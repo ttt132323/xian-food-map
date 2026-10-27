@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">西安吃在哪</string>
+
+    <!--
+      在线地址：填你自己的 GitHub Pages 地址，例如
+      https://yourname.github.io/xian-food-map/
+
+      留空或保留 YOURNAME 时，App 会直接加载打包进 assets 的离线版。
+      注意：离线版仍需要联网才能显示高德地图瓦片。
+    -->
+    <string name="site_url" translatable="false">https://YOURNAME.github.io/xian-food-map/</string>
+
+    <string name="offline_tip">网络不可用，已切到离线版</string>
+</resources>

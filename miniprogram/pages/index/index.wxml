@@ -1,0 +1,50 @@
+<view class="page">
+
+  <view class="bar">
+    <input class="search" placeholder="搜店名、菜、街区" placeholder-class="ph"
+           value="{{q}}" bindinput="onSearch" confirm-type="search" />
+    <view class="loc {{located ? 'on' : ''}}" bindtap="locate">{{located ? '已定位' : '定位'}}</view>
+  </view>
+
+  <view class="frow">
+    <text class="fl">时间</text>
+    <scroll-view class="chips" scroll-x enable-flex show-scrollbar="{{false}}">
+      <view wx:for="{{slots}}" wx:key="n"
+            class="chip {{slot === item.id ? 'on' : ''}}"
+            data-v="{{item.id}}" bindtap="pickSlot">{{item.n}}</view>
+    </scroll-view>
+  </view>
+
+  <view class="frow">
+    <text class="fl">类型</text>
+    <scroll-view class="chips" scroll-x enable-flex show-scrollbar="{{false}}">
+      <view wx:for="{{cats}}" wx:key="n"
+            class="chip {{cat === item.id ? 'on' : ''}}"
+            data-v="{{item.id}}" bindtap="pickCat">{{item.n}}</view>
+    </scroll-view>
+  </view>
+
+  <view class="count">{{countText}}</view>
+
+  <view wx:if="{{list.length === 0}}" class="empty">没有符合条件的店，放宽一下筛选。</view>
+
+  <view class="item" wx:for="{{list}}" wx:key="k" data-i="{{index}}" bindtap="openMap">
+    <view class="r">
+      <view class="n">
+        <text>{{item.n}}</text>
+        <text wx:if="{{item.openTag}}" class="tag {{item.open ? 'ok' : ''}}">{{item.open ? '开着' : '已过点'}}</text>
+        <text wx:if="{{item.la === null}}" class="tag">无点位</text>
+      </view>
+      <view class="m">{{item.a}} · {{item.t}}</view>
+      <view class="acts">
+        <view class="act" catchtap="openMap" data-i="{{index}}">地图上看</view>
+        <view class="act nav" catchtap="navTo" data-i="{{index}}">导航过去</view>
+      </view>
+    </view>
+    <view class="d" wx:if="{{item.dd}}">
+      <text class="dv">{{item.dd}}</text>
+      <text class="dl">{{item.dl}}</text>
+    </view>
+  </view>
+
+</view>

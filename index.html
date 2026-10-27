@@ -1,0 +1,3315 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F6F1E7">
+<title>落地第一口 · 西安站食单 11.01</title>
+<style>
+  :root{
+    --paper:#F6F1E7;
+    --paper-2:#FCF9F3;
+    --card:#FFFDF8;
+    --ink:#241F1A;
+    --ink-2:#5A5248;
+    --ink-3:#8E8577;
+    --line:#E2D8C6;
+    --line-2:#EDE4D4;
+    --red:#A6392B;
+    --red-2:#C4563F;
+    --red-wash:#F3E2DC;
+    --jade:#1D4A46;
+    --jade-wash:#DFE9E6;
+    --gold:#A97C24;
+    --gold-wash:#F2E8D2;
+    --dawn:#2A5560;
+    --dawn-2:#3C7583;
+    --serif:"Songti SC","STSong","Source Han Serif SC","Noto Serif CJK SC","SimSun",serif;
+    --sans:"PingFang SC","HarmonyOS Sans SC","MiSans","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+    --shadow:0 1px 2px rgba(60,45,25,.05), 0 8px 24px -12px rgba(60,45,25,.22);
+  }
+
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} }
+  html,body{margin:0;padding:0}
+  body{
+    font-family:var(--sans);
+    color:var(--ink);
+    background:
+      radial-gradient(1100px 520px at 50% -12%, #FFFDF6 0%, rgba(255,253,246,0) 62%),
+      var(--paper);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    padding-bottom:64px;
+  }
+  body::before{
+    content:"";
+    position:fixed;inset:0;pointer-events:none;z-index:0;
+    opacity:.35;
+    background-image:repeating-linear-gradient(0deg, rgba(120,100,70,.045) 0 1px, transparent 1px 3px);
+  }
+  .wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 18px}
+  @media (min-width:900px){ .wrap{padding:0 32px} }
+
+  /* ---------- top bar ---------- */
+  .topbar{
+    position:sticky;top:0;z-index:40;
+    backdrop-filter:blur(12px) saturate(1.4);
+    -webkit-backdrop-filter:blur(12px) saturate(1.4);
+    background:rgba(246,241,231,.82);
+    border-bottom:1px solid var(--line-2);
+  }
+  .topbar-in{
+    max-width:1080px;margin:0 auto;padding:9px 18px;
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+  }
+  @media (min-width:900px){ .topbar-in{padding:11px 32px} }
+  .brand{display:flex;align-items:center;gap:9px;min-width:0}
+  .seal{
+    width:24px;height:24px;flex:0 0 24px;border-radius:5px;
+    background:var(--red);color:#FFF6EE;
+    font-family:var(--serif);font-size:11px;line-height:1;
+    display:grid;place-items:center;letter-spacing:.5px;
+    box-shadow:inset 0 0 0 1px rgba(255,255,255,.28);
+  }
+  .brand-t{font-size:12.5px;letter-spacing:.14em;color:var(--ink-2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .brand-t b{color:var(--ink);font-weight:600}
+  @media (max-width:430px){ .bt-long{display:none} }
+  .fav-btn{
+    display:inline-flex;align-items:center;gap:6px;
+    border:1px solid var(--line);background:var(--card);
+    color:var(--ink-2);border-radius:999px;
+    padding:6px 12px;font-size:12px;font-family:inherit;cursor:pointer;
+    transition:.18s;white-space:nowrap;flex:0 0 auto;
+  }
+  .fav-btn:hover{border-color:var(--red);color:var(--red)}
+  .fav-btn .ct{font-variant-numeric:tabular-nums;color:var(--red);font-weight:600}
+
+  /* ---------- hero ---------- */
+  .hero{padding:34px 0 20px}
+  .kicker{
+    display:flex;align-items:center;gap:8px;
+    font-size:11px;letter-spacing:.18em;color:var(--ink-3);
+    text-transform:uppercase;margin-bottom:14px;
+  }
+  .kicker i{
+    width:6px;height:6px;border-radius:50%;background:var(--red);
+    box-shadow:0 0 0 4px rgba(166,57,43,.1);display:inline-block;
+  }
+  h1{
+    font-family:var(--serif);
+    font-size:clamp(38px,9vw,68px);
+    line-height:1.02;
+    letter-spacing:.02em;
+    font-weight:700;
+    margin:0 0 12px;
+  }
+  h1 em{
+    font-style:normal;color:var(--red);
+    position:relative;display:inline-block;
+  }
+  h1 em::after{
+    content:"";position:absolute;left:2%;right:2%;bottom:-.12em;height:.055em;
+    background:linear-gradient(90deg,var(--red),rgba(166,57,43,0));
+    opacity:.3;border-radius:2px;
+  }
+  .lede{margin:0;color:var(--ink-2);font-size:14.5px;max-width:34em}
+  .lede b{color:var(--ink);font-weight:600}
+
+  .facts{
+    display:grid;grid-template-columns:repeat(3,1fr);
+    gap:1px;margin:24px 0 0;
+    background:var(--line);
+    border:1px solid var(--line);border-radius:12px;overflow:hidden;
+  }
+  .fact{background:var(--card);padding:12px 12px 11px}
+  .fact b{
+    display:block;font-family:var(--serif);
+    font-size:22px;line-height:1.15;color:var(--ink);
+    font-variant-numeric:tabular-nums;
+  }
+  .fact > span{display:block;font-size:11px;color:var(--ink-3);margin-top:2px;letter-spacing:.03em}
+
+  /* ---------- slot ---------- */
+  .slot{margin:26px 0 0}
+  .slot-kicker{font-size:10px;letter-spacing:.16em;color:var(--red);margin-bottom:2px}
+  .slot-head{
+    display:flex;align-items:flex-end;justify-content:space-between;
+    gap:10px;margin-bottom:9px;
+  }
+  .slot-head h3{
+    font-family:var(--serif);font-size:15px;margin:0;font-weight:700;letter-spacing:.04em;
+  }
+  .slot-head span{font-size:11px;color:var(--ink-3)}
+  .chips{display:flex;flex-wrap:wrap;gap:7px}
+  .chip{
+    font-family:inherit;font-size:12.5px;
+    padding:7px 13px;border-radius:999px;cursor:pointer;
+    border:1px solid var(--line);background:var(--card);color:var(--ink-2);
+    transition:.16s ease;
+    display:inline-flex;align-items:center;gap:5px;
+  }
+  .chip:hover{border-color:#C9B79C;color:var(--ink)}
+  .chip.on{
+    background:var(--ink);border-color:var(--ink);color:#FBF6EC;
+    box-shadow:0 4px 14px -6px rgba(36,31,26,.55);
+  }
+  .chip.on .num{color:#E8C9A0}
+  .chip .num{font-size:10.5px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+
+  .slot-hint{
+    margin:11px 0 0;font-size:13px;color:var(--jade);
+    background:var(--jade-wash);
+    border-left:2px solid var(--jade);
+    padding:9px 12px;border-radius:0 8px 8px 0;
+    min-height:40px;display:flex;align-items:center;
+    transition:.2s;
+  }
+
+  /* ---------- tier map ---------- */
+  .tiers{
+    margin:30px 0 0;
+    border-top:1px solid var(--line-2);
+    border-bottom:1px solid var(--line-2);
+    padding:18px 0;
+    display:grid;gap:14px;
+  }
+  .tier-row{display:flex;align-items:center;gap:12px;font-size:12.5px}
+  .tier-d{flex:0 0 auto;color:var(--ink-3);font-variant-numeric:tabular-nums;width:66px;text-align:right;white-space:nowrap}
+  .tier-line{
+    flex:1;height:1px;background:
+      repeating-linear-gradient(90deg,var(--line) 0 4px,transparent 4px 8px);
+    position:relative;
+  }
+  .tier-line::before{
+    content:"";position:absolute;left:0;top:-2.5px;width:6px;height:6px;border-radius:50%;
+    background:var(--red);opacity:.55;
+  }
+  .tier-names{flex:0 0 auto;display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+  .tier-names a{
+    color:var(--ink-2);text-decoration:none;border-bottom:1px dotted var(--line);
+    padding-bottom:1px;transition:.16s;
+  }
+  .tier-names a:hover{color:var(--red);border-color:var(--red)}
+  @media (max-width:620px){
+    .tier-row{flex-wrap:wrap;gap:6px}
+    .tier-d{width:auto;text-align:left}
+    .tier-line{display:none}
+    .tier-names{justify-content:flex-start;width:100%}
+  }
+
+  /* ---------- section head ---------- */
+  .sec-head{
+    display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;
+    margin:0 0 16px;padding-bottom:10px;
+    border-bottom:1px solid var(--line);
+  }
+  .sec-head h2{
+    font-family:var(--serif);font-size:26px;margin:0;font-weight:700;letter-spacing:.02em;
+  }
+  .sec-head p{margin:0;font-size:12px;color:var(--ink-3);line-height:1.5}
+
+  /* ---------- hero (compact) ---------- */
+  .hero-mini{padding:20px 0 12px}
+  .hero-mini h1{
+    font-family:var(--serif);font-size:clamp(25px,4.2vw,36px);
+    margin:0;font-weight:700;line-height:1.16;letter-spacing:.02em;
+  }
+  .lede-mini{margin:7px 0 0;font-size:12.5px;color:var(--ink-2);max-width:46em;line-height:1.6}
+
+  /* ---------- map app ---------- */
+  .mapapp{display:grid;grid-template-columns:1fr;gap:14px;margin:6px 0 0}
+  @media (min-width:900px){
+    .mapapp{grid-template-columns:376px minmax(0,1fr);gap:18px;align-items:start}
+  }
+
+  .side{
+    background:var(--card);border:1px solid var(--line-2);border-radius:12px;
+    display:flex;flex-direction:column;overflow:hidden;
+  }
+  @media (min-width:900px){
+    .side{max-height:calc(100vh - 78px);position:sticky;top:56px}
+  }
+  .side-bar{display:flex;gap:7px;padding:10px;border-bottom:1px solid var(--line-2)}
+  .side-search{position:relative;flex:1;min-width:0}
+  .side-search input{
+    width:100%;font-family:inherit;font-size:12.5px;color:var(--ink);
+    padding:8px 9px 8px 29px;border-radius:8px;border:1px solid var(--line);
+    background:var(--paper-2);outline:none;transition:.16s;
+  }
+  .side-search input:focus{border-color:var(--red);box-shadow:0 0 0 3px rgba(166,57,43,.08)}
+  .side-search svg{position:absolute;left:9px;top:50%;transform:translateY(-50%);opacity:.45}
+  .loc-btn{
+    flex:0 0 auto;display:inline-flex;align-items:center;gap:4px;
+    padding:8px 10px;border-radius:8px;border:1px solid var(--line);
+    background:var(--paper-2);color:var(--ink-2);font-family:inherit;font-size:11.5px;
+    cursor:pointer;white-space:nowrap;transition:.16s;
+  }
+  .loc-btn svg{width:13px;height:13px}
+  .loc-btn:hover{border-color:var(--dawn);color:var(--dawn)}
+  .loc-btn.on{background:var(--dawn);border-color:var(--dawn);color:#F2F8F7}
+  .loc-btn.on svg{stroke:#F2F8F7}
+  .loc-btn.loading{opacity:.6}
+
+  .pick-bar[hidden]{display:none}
+  .pick-bar{
+    display:flex;align-items:center;gap:7px;
+    padding:8px 10px;border-bottom:1px solid var(--line-2);
+    background:#FCF3EC;
+  }
+  .pb-n{flex:1;font-size:11.5px;color:var(--red);font-weight:600}
+  .pb-go{
+    font-family:inherit;font-size:11px;padding:5px 10px;border-radius:6px;
+    border:1px solid var(--red);background:var(--red);color:#FFF7EF;cursor:pointer;
+  }
+  .pb-go:hover{background:#8F2E22}
+  .pb-x{
+    font-family:inherit;font-size:10.5px;padding:4px 7px;border-radius:5px;
+    border:1px solid var(--line);background:transparent;color:var(--ink-3);cursor:pointer;
+  }
+  .pb-x:hover{color:var(--red);border-color:#E0BDB2}
+  .act.pick{background:#FCF3EC;border-color:#E4C7BC;color:var(--red)}
+  .act.pick.on{background:var(--red);border-color:var(--red);color:#FFF7EF}
+  .seq{display:flex;flex-direction:column;gap:1px}
+  .seq-i{
+    display:flex;align-items:center;gap:8px;padding:5px 0;
+    border-bottom:1px dashed var(--line-2);font-size:12px;
+  }
+  .seq-i:last-child{border-bottom:none}
+  .seq-i b{
+    flex:0 0 20px;width:20px;height:20px;border-radius:50%;
+    background:var(--red);color:#FFF7EF;font-size:10.5px;font-weight:600;
+    display:grid;place-items:center;
+  }
+  .seq-i.seq-start b{background:var(--dawn)}
+  .seq-i span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--ink)}
+  .seq-i em{font-style:normal;font-size:11px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+
+  .side-filters{padding:8px 10px 9px;border-bottom:1px solid var(--line-2);display:grid;gap:6px}
+  .frow{display:flex;align-items:flex-start;gap:7px}
+  .fl{flex:0 0 24px;font-size:10px;color:var(--ink-3);letter-spacing:.08em;padding-top:5px}
+  .chips.xs{gap:4px}
+  .chips.xs .chip{font-size:10.5px;padding:4px 8px}
+  .chips.xs .chip .num{display:none}
+
+  .side-count{margin:0;padding:8px 12px 3px;font-size:10.5px;color:var(--ink-3);letter-spacing:.03em}
+  .side-list{flex:1;overflow-y:auto;padding:0 5px 8px}
+  .side-list::-webkit-scrollbar{width:5px}
+  .side-list::-webkit-scrollbar-thumb{background:#DDD2BE;border-radius:3px}
+
+  .shop{
+    display:flex;gap:9px;padding:9px 8px;border-radius:8px;cursor:pointer;
+    border-bottom:1px solid var(--line-2);transition:.14s;
+  }
+  .shop:last-child{border-bottom:none}
+  .shop:hover{background:#FBF7EF}
+  .shop.on{background:#FCF3EC;box-shadow:inset 2px 0 0 var(--red)}
+  .shop-r{flex:1;min-width:0}
+  .shop-n{font-size:13px;font-weight:600;line-height:1.35;display:flex;align-items:baseline;gap:5px;flex-wrap:wrap}
+  .shop-m{font-size:10.5px;color:var(--ink-3);margin-top:2px;line-height:1.45}
+  .shop-d{flex:0 0 auto;text-align:right;font-size:10.5px;color:var(--dawn);font-variant-numeric:tabular-nums;white-space:nowrap}
+  .shop-d b{display:block;font-size:12.5px;font-weight:600}
+  .shop-d span{font-size:9px;color:var(--ink-3)}
+  .tag-now{font-size:9px;color:var(--jade);border:1px solid #CBDCD8;background:var(--jade-wash);padding:0 4px;border-radius:3px;font-weight:400}
+  .tag-over{font-size:9px;color:var(--ink-3);border:1px solid var(--line);padding:0 4px;border-radius:3px;font-weight:400}
+  .shop-nav-btn{
+    margin-top:5px;font-size:9.5px;padding:2px 7px;border-radius:5px;
+    border:1px solid #CBDFE0;background:#EDF4F4;color:var(--dawn);
+    text-decoration:none;display:inline-block;cursor:pointer;
+  }
+  .shop-nav-btn:hover{background:var(--dawn);color:#fff;border-color:var(--dawn)}
+
+  /* ---------- 手机全屏地图 ---------- */
+  .map-back{
+    display:none;align-items:center;gap:4px;
+    border:none;background:transparent;font-family:inherit;
+    font-size:12px;color:var(--ink-2);cursor:pointer;
+    padding:4px 10px 4px 0;white-space:nowrap;flex:0 0 auto;
+  }
+  .map-back:hover{color:var(--red)}
+
+  @media (max-width:899px){
+    body.map-mode{overflow:hidden}
+    body.map-mode .topbar{display:none}
+    body.map-mode .map-pane{
+      position:fixed;left:0;right:0;top:0;bottom:0;z-index:400;
+      background:var(--paper);display:flex;flex-direction:column;
+      margin:0;padding:0;
+    }
+    body.map-mode .map-pane .map-card{
+      flex:1 1 auto;min-height:0;margin:0;
+      border:none;border-radius:0;box-shadow:none;
+      display:flex;flex-direction:column;
+    }
+    body.map-mode .map-pane .map-head{
+      flex:0 0 auto;
+      padding:calc(10px + env(safe-area-inset-top,0px)) 14px 10px;
+    }
+    body.map-mode .map-pane .map-canvas{
+      flex:1 1 auto;height:auto;min-height:0;
+    }
+    body.map-mode .map-pane .map-note{display:none}
+    body.map-mode .map-pane .map-tools{
+      flex:0 0 auto;margin:0;padding:9px 14px;
+      border-top:1px solid var(--line-2);background:var(--card);
+    }
+    body.map-mode .map-pane .nav-panel[hidden]{display:none}
+    body.map-mode .map-pane .nav-panel{
+      flex:0 0 auto;margin:0;border:none;border-radius:0;
+      border-top:1px solid var(--line-2);max-height:40vh;
+      display:flex;flex-direction:column;
+    }
+    body.map-mode .nav-steps{max-height:30vh}
+    body.map-mode .map-back{display:inline-flex}
+    body.map-mode .fab{display:none}
+  }
+
+  .map-pane{min-width:0}
+  @media (min-width:900px){ .map-pane{position:sticky;top:56px} }
+  @media (max-width:899px){
+    .map-pane .map-card{margin-bottom:8px;scroll-margin-top:52px}
+    .hero-mini{padding:14px 0 8px}
+    .lede-mini{display:none}
+  }
+  .map-pane .map-card{margin-bottom:11px}
+  .map-pane .map-canvas{height:min(50vh,480px)}
+  @media (max-width:899px){ .map-pane .map-canvas{height:31vh} }
+  .map-pane .days{margin:0 0 11px}
+  .map-pane .day{padding:7px 10px}
+  .map-pane .day b{font-size:13px}
+  .map-pane .day span{font-size:9.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .map-pane .replan{margin:0}
+
+  .map-tools{display:flex;gap:6px;margin:9px 0 0;padding:0 1px}
+  .mt-btn{
+    font-family:inherit;font-size:11.5px;padding:6px 12px;border-radius:7px;
+    border:1px solid var(--line);background:var(--card);color:var(--ink-2);
+    cursor:pointer;transition:.16s;
+  }
+  .mt-btn:hover{border-color:var(--dawn);color:var(--dawn)}
+  .mt-btn.on{background:var(--dawn);border-color:var(--dawn);color:#F2F8F7}
+  .mt-btn.ghost{margin-left:auto;color:var(--ink-3);background:transparent}
+  .mt-btn.app{background:var(--red);border-color:var(--red);color:#FFF7EF}
+  .mt-btn.app:hover{background:#8F2E22;border-color:#8F2E22;color:#FFF7EF}
+
+  .nav-panel{
+    margin:9px 0 0;border:1px solid var(--line-2);border-radius:10px;
+    background:var(--card);overflow:hidden;
+  }
+  .nav-head{
+    display:flex;align-items:center;gap:9px;padding:9px 12px;
+    border-bottom:1px solid var(--line-2);background:var(--paper-2);
+  }
+  .nav-t{
+    font-size:12.5px;font-weight:600;flex:1;min-width:0;
+    overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+  }
+  .nav-meta{font-size:11px;color:var(--dawn);font-variant-numeric:tabular-nums;white-space:nowrap}
+  .nav-x{
+    border:none;background:transparent;font-size:18px;line-height:1;color:var(--ink-3);
+    cursor:pointer;padding:0 2px;
+  }
+  .nav-x:hover{color:var(--red)}
+  .nav-steps{max-height:190px;overflow-y:auto;padding:8px 12px}
+  .nav-steps p.nav-tip{margin:0;font-size:12px;color:var(--ink-3);line-height:1.65}
+  .nav-steps *{font-family:var(--sans)!important;color:var(--ink-2)!important;background:transparent!important}
+  .nav-steps *{font-size:12px!important;line-height:1.7!important;box-shadow:none!important}
+  .nav-steps img,.nav-steps i{max-width:14px;vertical-align:middle}
+
+  .shop-acts{display:flex;gap:6px;margin-top:6px}
+  .act{
+    font-family:inherit;font-size:10px;padding:3px 8px;border-radius:5px;
+    border:1px solid var(--line);background:var(--paper-2);color:var(--ink-2);
+    cursor:pointer;transition:.15s;
+  }
+  .act:hover{border-color:var(--dawn);color:var(--dawn)}
+  .act.nav{background:#EDF4F4;border-color:#CBDFE0;color:var(--dawn)}
+  .act.nav:hover{background:var(--dawn);color:#fff;border-color:var(--dawn)}
+  .shop-x{
+    font-size:10.5px;color:var(--ink-3);margin-top:3px;line-height:1.5;
+    display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+  }
+  .amap-dot{
+    width:10px;height:10px;border-radius:50%;background:#A6392B;
+    border:2px solid #FFFFFF;box-shadow:0 1px 3px rgba(36,31,26,.3);
+  }
+
+  /* ---------- route section ---------- */
+  .route-sec{margin:38px 0 0}
+
+  .map-card{
+    border:1px solid var(--line-2);border-radius:12px;overflow:hidden;
+    background:var(--card);margin:0 0 22px;box-shadow:0 1px 2px rgba(60,45,25,.04);
+  }
+  .map-head{
+    display:flex;align-items:center;justify-content:space-between;gap:10px;
+    padding:10px 14px;border-bottom:1px solid var(--line-2);
+  }
+  .map-t{font-family:var(--serif);font-size:13px;font-weight:700;letter-spacing:.02em}
+  .map-stat{font-size:11.5px;color:var(--dawn);font-variant-numeric:tabular-nums;letter-spacing:.02em}
+  .map-legend2{
+    display:inline-flex;align-items:center;gap:4px;
+    font-size:10px;color:var(--ink-3);margin-right:9px;
+  }
+  .map-legend2 i{width:7px;height:7px;border-radius:50%;display:inline-block;margin-left:6px}
+  .map-legend2 i:first-child{margin-left:0}
+  .map-legend2 .d-key{background:var(--red)}
+  .map-legend2 .d-mid{background:#B9AE9C}
+  .map-legend2 .d-end{background:var(--jade)}
+  .map-canvas{width:100%;height:420px;background:#EFEADF}
+  .amap-me{
+    width:18px;height:18px;border-radius:50%;
+    background:#2A5560;border:3px solid #FFFFFF;
+    box-shadow:0 0 0 7px rgba(42,85,96,.16);
+  }
+  .map-fail{
+    display:flex;align-items:center;justify-content:center;flex-direction:column;
+    height:100%;padding:24px;text-align:center;
+    font-size:12.5px;color:var(--ink-3);line-height:1.8;
+  }
+  .map-fail b{color:var(--ink-2)}
+
+  .amap-pin{
+    border-radius:50%;border:2.5px solid #FFFFFF;
+    color:#FFFFFF;font-weight:700;font-size:13px;text-align:center;
+    font-family:"PingFang SC","Microsoft YaHei",sans-serif;
+    box-shadow:0 2px 7px rgba(36,31,26,.35);
+    box-sizing:border-box;user-select:none;
+  }
+  .map-note{
+    padding:7px 14px;font-size:10.5px;color:var(--ink-3);
+    border-top:1px solid var(--line-2);background:var(--paper-2);line-height:1.6;
+  }
+  @media (max-width:640px){
+    .map-canvas{height:300px}
+    .map-head{flex-wrap:wrap;gap:4px}
+    .map-legend2{display:none}
+  }
+
+  .route{
+    display:flex;align-items:stretch;
+    overflow-x:auto;scrollbar-width:thin;
+    padding:4px 2px 14px;
+    scroll-snap-type:x proximity;
+  }
+  .route::-webkit-scrollbar{height:5px}
+  .route::-webkit-scrollbar-thumb{background:#DDD2BE;border-radius:3px}
+  .route::-webkit-scrollbar-track{background:transparent}
+
+  .stop{
+    flex:0 0 232px;scroll-snap-align:start;
+    border:1px solid var(--line-2);border-radius:12px;
+    background:var(--card);padding:13px 14px 12px;
+    position:relative;transition:.16s;
+  }
+  .stop:hover{border-color:#D8C9B0;box-shadow:var(--shadow)}
+  .stop .pin{
+    width:22px;height:22px;border-radius:50%;
+    display:grid;place-items:center;
+    font-family:var(--serif);font-size:11px;
+    background:var(--paper-2);border:1px solid var(--line);
+    color:var(--ink-2);margin-bottom:8px;
+  }
+  .stop.key .pin{background:var(--red);border-color:var(--red);color:#FFF7EF}
+  .stop.end .pin{background:var(--jade);border-color:var(--jade);color:#F2F8F7}
+  .stop .stop-t{
+    font-size:11px;color:var(--red);letter-spacing:.08em;font-weight:600;
+    font-variant-numeric:tabular-nums;
+  }
+  .stop .stop-h{font-size:14px;font-weight:600;line-height:1.45;margin:2px 0 4px}
+  .stop .stop-d{font-size:12px;color:var(--ink-2);line-height:1.58}
+  .stop-nav{
+    display:inline-block;margin-top:8px;font-size:10.5px;color:var(--dawn);
+    text-decoration:none;border-bottom:1px dotted #A9C9CA;padding-bottom:1px;
+    transition:.16s;
+  }
+  .stop-nav:hover{color:var(--red);border-bottom-color:#E0BDB2}
+  .stop .stop-x{
+    margin-top:8px;padding-top:7px;border-top:1px dashed var(--line-2);
+    font-size:10.5px;color:var(--ink-3);letter-spacing:.03em;
+  }
+
+  .leg{
+    flex:0 0 92px;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;gap:5px;
+    padding:0 4px;
+  }
+  .leg i{
+    display:block;width:100%;height:1px;
+    background:repeating-linear-gradient(90deg,#D5C7AC 0 5px,transparent 5px 10px);
+  }
+  .leg span{
+    font-size:10px;color:var(--ink-3);white-space:nowrap;
+    background:var(--paper);padding:0 3px;line-height:1.4;text-align:center;
+  }
+
+  @media (max-width:760px){
+    .route{flex-direction:column;overflow:visible;padding:2px 0 6px}
+    .stop{flex:none;width:100%;scroll-snap-align:none}
+    .leg{flex:none;width:auto;height:40px;flex-direction:row;padding:0 0 0 24px;gap:8px}
+    .leg i{
+      width:1px;height:100%;flex:0 0 1px;
+      background:repeating-linear-gradient(180deg,#D5C7AC 0 5px,transparent 5px 10px);
+    }
+    .leg span{background:transparent;padding:0;font-size:10.5px}
+  }
+
+  /* ---------- replan ---------- */
+  .replan{
+    margin:22px 0 0;padding:15px 16px 16px;
+    border:1px solid var(--line-2);border-radius:12px;
+    background:var(--paper-2);
+  }
+  .replan-top{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;margin-bottom:10px}
+  .replan-t{font-family:var(--serif);font-size:14px;font-weight:700}
+  .replan-s{font-size:11.5px;color:var(--ink-3)}
+  #replanOut{margin-top:12px}
+  .replan-route{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+  .rr-node{
+    font-size:12px;padding:5px 10px;border-radius:7px;
+    background:var(--card);border:1px solid var(--line-2);color:var(--ink);
+  }
+  .rr-node b{color:var(--red);font-weight:600;margin-right:5px;font-variant-numeric:tabular-nums}
+  .rr-arrow{font-size:10px;color:var(--ink-3)}
+  .replan-meta{margin-top:9px;font-size:11.5px;color:var(--ink-3);line-height:1.6}
+
+  /* ---------- library ---------- */
+  .lib{margin:52px 0 0;padding-top:26px;border-top:1px solid var(--line)}
+  .lib-tabs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 24px}
+  @media (min-width:780px){ .lib-tabs{grid-template-columns:repeat(4,1fr)} }
+  .lib-tab{
+    text-align:left;font-family:inherit;cursor:pointer;
+    border:1px solid var(--line);background:var(--card);
+    border-radius:11px;padding:12px 13px 13px;transition:.16s;
+  }
+  .lib-tab b{
+    display:block;font-family:var(--serif);font-size:23px;line-height:1;
+    color:var(--ink);font-variant-numeric:tabular-nums;
+  }
+  .lib-tab .lt{display:block;font-size:13px;font-weight:600;color:var(--ink);margin-top:6px}
+  .lib-tab em{
+    display:block;font-style:normal;font-size:10.5px;color:var(--ink-3);
+    margin-top:3px;line-height:1.5;
+  }
+  .lib-tab:hover{border-color:#D3C4A9}
+  .lib-tab.on{
+    border-color:var(--red);background:#FCF5EF;
+    box-shadow:inset 0 0 0 1px rgba(166,57,43,.12);
+  }
+  .lib-tab.on b{color:var(--red)}
+  .lib-tab.on em{color:#8B6A5C}
+
+  /* ---------- index view ---------- */
+  #indexView{padding-top:20px}
+  .index-lede{
+    margin:0 0 16px;padding:14px 16px;
+    background:var(--paper-2);border:1px solid var(--line-2);border-radius:10px;
+  }
+  .index-lede p{margin:0;font-size:13px;color:var(--ink-2);line-height:1.75}
+  @media (max-width:640px){
+    .index-lede p{font-size:12.5px;line-height:1.7}
+    .index-lede{padding:12px 14px}
+  }
+  .index-lede b{color:var(--ink);font-weight:600}
+
+  .catnav{
+    display:flex;gap:6px;flex-wrap:wrap;
+    position:sticky;top:44px;z-index:20;
+    margin:0 0 20px;padding:8px 0;
+    background:rgba(246,241,231,.93);
+    backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line-2);
+  }
+  .catnav a{
+    font-size:12px;color:var(--ink-2);text-decoration:none;
+    padding:5px 10px;border-radius:999px;border:1px solid transparent;transition:.15s;
+  }
+  .catnav a:hover{background:var(--card);border-color:var(--line);color:var(--red)}
+
+  .cat{margin:0 0 26px;padding-top:18px;border-top:1px solid var(--line-2);scroll-margin-top:104px}
+  .cat:first-of-type{border-top:none;padding-top:0}
+  .cat-head{
+    display:flex;align-items:baseline;gap:9px;
+    margin:0 0 8px;padding-bottom:8px;border-bottom:1px solid var(--line-2);
+  }
+  .cat-head h3{font-family:var(--serif);font-size:19px;margin:0;font-weight:700;letter-spacing:.02em}
+  .cat-head .n{font-size:11px;color:var(--ink-3)}
+  .cat-tip{
+    margin:0 0 10px;font-size:12.5px;color:var(--jade);
+    background:var(--jade-wash);border-left:2px solid var(--jade);
+    padding:7px 11px;border-radius:0 6px 6px 0;line-height:1.6;
+  }
+  .entries{display:grid;gap:0}
+  @media (min-width:760px){ .entries{grid-template-columns:1fr 1fr;column-gap:30px} }
+  .entry{padding:9px 0;border-bottom:1px dashed var(--line-2)}
+  .entry .nm{
+    font-size:14px;font-weight:600;color:var(--ink);
+    display:flex;align-items:center;gap:6px;flex-wrap:wrap;line-height:1.45;
+  }
+  .entry .nm small{
+    font-weight:400;font-size:10px;color:var(--red);
+    border:1px solid #E9CDC4;background:var(--red-wash);
+    padding:0 5px;border-radius:3px;
+  }
+  .entry .nm small.gray{color:var(--ink-3);border-color:var(--line);background:#F7F2E7}
+  .entry .loc{font-size:11.5px;color:var(--ink-3);margin-top:2px}
+  .entry .nt{font-size:12.5px;color:var(--ink-2);margin-top:3px;line-height:1.62}
+
+  /* ---------- market view ---------- */
+  #marketView{padding-top:20px}
+  .index-lede.dawn{
+    background:linear-gradient(180deg,#EFF5F4,#FAFCFB);
+    border-color:#D6E4E3;
+  }
+  .index-lede.dawn p{color:#37565A}
+  .index-lede.dawn b{color:#1E444C}
+
+  .mk-pick{display:grid;gap:10px;margin:0 0 20px}
+  @media (min-width:760px){ .mk-pick{grid-template-columns:1fr 1fr} }
+  .mk-pickcard{
+    position:relative;padding:13px 15px;border-radius:11px;
+    background:var(--card);border:1px solid var(--line-2);
+    border-left:3px solid var(--dawn);
+  }
+  .mk-pickcard .lbl{font-size:10px;letter-spacing:.14em;color:var(--dawn-2);margin-bottom:4px}
+  .mk-pickcard h4{font-family:var(--serif);font-size:17px;margin:0 0 2px;font-weight:700}
+  .mk-pickcard .m{font-size:11.5px;color:var(--ink-3)}
+  .mk-pickcard p{margin:6px 0 0;font-size:12.5px;color:var(--ink-2);line-height:1.62}
+
+  .mk-list{border-top:1px solid var(--line-2)}
+  .mk-row{border-bottom:1px solid var(--line-2);padding:11px 0;cursor:pointer;transition:background .16s}
+  .mk-row:hover{background:#FBFDFC}
+  .mk-row.open{background:#FBFDFC}
+  .mk-row.open .mk-name{color:var(--dawn)}
+  .mk-head{display:flex;align-items:center;gap:11px}
+  .mk-rank{
+    font-family:var(--serif);font-size:11px;color:var(--dawn-2);
+    width:22px;flex:0 0 22px;font-variant-numeric:tabular-nums;letter-spacing:.04em;
+  }
+  .mk-name{
+    font-size:14.5px;font-weight:600;flex:1;min-width:0;
+    display:flex;align-items:center;gap:7px;flex-wrap:wrap;
+  }
+  .mk-name em{
+    font-style:normal;font-size:10px;font-weight:400;letter-spacing:.03em;
+    color:var(--dawn);border:1px solid #CBDFE0;background:#EDF4F4;
+    padding:0 5px;border-radius:3px;
+  }
+  .mk-time{font-size:12px;color:var(--dawn);font-variant-numeric:tabular-nums;flex:0 0 auto}
+  .mk-meta{
+    font-size:11.5px;color:var(--ink-3);margin:3px 0 0 33px;
+    display:flex;align-items:center;gap:9px;flex-wrap:wrap;
+  }
+  .mk-bar{width:88px;height:3px;background:#E8E2D5;border-radius:2px;overflow:hidden}
+  .mk-bar i{display:block;height:100%;background:var(--dawn);border-radius:2px}
+  .mk-detail{
+    display:none;margin:9px 0 2px 33px;padding:10px 12px;
+    background:#F3F9F8;border-radius:0 8px 8px 0;
+    border:1px solid #E1EDEC;border-left:2px solid #A9C9CA;
+  }
+  .mk-row.open .mk-detail{display:block}
+  .mk-detail p{margin:0 0 5px;font-size:12.5px;color:var(--ink-2);line-height:1.66}
+  .mk-detail p:last-child{margin-bottom:0}
+  .mk-detail b{color:var(--dawn);font-weight:600;font-size:11px;letter-spacing:.06em}
+
+  @media (max-width:760px){
+    .mk-pick{
+      grid-template-columns:none;
+      grid-auto-flow:column;grid-auto-columns:85%;
+      overflow-x:auto;overscroll-behavior-x:contain;
+      scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
+      margin:0 -18px 16px;padding:0 18px 6px;
+    }
+    .mk-pick::-webkit-scrollbar{display:none}
+    .mk-pickcard{scroll-snap-align:start}
+    .mk-meta{margin-left:33px}
+    .mk-detail{margin-left:0}
+  }
+
+  /* ---------- table view ---------- */
+  #tableView{padding-top:20px}
+  .index-lede.plain{background:var(--paper-2)}
+  .tb-cats{margin:0 0 11px}
+  .tb-search{margin:0 0 14px;max-width:none;width:100%;flex:1 1 100%}
+  .tb-sec{margin:0 0 22px;padding-top:16px;border-top:1px solid var(--line-2)}
+  .tb-sec:first-child{border-top:none;padding-top:0}
+  .tb-sec h3{
+    font-family:var(--serif);font-size:16px;margin:0 0 6px;
+    display:flex;gap:8px;align-items:baseline;font-weight:700;
+  }
+  .tb-sec h3 span{font-size:11px;color:var(--ink-3);font-weight:400;letter-spacing:.04em}
+  .tb-row{
+    display:grid;grid-template-columns:172px 200px 1fr;gap:16px;
+    padding:8px 0;border-bottom:1px dashed var(--line-2);align-items:baseline;
+  }
+  .tb-row:hover{background:#FCFAF5}
+  .tb-n{font-size:13.5px;font-weight:600;color:var(--ink);line-height:1.45}
+  .tb-l{font-size:11.5px;color:var(--ink-3);line-height:1.5}
+  .tb-time{color:#6E6353;font-variant-numeric:tabular-nums}
+  .tb-note{font-size:12.5px;color:var(--ink-2);line-height:1.6}
+  .tb-l.is-empty{color:#CFC5B2}
+  @media (max-width:760px){
+    .tb-row{grid-template-columns:1fr;gap:1px;padding:9px 0}
+    .tb-l{font-size:11px}
+    .tb-l.is-empty,.tb-note.is-empty{display:none}
+    .tb-sec h3{font-size:15px}
+  }
+
+  /* ---------- toolbar ---------- */
+  .toolbar{
+    display:flex;gap:10px;align-items:center;flex-wrap:wrap;
+    margin:26px 0 16px;scroll-margin-top:70px;
+  }
+  .card{scroll-margin-top:80px}
+  .toolbar .chips{flex:1 1 auto}
+  .search{
+    position:relative;flex:0 1 230px;min-width:160px;
+  }
+  .search input{
+    width:100%;font-family:inherit;font-size:13px;color:var(--ink);
+    padding:8px 12px 8px 32px;border-radius:999px;
+    border:1px solid var(--line);background:var(--card);outline:none;
+    transition:.18s;
+  }
+  .search input:focus{border-color:var(--red);box-shadow:0 0 0 3px rgba(166,57,43,.09)}
+  .search input::placeholder{color:#A79C8C}
+  .search svg{position:absolute;left:11px;top:50%;transform:translateY(-50%);opacity:.42}
+  @media (max-width:640px){
+    .search{flex:1 1 100%}
+  }
+
+  /* ---------- grid ---------- */
+  .count{
+    font-size:11.5px;color:var(--ink-3);letter-spacing:.08em;
+    margin:0 0 10px;
+  }
+  .grid{
+    display:grid;grid-template-columns:1fr;gap:12px;align-items:stretch;
+  }
+  @media (min-width:720px){ .grid{grid-template-columns:1fr 1fr;gap:14px} }
+
+  .card{
+    position:relative;
+    display:flex;flex-direction:column;
+    background:var(--card);
+    border:1px solid var(--line-2);
+    border-radius:13px;
+    padding:15px 15px 13px;
+    cursor:pointer;
+    transition:transform .18s ease, box-shadow .18s ease, border-color .18s;
+    box-shadow:0 1px 1px rgba(70,55,30,.035);
+    overflow:hidden;
+  }
+  .card::after{
+    content:"";position:absolute;left:0;top:0;bottom:0;width:2px;
+    background:var(--red);opacity:0;transition:.2s;
+  }
+  .card:hover{transform:translateY(-2px);box-shadow:var(--shadow);border-color:#D9CBB4}
+  .card:hover::after{opacity:.7}
+  .card.dim{display:none}
+  .card.is-closed{opacity:.55;filter:saturate(.6)}
+  .card.is-closed:hover{opacity:.8}
+  .card.is-closed::after{background:var(--ink-3)}
+  .divider{
+    grid-column:1/-1;display:flex;align-items:center;gap:12px;
+    margin:10px 0 2px;font-size:11px;color:var(--ink-3);letter-spacing:.09em;
+  }
+  .divider i{flex:1;height:1px;background:var(--line-2);display:block}
+  .card.hit{
+    animation:hit .7s cubic-bezier(.2,.8,.3,1);
+    border-color:var(--red);
+  }
+  @keyframes hit{
+    0%{transform:scale(1)}
+    25%{transform:scale(1.022) rotate(-.35deg)}
+    55%{transform:scale(1.012) rotate(.3deg)}
+    100%{transform:scale(1)}
+  }
+  .card.flash{box-shadow:0 0 0 3px rgba(166,57,43,.16), var(--shadow)}
+
+  .card-top{display:flex;align-items:flex-start;gap:10px;margin-bottom:2px}
+  .idx{
+    font-family:var(--serif);font-size:11px;color:var(--red);
+    letter-spacing:.06em;padding-top:3px;font-variant-numeric:tabular-nums;
+    flex:0 0 auto;
+  }
+  .name{
+    font-family:var(--serif);font-size:19px;line-height:1.3;
+    font-weight:700;letter-spacing:.01em;margin:0;flex:1;min-width:0;
+  }
+  .mark{
+    flex:0 0 auto;width:26px;height:26px;border-radius:50%;
+    border:1px solid var(--line);background:transparent;
+    display:grid;place-items:center;cursor:pointer;transition:.16s;
+    margin-top:1px;padding:0;
+  }
+  .mark svg{width:14px;height:14px;stroke:var(--ink-3);fill:none;stroke-width:1.6;transition:.16s}
+  .mark:hover{border-color:var(--red-2)}
+  .mark:hover svg{stroke:var(--red-2)}
+  .mark.on{background:var(--red);border-color:var(--red)}
+  .mark.on svg{stroke:#FFF7EF;fill:#FFF7EF}
+
+  .meta{
+    display:flex;flex-wrap:wrap;align-items:center;gap:5px 8px;
+    font-size:11.5px;color:var(--ink-3);margin:5px 0 9px;
+  }
+  .tag{
+    font-size:10.5px;letter-spacing:.04em;padding:1px 6px;border-radius:4px;
+    border:1px solid var(--line);color:var(--ink-2);background:#FBF7EF;
+  }
+  .tag.t-red{color:var(--red);border-color:#E9CDC4;background:var(--red-wash)}
+  .tag.t-jade{color:var(--jade);border-color:#CBDCD8;background:var(--jade-wash)}
+  .tag.t-gold{color:var(--gold);border-color:#E7D9B8;background:var(--gold-wash)}
+  .sep{color:#D3C7B2}
+
+  .blurb{
+    font-size:13px;color:var(--ink-2);margin:0 0 10px;
+    display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+  }
+  .must{
+    font-size:12px;color:var(--ink-2);
+    border-top:1px dashed var(--line-2);padding-top:9px;margin-top:auto;
+    display:flex;gap:6px;align-items:baseline;
+  }
+  .must b{color:var(--ink-3);font-weight:500;flex:0 0 auto;font-size:11px;letter-spacing:.04em}
+  .must span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+  .localbar{
+    display:flex;align-items:center;gap:7px;margin-top:9px;
+    font-size:10.5px;color:var(--ink-3);letter-spacing:.04em;
+  }
+  .bars{display:flex;gap:2px}
+  .bars i{width:11px;height:4px;border-radius:1.5px;background:#E6DCCA;display:block}
+  .bars i.f{background:var(--red)}
+
+  /* ---------- plan ---------- */
+  .plan{
+    margin:46px 0 0;padding:26px 0 10px;
+    border-top:1px solid var(--line-2);
+  }
+  .plan h2{
+    font-family:var(--serif);font-size:24px;margin:0 0 4px;font-weight:700;letter-spacing:.02em;
+  }
+  .plan .sub{font-size:12.5px;color:var(--ink-3);margin:0 0 20px}
+  .plan-grid{display:grid;gap:22px}
+  @media (min-width:760px){ .plan-grid{grid-template-columns:1.15fr .85fr;gap:34px} }
+
+  .days{display:flex;gap:8px;margin:0 0 18px;flex-wrap:wrap;align-items:stretch}
+  .day{
+    flex:1 1 0;min-width:132px;
+    border:1px solid var(--line);background:var(--card);
+    border-radius:10px;padding:9px 12px 10px;cursor:pointer;
+    font-family:inherit;text-align:left;transition:.16s;
+  }
+  .day b{
+    display:block;font-family:var(--serif);font-size:15px;font-weight:700;
+    color:var(--ink);letter-spacing:.02em;
+  }
+  .day span{display:block;font-size:10.5px;color:var(--ink-3);margin-top:2px;letter-spacing:.02em}
+  .day:hover{border-color:#CDBFA6}
+  .day.on{
+    background:#FCF4EC;border-color:#E2C9BC;
+    box-shadow:inset 3px 0 0 var(--red);
+  }
+  .day.on b{color:var(--red)}
+  .day.on span{color:var(--ink-2)}
+
+  .day-lede{
+    margin:0 0 18px;padding:10px 13px;
+    background:var(--paper-2);border-left:2px solid var(--red);
+    border-radius:0 8px 8px 0;
+    font-size:13px;color:var(--ink-2);line-height:1.65;
+  }
+  .day-tips{display:grid;gap:10px;margin-top:18px}
+  @media (min-width:780px){ .day-tips{grid-template-columns:repeat(3,1fr)} }
+  .route-hint{
+    display:none;font-size:10.5px;color:var(--ink-3);
+    text-align:right;margin:-8px 2px 8px;letter-spacing:.04em;
+  }
+  @media (max-width:760px){ .route-hint{display:none!important} }
+  @media (max-width:520px){
+    .day{min-width:0;padding:8px 9px 9px}
+    .day b{font-size:13.5px}
+    .day span{font-size:9.5px}
+    .day-lede{font-size:12.5px}
+  }
+
+  .tl{position:relative;padding-left:20px;margin:0;list-style:none}
+  .tl::before{
+    content:"";position:absolute;left:4px;top:6px;bottom:6px;width:1px;
+    background:linear-gradient(180deg,rgba(166,57,43,.55) 0%,#D8CAB1 32%,#E4DAC8 100%);
+  }
+  .tl li{position:relative;padding:0 0 16px}
+  .tl li::before{
+    content:"";position:absolute;left:-19px;top:7px;width:7px;height:7px;border-radius:50%;
+    background:var(--paper);border:1.5px solid var(--red);
+  }
+  .tl li.key::before{background:var(--red)}
+  .tl .t{
+    font-size:11px;color:var(--red);letter-spacing:.08em;
+    font-variant-numeric:tabular-nums;font-weight:600;
+  }
+  .tl .h{font-size:13.5px;font-weight:600;margin:1px 0 1px}
+  .tl .d{font-size:12px;color:var(--ink-3);line-height:1.55}
+
+  .notes{display:grid;gap:9px;align-content:start}
+  .note{
+    background:var(--paper-2);border:1px solid var(--line-2);
+    border-radius:10px;padding:11px 13px;
+  }
+  .note b{display:block;font-size:11px;letter-spacing:.1em;color:var(--gold);margin-bottom:3px}
+  .note p{margin:0;font-size:12.5px;color:var(--ink-2);line-height:1.58}
+
+  footer{
+    margin:36px 0 0;padding:20px 0 0;
+    border-top:1px solid var(--line-2);
+    font-size:11px;color:var(--ink-3);line-height:1.7;
+  }
+  footer b{color:var(--ink-2);font-weight:500}
+
+  /* ---------- sheet ---------- */
+  .scrim{
+    position:fixed;inset:0;z-index:60;
+    background:rgba(35,28,20,.42);
+    backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);
+    opacity:0;pointer-events:none;transition:opacity .22s;
+  }
+  .scrim.on{opacity:1;pointer-events:auto}
+  .sheet{
+    position:fixed;left:0;right:0;bottom:0;z-index:61;
+    background:var(--card);
+    border-radius:18px 18px 0 0;
+    border-top:1px solid var(--line);
+    max-height:86vh;overflow-y:auto;
+    transform:translateY(102%);
+    opacity:0;visibility:hidden;
+    transition:transform .3s cubic-bezier(.22,.9,.28,1), opacity .22s ease, visibility .3s;
+    box-shadow:0 -18px 50px -20px rgba(30,22,12,.5);
+    padding:0 0 max(20px,env(safe-area-inset-bottom));
+  }
+  .sheet.on{transform:translateY(0);opacity:1;visibility:visible}
+  @media (min-width:760px){
+    .sheet{
+      left:50%;right:auto;transform:translate(-50%,102%);
+      width:560px;border-radius:16px;bottom:24px;
+      max-height:82vh;
+    }
+    .sheet.on{transform:translate(-50%,0)}
+  }
+  .sheet-grip{
+    position:sticky;top:0;background:var(--card);
+    padding:9px 0 6px;display:grid;place-items:center;z-index:2;
+  }
+  .sheet-grip i{width:34px;height:3px;border-radius:2px;background:#DDD3C1;display:block}
+  .sheet-body{padding:4px 22px 8px}
+  .sh-kicker{font-size:10.5px;letter-spacing:.16em;color:var(--ink-3);margin-bottom:5px}
+  .sh-name{
+    font-family:var(--serif);font-size:26px;line-height:1.2;font-weight:700;margin:0 0 8px;
+  }
+  .sh-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+  .sh-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:1px;
+    background:var(--line-2);border:1px solid var(--line-2);
+    border-radius:10px;overflow:hidden;margin-bottom:16px;
+  }
+  .sh-cell{background:var(--paper-2);padding:10px 12px}
+  .sh-cell span{display:block;font-size:10px;letter-spacing:.1em;color:var(--ink-3);margin-bottom:2px}
+  .sh-cell b{font-size:13px;font-weight:600;color:var(--ink);line-height:1.4}
+  .sh-h{
+    font-size:10.5px;letter-spacing:.14em;color:var(--red);
+    margin:0 0 6px;font-weight:600;
+  }
+  .sh-sec{margin-bottom:15px}
+  .sh-sec p{margin:0;font-size:13.5px;color:var(--ink-2);line-height:1.68}
+  .sh-must{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px}
+  .sh-must span{
+    font-size:12px;padding:4px 10px;border-radius:6px;
+    background:#F7F0E2;color:#6B5A3C;border:1px solid #EADDCA;
+  }
+  .sh-quote{
+    border-left:2px solid var(--gold);
+    background:var(--gold-wash);
+    padding:10px 12px;border-radius:0 8px 8px 0;
+    font-size:13px;color:#6B5426;line-height:1.65;
+  }
+  .sh-close{
+    width:100%;margin-top:6px;padding:12px;border-radius:10px;
+    border:1px solid var(--line);background:var(--paper-2);
+    font-family:inherit;font-size:13px;color:var(--ink-2);cursor:pointer;
+  }
+  .sh-close:hover{border-color:var(--ink-3)}
+
+  /* ---------- floating ---------- */
+  .fab{
+    position:fixed;right:16px;bottom:20px;z-index:50;
+    display:inline-flex;align-items:center;gap:7px;
+    padding:11px 16px;border-radius:999px;
+    background:var(--red);color:#FFF7EE;border:none;cursor:pointer;
+    font-family:inherit;font-size:13px;font-weight:600;letter-spacing:.03em;
+    box-shadow:0 10px 24px -10px rgba(166,57,43,.9), 0 2px 6px rgba(70,40,30,.16);
+    transition:.18s;
+  }
+  .fab:hover{background:#8F2E22;transform:translateY(-1px)}
+  .fab:active{transform:translateY(0) scale(.98)}
+  .fab svg{width:15px;height:15px;stroke:#FFF7EE;fill:none;stroke-width:1.7}
+
+  .empty{
+    grid-column:1/-1;text-align:center;padding:48px 20px;color:var(--ink-3);
+    font-size:13px;border:1px dashed var(--line);border-radius:12px;
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+  }
+</style>
+<!-- 高德地图 JS API 2.0 · 个人使用，Key 与安全密钥在此处。公开分享页面之前，请去控制台限制域名或删除 Key。 -->
+<script type="text/javascript">
+  window._AMapSecurityConfig = {
+    securityJsCode: "871bb55bd7fea7716bdcf0c34f3fab39"
+  };
+</script>
+<script src="https://webapi.amap.com/maps?v=2.0&key=2579044d9de2cc08c1af1fadc115a335" onerror="window.__mapFailed=true"></script>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <div class="brand">
+      <div class="seal">西</div>
+      <div class="brand-t"><b>西安站</b> · 11.01–11.03<span class="bt-long"> 美食地图</span></div>
+    </div>
+    <button class="fav-btn" id="favBtn">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+        <path d="M12 20.5s-7.3-4.6-7.3-9.6A4.2 4.2 0 0 1 12 8a4.2 4.2 0 0 1 7.3 2.9c0 5-7.3 9.6-7.3 9.6z"/>
+      </svg>
+      我的清单 <span class="ct" id="favCount">0</span>
+    </button>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <section class="hero-mini">
+    <h1>西安，<em>吃在哪</em></h1>
+    <p class="lede-mini">169 家本地店，左边筛、右边看。点「地图上看」定位，点「导航过去」直接算路线——步行还是开车，你自己选。</p>
+  </section>
+
+  <section class="mapapp">
+    <aside class="side">
+      <div class="side-bar">
+        <div class="side-search">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6B6155" stroke-width="2">
+            <circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/>
+          </svg>
+          <input id="shopSearch" type="search" placeholder="搜店名、菜、街区" autocomplete="off">
+        </div>
+        <button class="loc-btn" id="mapOpen" title="打开地图">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M3 7l6-3 6 3 6-3v13l-6 3-6-3-6 3z"/><path d="M9 4v13M15 7v13"/>
+          </svg>
+          <span>地图</span>
+        </button>
+        <button class="loc-btn" id="locBtn" title="定位到我">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="12" r="3.2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/>
+          </svg>
+          <span id="locTxt">我的位置</span>
+        </button>
+      </div>
+
+      <div class="pick-bar" id="pickBar" hidden>
+        <span class="pb-n" id="pickCount">已选 0 家</span>
+        <button class="pb-go" id="pickGo">规划最优路线</button>
+        <button class="pb-x" id="pickClear" title="清空">清空</button>
+      </div>
+
+      <div class="side-filters">
+        <div class="frow">
+          <span class="fl">时间</span>
+          <div class="chips xs" id="timeChips"></div>
+        </div>
+        <div class="frow">
+          <span class="fl">类型</span>
+          <div class="chips xs" id="catChips"></div>
+        </div>
+      </div>
+
+      <p class="side-count" id="sideCount"></p>
+      <div class="side-list" id="shopList"></div>
+    </aside>
+
+    <div class="map-pane">
+      <div class="map-card" id="mapCard">
+        <div class="map-head">
+          <button class="map-back" id="mapBack">← 列表</button>
+          <span class="map-t" id="mapTitle">地图</span>
+          <span class="map-stat" id="mapStat"></span>
+        </div>
+        <div id="mapCanvas" class="map-canvas"></div>
+        <div class="map-note" id="mapNote">
+          点位按街区估算，可能偏差几百米；连线是示意，不是导航路径。地图走高德，需要联网。<b>若显示空白</b>，请把文件下载到本地，用浏览器直接打开。
+        </div>
+      </div>
+      <div class="map-tools">
+        <button class="mt-btn on" data-mode="walk" id="modeWalk">步行路线</button>
+        <button class="mt-btn" data-mode="drive" id="modeDrive">驾车路线</button>
+        <button class="mt-btn app" id="modeApp">App 导航</button>
+        <button class="mt-btn ghost" data-mode="clear" id="modeClear">清除</button>
+      </div>
+      <div class="nav-panel" id="navPanel" hidden>
+        <div class="nav-head">
+          <span class="nav-t" id="navTitle">路线</span>
+          <span class="nav-meta" id="navMeta"></span>
+          <button class="nav-x" id="navClose" aria-label="关闭">×</button>
+        </div>
+        <div class="nav-steps" id="navSteps"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 资料库 -->
+  <section class="lib">
+    <div class="sec-head">
+      <h2>查店</h2>
+      <p>四份资料，按现在的需要点</p>
+    </div>
+    <div class="lib-tabs" id="viewTabs">
+      <button class="lib-tab on" data-view="list"><b>18</b><span class="lt">落地食单</span><em>按到站的腿程排</em></button>
+      <button class="lib-tab" data-view="index"><b>50</b><span class="lt">本地清单</span><em>按品类查，本地人原话</em></button>
+      <button class="lib-tab" data-view="market"><b>14</b><span class="lt">早市</span><em>按离你远近排</em></button>
+      <button class="lib-tab" data-view="table"><b>99</b><span class="lt">全表</span><em>搜店名、街区、菜</em></button>
+    </div>
+
+  <div id="listView">
+
+  <section class="slot">
+    <div class="slot-head">
+      <div>
+        <div class="slot-kicker">落地食单 · 18 家</div>
+        <h3>你几点出站？</h3>
+      </div>
+      <span>选一个，排序会跟着变</span>
+    </div>
+    <div class="chips" id="slotChips"></div>
+    <p class="slot-hint" id="slotHint"></p>
+  </section>
+
+  <section class="tiers" id="tiers">
+    <div class="tier-row">
+      <div class="tier-d">出站 20 分</div>
+      <div class="tier-line"></div>
+      <div class="tier-names">
+        <a href="#" data-jump="1">魏家凉皮</a>
+        <a href="#" data-jump="2">老陈家烩菜</a>
+        <a href="#" data-jump="3">郑家包子</a>
+        <a href="#" data-jump="4">王家桶子鸡</a>
+      </div>
+    </div>
+    <div class="tier-row">
+      <div class="tier-d">1.5–3 km</div>
+      <div class="tier-line"></div>
+      <div class="tier-names">
+        <a href="#" data-jump="5">永兴坊</a>
+        <a href="#" data-jump="6">京豫餐厅</a>
+      </div>
+    </div>
+    <div class="tier-row">
+      <div class="tier-d">城墙里头</div>
+      <div class="tier-line"></div>
+      <div class="tier-names">
+        <a href="#" data-jump="7">一真楼</a>
+        <a href="#" data-jump="9">白牙牙</a>
+        <a href="#" data-jump="10">壹佳烤肉</a>
+        <a href="#" data-jump="13">胖子甑糕</a>
+        <a href="#" data-jump="16">秦豫</a>
+        <a href="#" data-jump="18">春发生</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="toolbar">
+    <div class="chips" id="filterChips"></div>
+    <div class="search">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6B6155" stroke-width="2">
+        <circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/>
+      </svg>
+      <input id="search" type="search" placeholder="搜店名、菜、街区" autocomplete="off">
+    </div>
+  </div>
+
+  <p class="count" id="count"></p>
+  <div class="grid" id="grid"></div>
+  </div><!-- /listView -->
+
+  <div id="indexView" hidden>
+    <div class="index-lede">
+      <p>这一页不是榜单，是一位常住西安的本地人 2025 年 4 月在微信里打的字，我按品类重新排了一遍。<br>
+      他的口径很统一：<b>别去网红店，去老百姓吃得多的地方；哪家都不能保证永远好吃，先少点，不合口味就换。</b><br>
+      标「城内」的，从西安站打车 15 分钟内到；没标的在城南、城西，要专门跑一趟。</p>
+    </div>
+    <nav class="catnav" id="catNav"></nav>
+    <div id="indexBody"></div>
+  </div>
+
+  <div id="marketView" hidden>
+    <div class="index-lede dawn">
+      <p>这一页是<b>早市</b>，来源是同一张图（14 个点位）。早市 6:30 前后开，9:30 陆续收摊，晚了就只剩空摊位。<br>
+      我把它们按<b>离西安站的距离</b>排了一遍，而不是照着地图念名字——你是坐火车来的，远近比名气重要。<br>
+      一句实话：<b>真正值得专程的只有洒金桥和小南门</b>，剩下 12 个是社区早市，除非你就住那一片，否则不用跑。</p>
+    </div>
+    <div class="mk-pick" id="mkPick"></div>
+    <div class="mk-list" id="mkList"></div>
+  </div>
+
+  <div id="tableView" hidden>
+    <div class="index-lede plain">
+      <p>这一页是<b>原始资料，不是推荐</b>：本地人自己维护的一份 Excel，共 99 家，按他的品类分。评价、地址、营业时间基本是他的原话，我只做了删减和排版。<br>
+      用法不是从头读，是<b>搜</b>——想到一个店名、一条街、一道菜，搜一下看有没有被记下来。<br>
+      要解决「此刻吃哪家」，回第一页。</p>
+    </div>
+    <div class="chips tb-cats" id="tbCats"></div>
+    <div class="search tb-search">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6B6155" stroke-width="2">
+        <circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/>
+      </svg>
+      <input id="tbSearch" type="search" placeholder="搜店名、街区、菜、评价里的关键词" autocomplete="off">
+    </div>
+    <p class="count" id="tbCount"></p>
+    <div id="tbBody"></div>
+  </div>
+
+  </section><!-- /lib -->
+
+  <footer>
+    <b>资料</b>：店名、品类、营业时间来自一位常住西安的朋友（2025 年 4 月）和他自己维护的一份 Excel，我按品类和距离重新排列。<br>
+    <b>不评价</b>：这里只写「这家是吃什么的」，不写好吃不好吃。口味是自己的事，到店先少点，不合口就换一家。<br>
+    <b>坐标</b>：街区级估算，可能偏几百米，用来判断顺不顺路够了。真要导航，点「App 导航」交给手机地图。
+  </footer>
+
+</div>
+
+<button class="fab" id="fab">
+  <svg viewBox="0 0 24 24"><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/><circle cx="12" cy="12" r="4.4"/></svg>
+  不知道吃啥
+</button>
+
+<div class="scrim" id="scrim"></div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="店铺详情">
+  <div class="sheet-grip"><i></i></div>
+  <div class="sheet-body" id="sheetBody"></div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  var SLOTS = [
+    { id: "morning",  label: "上午", time: "07–11", hint: "早上到站最占便宜：白牙牙的肉丸糊辣汤、胖子甑糕、秦豫肉夹馍都还在。先去坊上，别在站前凑合。" },
+    { id: "noon",     label: "午间", time: "11–14", hint: "中午落地先解决一顿正餐。打车 12 分钟到洒金桥或大皮院，一碗小炒泡馍比什么都实在。" },
+    { id: "afternoon",label: "下午", time: "14–17", hint: "下午这段适合边走边吃。甑糕和秦豫已经收摊了，但烤肉四点开档，正好接上。" },
+    { id: "evening",  label: "傍晚", time: "17–20", hint: "傍晚是最好的时间。红埠街的烤肉刚上炉，东新街夜市也开档了，从出站口走 1.3 公里就到。" },
+    { id: "late",     label: "深夜", time: "20–01", hint: "深夜到站别慌。东新街营业到凌晨两三点，一碗烩菜、五个牛肉包，就是西安的待客方式。" }
+  ];
+
+  var FILTERS = [
+    { id: "all",     label: "全部" },
+    { id: "station", label: "出站 20 分钟内" },
+    { id: "old",     label: "城墙里 · 回坊" },
+    { id: "late",    label: "深夜还开着" },
+    { id: "fav",     label: "我的清单" }
+  ];
+
+  var WIN_LABEL = {
+    morning: "上午", noon: "中午", afternoon: "下午", evening: "傍晚", late: "深夜"
+  };
+
+  var DATA = [
+    {
+      id: 1, name: "魏家凉皮", sub: "解放路火车站店",
+      area: "解放路 · 出站口南侧", type: "凉皮 / 肉夹馍",
+      price: "¥20", dist: 0.9, walk: "步行 11 分",
+      tier: "station", local: 2,
+      windows: ["morning", "noon", "afternoon", "evening"],
+      must: ["秘制凉皮", "优质肉夹馍"],
+      blurb: "出站最近的一口正经饭。连锁，但这家 1300 多条评价、评分 4.8，出餐快，拖着箱子进去也不尴尬。",
+      route: "出站沿解放路向南直走，过西五路路口前后右手边，全程不用拐弯。",
+      truth: "本地人不会专门来吃魏家——但你是刚下火车。饿到发抖的时候，别硬撑着去找老字号。"
+    },
+    {
+      id: 2, name: "老陈家烩菜", sub: "东新街总店",
+      area: "东新街 · 食尚东新街", type: "清真烩菜 / 夜宵",
+      price: "¥43", dist: 1.3, walk: "步行 17 分",
+      tier: "station", local: 5,
+      windows: ["evening", "late"],
+      must: ["牛肉丸子烩菜", "花卷", "涮牛肚"],
+      blurb: "东新街「三绝」之首，八十年代开到现在。牛肉、丸子、腐竹、面筋熬一锅，汤浓得能泡花卷。",
+      route: "出站往东南，沿东新街走到底，食尚东新街清真区内。夜里路上人不少。",
+      truth: "晚上十点后去几乎不排队。烩菜偏咸，可以让老板少放盐；花卷一定要单加一份，蘸汤吃。"
+    },
+    {
+      id: 3, name: "郑家包子", sub: "东新街",
+      area: "东新街 · 夜市", type: "包子 / 夜宵",
+      price: "¥15", dist: 1.3, walk: "步行 17 分",
+      tier: "station", local: 4,
+      windows: ["evening", "late"],
+      must: ["牛肉包", "韭菜粉条包"],
+      blurb: "夜市标配。牛肉包一口下去满嘴流油，本地人开口就是「给我来二十个」。",
+      route: "和老陈家在同一条街上，两家隔几步，一起吃了就行。",
+      truth: "先按五个买，试口再加。素馅比想象中好吃，别只盯着肉的。"
+    },
+    {
+      id: 4, name: "王家桶子鸡", sub: "东新街",
+      area: "东新街 · 夜市", type: "卤味 / 凉菜",
+      price: "¥30", dist: 1.3, walk: "步行 17 分",
+      tier: "station", local: 4,
+      windows: ["afternoon", "evening", "late"],
+      must: ["桶子鸡", "卤汁"],
+      blurb: "不开膛破肚卤出来的整鸡，皮脆、肉紧、越嚼越香，跟烧鸡完全两回事。",
+      route: "东新街夜市中段，看哪家挂着整鸡、师傅在案板上斩就是。",
+      truth: "让师傅多浇两勺卤汁。打包回酒店当夜宵，比站在摊前吃舒服得多。"
+    },
+    {
+      id: 5, name: "永兴坊", sub: "中山门内 · 非遗小吃街",
+      area: "中山门内 · 东新街东口", type: "陕西小吃集合",
+      price: "¥50", dist: 2.5, walk: "打车 10 分",
+      tier: "near", local: 2,
+      windows: ["morning", "noon", "afternoon", "evening"],
+      must: ["潼关肉夹馍", "子长煎饼", "粉汤羊血", "牛奶鸡蛋醪糟"],
+      blurb: "把整个陕西塞进一个院子：关中的肉夹馍、陕北的煎饼、陕南的糍粑，一次吃全。",
+      route: "出站打车约 10 分钟；或地铁 4 号线到五路口换 1 号线，朝阳门站下步行 5 分。",
+      truth: "本地人不来这儿。但如果你只待一天、想一次尝遍全省，它效率最高。摔碗酒不必凑。"
+    },
+    {
+      id: 6, name: "京豫餐厅", sub: "西大街 · 清真老字号",
+      area: "西大街 · 鼓楼西侧", type: "清真炒菜",
+      price: "¥65", dist: 3.4, walk: "打车 13 分",
+      tier: "near", local: 5,
+      windows: ["noon", "evening"],
+      must: ["老菜（问店员）", "招牌牛羊肉"],
+      blurb: "本地人点名的一家：人均 60–70 的清真老字号，在西大街，菜量大，有几道是传下来的老菜。",
+      route: "地铁 4 号线大差市换 6 号线到广济街，步行 5 分；或直接打车。",
+      truth: "想吃「一顿正经的西安家常」而不是小吃，就选它。点菜时直接问哪几道是老菜。"
+    },
+    {
+      id: 7, name: "一真楼牛羊肉泡馍", sub: "大皮院",
+      area: "大皮院 · 回坊", type: "泡馍 / 清真",
+      price: "¥30", dist: 3.3, walk: "打车 13 分",
+      tier: "old", local: 5,
+      windows: ["morning", "noon", "afternoon", "evening"],
+      must: ["牛肉泡馍", "小酥肉"],
+      blurb: "本地人给的第一梯队泡馍，就在大皮院。汤清、肉烂，西安人办席也来。",
+      route: "地铁 1 号线洒金桥站出，往东步行约 8 分钟进大皮院。",
+      truth: "西安人多数吃牛肉泡馍，不是羊肉。馍掰成黄豆大小，掰大了不进味；赶时间就机器掰。"
+    },
+    {
+      id: 8, name: "马宾小炒", sub: "回坊",
+      area: "坊上 · 小炒泡馍", type: "小炒泡馍",
+      price: "¥30", dist: 3.2, walk: "打车 12 分",
+      tier: "old", local: 5,
+      windows: ["noon", "afternoon"],
+      must: ["小炒泡馍"],
+      blurb: "问「小炒吃哪家」，本地人只回了两个字：马宾。酸辣、油大、锅气足，跟汤泡馍两个世界。",
+      route: "坊内步行可达，从洒金桥或大皮院过去都不远，具体位置现场问一句。",
+      truth: "小炒普遍偏咸偏油，配糖蒜和冰峰。第一次吃建议少放辣子，不够再加。"
+    },
+    {
+      id: 9, name: "白牙牙肉丸糊辣汤", sub: "红埠街",
+      area: "红埠街 · 回坊", type: "糊辣汤 / 早点",
+      price: "¥12", dist: 3.2, walk: "打车 12 分",
+      tier: "old", local: 5,
+      windows: ["morning"],
+      must: ["肉丸糊辣汤", "馍"],
+      blurb: "本地人报的第一家糊辣汤。西安的糊辣汤是牛肉丸、土豆、莲花白勾芡那种，不是河南版。",
+      route: "红埠街，从洒金桥步行过去几分钟。早上人多，看到本地人端着碗站着吃就对。",
+      truth: "只做早上，中午基本收摊。要「多丸子」，馍掰碎泡进去。"
+    },
+    {
+      id: 10, name: "壹佳烤肉", sub: "红埠街",
+      area: "红埠街 · 回坊", type: "炭火烤肉 / 夜宵",
+      price: "¥45", dist: 3.2, walk: "打车 12 分",
+      tier: "old", local: 5,
+      windows: ["evening", "late"],
+      must: ["烤肉筋", "烤腰子", "暖锅"],
+      blurb: "本地人点名的炭烤：1.2 元一串，还有暖锅。西安的烤肉按串算，一把一把上。",
+      route: "红埠街，下午四点才开档。和糊辣汤在同一条街，可以分两趟来。",
+      truth: "不吃辣要提前说。腰子普遍烤得嫩，吃不惯就让人再烤熟一点。先点十串试味，别一次点一桌。"
+    },
+    {
+      id: 11, name: "刘信牛羊肉小炒泡馍", sub: "洒金桥",
+      area: "洒金桥 · 回坊", type: "泡馍 / 清真",
+      price: "¥35", dist: 3.1, walk: "打车 12 分",
+      tier: "old", local: 5,
+      windows: ["noon", "afternoon", "evening"],
+      must: ["小炒泡馍", "普通牛肉泡馍", "糖蒜"],
+      blurb: "洒金桥的老铺。小炒酸辣、油大、锅气足。洒金桥比北院门实在，这是本地人的共识。",
+      route: "打车到洒金桥十字；或地铁 4 号线到五路口换 1 号线，洒金桥站 B 口出，步行 5 分。",
+      truth: "第一次建议点小炒，别点汤泡馍——汤泡馍讲究汤底，游客未必吃得惯。"
+    },
+    {
+      id: 12, name: "马二优质酸汤水饺", sub: "洒金桥",
+      area: "洒金桥 · 回坊", type: "饺子 / 清真",
+      price: "¥19", dist: 3.1, walk: "打车 12 分",
+      tier: "old", local: 4,
+      windows: ["morning", "noon", "afternoon", "evening"],
+      must: ["酸汤水饺", "酸汤"],
+      blurb: "牛肉韭黄馅，皮薄。真正的主角是那碗酸汤——醋、辣油、虾皮、香菜，喝完才算吃完。",
+      route: "洒金桥街上，离刘信不远，两家可以连着吃。",
+      truth: "汤比饺子更值得。两个人点三两就够，留着肚子去隔壁吃甑糕。"
+    },
+    {
+      id: 13, name: "马文章胖子甑糕", sub: "洒金桥",
+      area: "洒金桥 · 回坊", type: "甑糕 / 早点",
+      price: "¥8", dist: 3.1, walk: "打车 12 分",
+      tier: "old", local: 4,
+      windows: ["morning"],
+      must: ["甑糕"],
+      blurb: "糯米、红枣、芸豆一层层蒸出来的。热的时候枣香糊嘴，五块钱一大块，撑到中午。",
+      route: "洒金桥中段，看哪家门口排着本地大爷大妈。",
+      truth: "只卖早上，卖完就收摊，别下午去。要刚出锅那层，多要枣。"
+    },
+    {
+      id: 14, name: "定家小酥肉", sub: "大皮院",
+      area: "大皮院 · 回坊", type: "蒸碗 / 清真",
+      price: "¥30", dist: 3.3, walk: "打车 13 分",
+      tier: "old", local: 4,
+      windows: ["noon", "afternoon", "evening"],
+      must: ["小酥肉", "米饭"],
+      blurb: "牛肉裹粉炸过再上笼蒸，端上来是一碗带汤的软酥肉，配米饭吃。",
+      route: "大皮院，离一真楼不远。",
+      truth: "两个人分一份刚好，一个人吃会腻。别点太多，大皮院还有半条街等着。"
+    },
+    {
+      id: 15, name: "盛志望麻酱凉皮", sub: "大皮院",
+      area: "大皮院 · 回坊", type: "凉皮 / 清真",
+      price: "¥12", dist: 3.3, walk: "打车 13 分",
+      tier: "old", local: 3,
+      windows: ["noon", "afternoon", "evening"],
+      must: ["麻酱凉皮", "冰峰"],
+      blurb: "麻酱厚到能挂住筷子，芝麻香压过辣子。跟酸辣路线的秦镇米皮完全是两回事。",
+      route: "大皮院中段，门口常有人端碗站着吃。",
+      truth: "堂食比外卖强一倍，凉皮放久了会坨。想吃更辣的米皮，本地人推的是朱选民和吴鑫。"
+    },
+    {
+      id: 16, name: "秦豫肉夹馍", sub: "东木头市",
+      area: "东木头市 · 老城", type: "肉夹馍",
+      price: "¥15", dist: 3.4, walk: "打车 13 分",
+      tier: "old", local: 5,
+      windows: ["morning", "noon"],
+      must: ["腊汁肉夹馍（肥瘦）", "凉皮"],
+      blurb: "白吉馍现打，腊汁肉剁得粗，肥瘦相间，一口下去汁顺着手流。",
+      route: "打车到东木头市；地铁 4 号线大差市站下，往南步行 10 分。",
+      truth: "只做到午后，卖完收摊，下午去基本白跑。一定要「肥瘦」。本地人还推子午路张记（只认直营店）和王魁。"
+    },
+    {
+      id: 17, name: "爱骅裤带面", sub: "东木头市",
+      area: "东木头市 · 老城", type: "面食",
+      price: "¥13", dist: 3.4, walk: "打车 13 分",
+      tier: "old", local: 3,
+      windows: ["noon", "afternoon", "evening"],
+      must: ["油泼裤带面", "臊子面"],
+      blurb: "面宽得像裤带，一根就够。油泼辣子现泼，蒜香冲得人一激灵。",
+      route: "东木头市，离秦豫不远，可以一条街吃完。",
+      truth: "本地人对面食的原话是「去老百姓吃得多的地方，不要去网红店」。这家偏游客向，但味道不差、出餐快。"
+    },
+    {
+      id: 18, name: "春发生葫芦头泡馍", sub: "南院门",
+      area: "南院门 · 老城", type: "泡馍 / 陕菜",
+      price: "¥40", dist: 3.5, walk: "打车 14 分",
+      tier: "old", local: 4,
+      windows: ["noon", "evening"],
+      must: ["葫芦头泡馍", "梆梆肉"],
+      blurb: "百年老店，葫芦头就是猪大肠。汤是奶白色的，处理得干净，一点腥味都没有。",
+      route: "打车到南院门；地铁 4 号线大差市换 6 号线到广济街，步行 6 分。",
+      truth: "过不了「大肠」这关就别点，去了点梆梆肉也行。梆梆肉是熏的，可以单点。"
+    }
+  ];
+
+  /* 本地人清单：来源为一位常住西安的本地朋友 2025-04-14 的微信原话，按品类重排 */
+  var INDEX = [
+    {
+      id: "paomo", name: "泡馍 · 小炒", en: "PAOMO",
+      tip: "西安人多数吃牛肉泡馍，不是羊肉。泡馍要自己掰，掰成黄豆大小才进味；赶时间就选机器掰。",
+      items: [
+        { n: "广济街老刘家", loc: "坊上 · 广济街 · 约 3.4 km", near: true, note: "本地人开口报的第一家。" },
+        { n: "大皮院一真楼", loc: "坊上 · 大皮院 · 约 3.3 km", near: true, note: "老铺，汤清肉烂，办席也来。" },
+        { n: "哈里泡馍", loc: "坊上 · 约 3.3 km", near: true, note: "同一梯队，本地人常去。" },
+        { n: "景德泡馍", loc: "坊上 · 约 3.3 km", near: false, note: "老名字，游客基本不知道。" },
+        { n: "三义成马家泡馍", loc: "坊上 · 约 3.4 km", near: false, note: "名气不如前几家，本地人认。" },
+        { n: "马宾（小炒）", loc: "坊上 · 小炒 · 约 3.2 km", near: true, note: "问小炒吃哪家，只回了两个字：马宾。" },
+        { n: "春发生葫芦头", loc: "南院门 · 约 3.5 km", near: true, note: "葫芦头是猪大肠，另一条路。" }
+      ]
+    },
+    {
+      id: "hulatang", name: "肉丸糊辣汤", en: "HULATANG",
+      tip: "注意是「糊辣汤」不是「胡辣汤」。西安版是牛肉丸、土豆、莲花白勾芡，只做早上，中午基本收摊。",
+      items: [
+        { n: "红埠街白牙牙", loc: "红埠街 · 约 3.2 km", near: true, note: "本地人报的第一家。" },
+        { n: "小皮院元元", loc: "小皮院 · 约 3.3 km", near: false, note: "坊里人从小吃到大。" },
+        { n: "乌轶坤", loc: "坊上 · 约 3.3 km", near: false, note: "老字号，汤稠丸子实。" },
+        { n: "立新街雷老虎", loc: "立新街 · 约 3.8 km", near: false, note: "城北老铺。" },
+        { n: "光明巷贾家", loc: "光明巷 · 约 3.2 km", near: false, note: "巷子里的店，看本地人排队。" },
+        { n: "劳动西路邢老三", loc: "劳动西路 · 约 5.5 km", near: false, note: "西郊人的早饭。" },
+        { n: "翠华路石洪", loc: "翠华路 · 约 7.6 km", near: false, note: "南郊，顺路小寨才去。" }
+      ]
+    },
+    {
+      id: "kaorou", name: "炭火烤肉", en: "KAOROU",
+      tip: "下午四点才开档。串按 1–1.2 元算，先点十串试味，别一次点一桌；不吃辣提前说，腰子普遍烤得嫩。",
+      items: [
+        { n: "红埠街壹佳烤肉", loc: "红埠街 · 1.2 元/串 · 有暖锅", near: true, note: "本地人点名的第一家炭烤。" },
+        { n: "胜胜烤肉", loc: "家属院里 · 1.2 元/串", near: false, note: "要排队，肉串比别家大。" },
+        { n: "学习巷四宝庭院", loc: "学习巷 · 1 元/串", near: false, note: "碳烤电烤交替，先少要点尝尝再决定。" },
+        { n: "庙后街费萨尔", loc: "庙后街 · 1 元/串", near: false, note: "网红店，店小、人多、排队久。" },
+        { n: "广济街张庆烤肉", loc: "广济街 · 1.2 元/串 · 有麻食", near: false, note: "烤肉配麻食。" },
+        { n: "郭楠", loc: "坊上 · 1.2 元/串", near: false, note: "周末要排队。" },
+        { n: "庙后街杨家（电烤）", loc: "庙后街 · 1.2 元/串", near: false, note: "电烤，外地朋友可以尝尝盐筋。" }
+      ]
+    },
+    {
+      id: "mipi", name: "米皮 · 擀面皮", en: "MIPI",
+      tip: "米皮看辣椒油香不香，擀面皮看筋道。这两年是朱选民和吴鑫在打。",
+      items: [
+        { n: "朱选民", loc: "米皮 · 近一年最爱", near: false, note: "辣椒油比较香。" },
+        { n: "吴鑫", loc: "米皮 · 老牌", near: false, note: "曾经的最爱，排队人多、给的量小了点。" },
+        { n: "吴升", loc: "米皮", near: false, note: "也不错，人不算多。" },
+        { n: "南门外薛昌利", loc: "米皮 · 南门外", near: false, note: "也可以，顺路再去。" },
+        { n: "大学南路拴马桩", loc: "擀面皮 · 大学南路", near: false, note: "交通医院旁边那家更好吃。" },
+        { n: "草场坡八亩沟", loc: "擀面皮 · 草场坡", near: false, note: "老牌，酸辣够劲。" },
+        { n: "张兴邦", loc: "擀面皮 · 连锁", near: false, note: "连锁也还行，有团购。" }
+      ]
+    },
+    {
+      id: "roujiamo", name: "肉夹馍", en: "ROUJIAMO",
+      tip: "腊汁肉要「肥瘦」，纯瘦会柴。子午路张记只认直营店，加盟店口味不稳。",
+      items: [
+        { n: "子午路张记", loc: "翠华路店 / 建大店 / 明德门店", near: false, note: "只去这三家直营；其他加盟店口味不稳定。" },
+        { n: "东关吉祥（吉祥村店）", loc: "吉祥村", near: false, note: "本地人报的补充项。" },
+        { n: "王魁肉夹馍", loc: "老城", near: false, note: "「还行」——本地人的原话。" },
+        { n: "红小巷刘嫂", loc: "东关 · 红小巷", near: false, note: "巷子里的老摊。" },
+        { n: "石洪 / 李老三 / 李老四", loc: "腊牛肉夹馍", near: false, note: "三家都是本地人报的腊牛肉夹馍。" }
+      ]
+    },
+    {
+      id: "shuipen", name: "水盆羊肉", en: "SHUIPEN",
+      tip: "水盆是渭南小吃。本地人原话：坊上泡馍馆的水盆，不如汉民水盆好吃。",
+      items: [
+        { n: "崇斌", loc: "水盆 · 澄城系", near: false, note: "汤清肉烂，配月牙饼。" },
+        { n: "王艳明盛", loc: "水盆", near: false, note: "本地人报的名单之一。" },
+        { n: "黑右福", loc: "水盆", near: false, note: "老客多。" },
+        { n: "振兴路雷记", loc: "振兴路", near: false, note: "城西老铺。" },
+        { n: "锦弘", loc: "水盆", near: false, note: "本地人报的名单之一。" },
+        { n: "东福小杨", loc: "水盆", near: false, note: "本地人报的名单之一。" },
+        { n: "虎子水盆", loc: "大雁塔景区附近", near: false, note: "味道不算上乘，只是离景区近——不想走远可以吃。" }
+      ]
+    },
+    {
+      id: "chaocai", name: "炒菜 · 家常", en: "CHAOCAI",
+      tip: "想吃一顿正经的，别在景区吃。人均六七十就能吃得很好，菜量还大。",
+      items: [
+        { n: "京豫餐厅", loc: "西大街 · 清真老字号 · 人均 60–70", near: true, note: "性价比高，菜量大，有几道是传承老菜。" },
+        { n: "三姐妹餐厅", loc: "家常菜 · 人均 70 左右", near: false, note: "本地人日常聚餐那种。" },
+        { n: "纳家楼 / 陕派长安 / 大厨小馆", loc: "连锁", near: false, note: "想吃稳的可以选，别指望惊喜。" }
+      ]
+    },
+    {
+      id: "dianxin", name: "点心 · 伴手礼", en: "DIANXIN",
+      tip: "德懋恭、全盛斋有名气但偏贵。买的时候看一下新鲜程度，怕有陈货。",
+      items: [
+        { n: "德懋恭", loc: "老字号 · 偏贵", near: false, note: "水晶饼是招牌，送礼体面。" },
+        { n: "全盛斋", loc: "老字号 · 偏贵", near: false, note: "椒盐酥、枣泥酥稳。" },
+        { n: "德富园 / 宝宝中西糕点 / 锦祥斋", loc: "开了好多年的平价铺子", near: false, note: "性价比路线，本地人自己买。" },
+        { n: "生信斋 / 淑雅斋 / 兴盛园 / 安建坡", loc: "老铺", near: false, note: "同上，看日期买新鲜的。" },
+        { n: "赵记素斋（绿豆饼）", loc: "钟楼小区", near: true, note: "名气大也最贵，偏甜。" },
+        { n: "四民巷雷记 / 长乐坊玉波记 / 科技路昭明", loc: "绿豆饼", near: false, note: "昭明不是很甜，本地人常买。" },
+        { n: "好丽园 / 四香斋 / 飞淏", loc: "绿豆饼 · 连锁", near: false, note: "都有团购，便宜一点。" }
+      ]
+    }
+  ];
+
+  /* 早市：来源为同一张「西安早市」点位图（14 个），按到西安站的距离重排 */
+  var MARKET = [
+    {
+      name: "洒金桥早市", area: "莲湖区 · 洒金桥", dist: 3.1, time: "12 分",
+      badge: "离站最近", pick: true,
+      why: "从西安站出发最快的一个，也是唯一一个在回坊里的早市。甑糕、牛肉饼、糊辣汤一条街，和晚上的洒金桥夜市不是同一批摊。",
+      go: "地铁 1 号线洒金桥站 B 口出，往北走 3 分钟；或打车到洒金桥十字。",
+      what: "回坊早市那一套：甑糕、牛肉饼、糊辣汤、油茶麻花。",
+      note: "8 点前到，甑糕还是热的；9 点后陆续收摊。"
+    },
+    {
+      name: "小南门早市", area: "碑林区 · 小南门（勿幕门）内", dist: 3.6, time: "13 分",
+      badge: "名气最大", pick: true,
+      why: "西安被拍得最多的早市。肘子夹馍、油茶麻花、菜盒都在这一条街上。人多、路面窄、有点乱，介意卫生的话别来。",
+      go: "打车到小南门（勿幕门），进城门往东就是；地铁 2 号线永宁门站出来还要走 10 分钟。",
+      what: "肘子夹馍、宫廷香酥牛肉饼、油茶麻花、菜盒、茉莉豆浆。",
+      note: "9 点前最热闹，10 点基本收完。别开车，没地方停。"
+    },
+    {
+      name: "东仓门早市", area: "碑林区 · 东仓门", dist: 4.0, time: "14 分",
+      badge: "城内", pick: false,
+      why: "城墙东南角，规模不大，以周边居民为主。如果你住在建国门、和平门一带，它是最近的一个。",
+      go: "打车到东仓门；地铁 4 号线和平门站出，往西步行 8 分钟。",
+      what: "社区早市的常见几样：甑糕、水煎包、菜盒、糊辣汤。",
+      note: "旅游属性弱，胜在不用挤。"
+    },
+    {
+      name: "经九路早市", area: "碑林区 · 经九路", dist: 6.0, time: "18 分",
+      badge: "", pick: false,
+      why: "东郊，靠近兴庆宫公园。住在东关一带才顺路。",
+      go: "打车到经九路；或地铁 3 号线长乐公园站下步行。",
+      what: "社区早市：甑糕、油条、豆浆、水煎包、菜盒。",
+      note: "规模中等，游客基本不会来。"
+    },
+    {
+      name: "西何家村早市", area: "碑林区 · 含光路", dist: 6.5, time: "18 分",
+      badge: "", pick: false,
+      why: "省人民医院旁边的老居民区，城南一带。",
+      go: "打车到含光路何家村；地铁 2 号线体育场站下步行 12 分钟。",
+      what: "社区早市常见的那几样，以本地居民买菜吃早点为主。",
+      note: "住在城南才值得来。"
+    },
+    {
+      name: "西工大早市", area: "莲湖区 · 劳动南路", dist: 7.0, time: "20 分",
+      badge: "", pick: false,
+      why: "西北工业大学友谊校区旁边，学生和老师多，价格压得低。",
+      go: "打车到劳动南路西工大东门一带。",
+      what: "大学旁的早市：包子、豆浆、甑糕、煎饼。",
+      note: "寒暑假会冷清，开学季最热闹。"
+    },
+    {
+      name: "民洁路早市", area: "莲湖区 · 民洁路", dist: 7.5, time: "20 分",
+      badge: "", pick: false,
+      why: "西郊土门一带，标准的居民区早市。",
+      go: "打车到民洁路（土门商圈南侧）。",
+      what: "社区早市：油茶麻花、甑糕、水煎包、菜盒。",
+      note: "离西安站不近，除非你住西郊。"
+    },
+    {
+      name: "红专南路早市", area: "雁塔区 · 红专南路", dist: 8.0, time: "22 分",
+      badge: "", pick: false,
+      why: "小寨东边的老居民区，周边上班族多。",
+      go: "打车到红专南路；地铁 3 号线小寨站下步行 10 分钟。",
+      what: "社区早市常见几样，早点摊密度高。",
+      note: "上班高峰会挤，8 点后排队明显。"
+    },
+    {
+      name: "朱雀南路早市", area: "雁塔区 · 朱雀大街南段", dist: 8.5, time: "22 分",
+      badge: "", pick: false,
+      why: "城南主干道边，规模中等。",
+      go: "打车到朱雀大街南段；地铁 2 号线南稍门站下步行。",
+      what: "社区早市：甑糕、糊辣汤、包子、菜盒。",
+      note: "顺路可以，专程不值。"
+    },
+    {
+      name: "电子三路早市", area: "雁塔区 · 电子城", dist: 9.5, time: "25 分",
+      badge: "", pick: false,
+      why: "电子城片区，上班族多，早市结束得早。",
+      go: "打车到电子三路；地铁 6 号线科技路站下步行。",
+      what: "社区早市，早点为主。",
+      note: "9 点前就散得差不多了。"
+    },
+    {
+      name: "曲江池西村早市", area: "雁塔区 · 曲江池西路", dist: 10.0, time: "25 分",
+      badge: "", pick: false,
+      why: "曲江，靠近曲江池遗址公园。住曲江的酒店才用得上。",
+      go: "打车到曲江池西路。",
+      what: "社区早市：甑糕、油茶麻花、包子、菜盒。",
+      note: "逛完可以顺路去曲江池走一圈。"
+    },
+    {
+      name: "雁鸣小区早市", area: "雁塔区 · 曲江二期", dist: 11.0, time: "28 分",
+      badge: "", pick: false,
+      why: "曲江二期的社区型早市，规模小。",
+      go: "打车到雁鸣小区。",
+      what: "社区早市，摊位不多。",
+      note: "只有住这一片才顺路。"
+    },
+    {
+      name: "府东一路早市", area: "长安区 · 韦曲", dist: 13.0, time: "32 分",
+      badge: "", pick: false,
+      why: "长安区韦曲，已经是南郊末端。",
+      go: "地铁 2 号线韦曲南站下，打车 5 分钟。",
+      what: "社区早市，价格比城里低。",
+      note: "从西安站过去要 30 分钟以上，不建议专程。"
+    },
+    {
+      name: "韦曲老街早市", area: "长安区 · 韦曲老街", dist: 13.5, time: "33 分",
+      badge: "", pick: false,
+      why: "长安区最老的一片街区，最有县城气息的一个早市。",
+      go: "地铁 2 号线韦曲南站下，往老街方向步行 10 分钟。",
+      what: "社区早市：甑糕、糊辣汤、油糕、菜盒。",
+      note: "如果你要去秦岭或长安区办事，可以顺路；单纯为吃早点不值。"
+    }
+  ];
+
+  /* 全表：来源为本地人的 Excel「工作表1」，99 家，按原表品类分，评价与地址保留原话 */
+  var TABLE = [
+    {
+      id: "mianshi", name: "面食 · 泡馍", en: "NOODLE",
+      rows: [
+        { n: "马二水饺", loc: "洒金桥", h: "09:00–22:00", note: "推荐酸汤，不要饭点儿去" },
+        { n: "坤坤菠菜面", loc: "", h: "", note: "味道一绝，老板以前算是个小网红" },
+        { n: "马峰小炒", loc: "大皮院走到尽头向北", h: "17:00 开始", note: "下午五点开始营业，环境一般，味道好" },
+        { n: "夏同心小杨炒肉片", loc: "", h: "", note: "新店装修还行，炒肉片拌面片味道有点淡，手抓家常炒菜还不错" },
+        { n: "阿丽娅新疆拌面", loc: "小寨翠华路 9 号", h: "", note: "小馆子，西安新疆拌面天花板" },
+        { n: "方牛肉面（西稍门）", loc: "西稍门", h: "", note: "臊子面、烩面片香得很" },
+        { n: "牛一嘴", loc: "曲江雁翔路天驹大厦（总店）", h: "", note: "分店很多，正宗兰州拉面，总店最正宗，3 号线 & 5 号线青龙寺站南行 600 米" },
+        { n: "马德元牛肉面", loc: "", h: "", note: "和牛一嘴差不多" },
+        { n: "志亮蒸饺", loc: "", h: "10:00–21:30", note: "饭点儿人多，除了蒸饺，八宝粥、醪糟也推荐" },
+        { n: "石家包子", loc: "大学习巷 / 大皮院", h: "", note: "" },
+        { n: "郑家包子", loc: "五路口", h: "", note: "" },
+        { n: "景德泡馍", loc: "", h: "", note: "" },
+        { n: "丁家牛肉面", loc: "金康巷", h: "", note: "味道不错" },
+        { n: "哈里泡馍", loc: "早慈巷", h: "", note: "" },
+        { n: "大盘鸡拌面", loc: "红富街街门口", h: "", note: "" },
+        { n: "星月楼", loc: "许士庙街口", h: "", note: "泡馍" },
+        { n: "尕西过油肉拌面", loc: "大莲花池", h: "", note: "" },
+        { n: "雅真楼泡馍小炒", loc: "光明巷", h: "11:00–20:30", note: "生肉小炒，萝卜泡馍" },
+        { n: "亚心新疆烤包子", loc: "永兴坊对面", h: "", note: "过油肉拌面" }
+      ]
+    },
+    {
+      id: "huoguo", name: "火锅 · 串串", en: "HOTPOT",
+      rows: [
+        { n: "酸辣谷", loc: "钟楼店", h: "11:00–22:00", note: "环境、服务都不错，菜品味道也好（曲江店已关）" },
+        { n: "京馆涮", loc: "", h: "", note: "" },
+        { n: "大学习巷串串", loc: "", h: "", note: "整体味道、菜品都不错，性价比高，六点前去人少，适合 5 人以下" },
+        { n: "老回坊", loc: "", h: "", note: "老店性价比不错" },
+        { n: "锦翔炝锅鱼", loc: "五路口 / 和平门 / 明德门 / 西稍门 / 胡家庙", h: "", note: "鱼凉菜不错，涮菜一般，性价比不错。和平门店楼下有大型地上停车场，其他店停车都困难" },
+        { n: "老东乡", loc: "曲江翠华路 · 学诚广场", h: "", note: "肉好，人均略贵，炝拌龙须菜好吃。地铁都不顺，晚高峰常堵" },
+        { n: "东来顺", loc: "赛格 / 交大 / 高新 / 未央国际", h: "10:00–22:00", note: "环境服务到位，适合重要宴请，有代金券" },
+        { n: "京华源", loc: "", h: "", note: "京味儿十足，性价比高" },
+        { n: "叁少野", loc: "", h: "", note: "味道不错适合三两好友聚聚" },
+        { n: "拙夫重庆火锅", loc: "", h: "", note: "牛油锅底美太" },
+        { n: "清雅斋", loc: "钟楼 / 高新 / 曲江", h: "", note: "自助式的，有主食、烧烤、牛排、涮锅，环境也不错，饭点儿人多，性价比高" },
+        { n: "江湖豪客铁锅炖", loc: "", h: "", note: "" },
+        { n: "华宇开锅羊肉", loc: "", h: "", note: "" },
+        { n: "胖小李", loc: "民乐园", h: "", note: "4 号线大差市和五路口站步行都不远；路边能停车，旁边紧邻叁少野火锅" },
+        { n: "港姐姐", loc: "", h: "", note: "" },
+        { n: "老马家铁锅炖东北", loc: "南小巷", h: "", note: "老板娘东北人，很热情，环境还不错，菜量一般，美团比较划算，单点价格偏贵" },
+        { n: "天斋 · 盐池手抓羊肉", loc: "凤八、文景路", h: "", note: "" },
+        { n: "火锅（粉巷 HOT 店）", loc: "", h: "11:30–次日 02:00", note: "有团购优惠" },
+        { n: "新凯涮肉", loc: "桥梓口", h: "", note: "肉不错味道很好但基本全是肉" },
+        { n: "牧普巴小串", loc: "凤城七路", h: "16:00–02:00", note: "肉不错很新鲜，适合室外吃，像野餐一样的小凳子" },
+        { n: "京顺祥", loc: "朱雀门里西边", h: "", note: "三鲜料碗、脆骨羊肉、炸丸子" },
+        { n: "老门框铜锅涮肉", loc: "高新区锦业路", h: "", note: "涮肉和毛肚好吃，还有芝麻烧饼" },
+        { n: "阿齐哥麻辣烫", loc: "西外旁边", h: "", note: "" }
+      ]
+    },
+    {
+      id: "kaorou2", name: "烤肉", en: "BBQ",
+      rows: [
+        { n: "莎拉拉", loc: "", h: "11:00–22:00", note: "菜品多，人巨多，周末需排队基本 1–2 小时" },
+        { n: "街头烧烤（庙后街）", loc: "庙后街", h: "", note: "韩式烤肉，适合 2–3 人，人多了不划算" },
+        { n: "回文人家", loc: "", h: "", note: "" },
+        { n: "回头鱼", loc: "大学习巷串串北边", h: "", note: "环境一般，味道好" },
+        { n: "小白烤肉饺子坊", loc: "大庆路", h: "", note: "老店，大庆路这片清真烤肉一绝，性价比不错，粉蒸肉配烧肉夹馍" },
+        { n: "马健酱汁烤肉", loc: "红埠街", h: "", note: "红埠街小店，酱料味儿跟文文不太一样，鲜香味" },
+        { n: "马乐烤肉", loc: "麦苋街", h: "", note: "味道性价比不错，排队长" },
+        { n: "大寨门", loc: "大寨路附近 / 北郊", h: "", note: "东北菜，烧烤一般，其他菜品还可以" },
+        { n: "高牧自助", loc: "", h: "13:30–23:30", note: "韩式烤肉，新开的，吃肉很爽" },
+        { n: "阿丽娅韩式自助烧烤", loc: "", h: "11:00–23:00", note: "" },
+        { n: "白娃烤肉", loc: "化觉巷", h: "晚上", note: "烤筋、麻辣米线、龙须面" },
+        { n: "郭楠烤肉", loc: "广济街", h: "18:00 开始", note: "烤肉、炸酱面，鸡腿特别好吃，复古风" }
+      ]
+    },
+    {
+      id: "chaocai2", name: "炒菜 · 正餐", en: "RESTAURANT",
+      rows: [
+        { n: "清真小梅鸽香港餐厅", loc: "", h: "11:00–14:30 / 17:00–22:00", note: "粤菜和湘菜结合，味道不错（立丰城店在装修）" },
+        { n: "德隆楼", loc: "", h: "10:00–22:30", note: "" },
+        { n: "老兰家", loc: "雁塔西路", h: "", note: "小寨金莎国际西边，炒菜不错。2 号线小寨站 C 口南行一个路口左拐步行约 1 公里；兴善寺东街老店在装修，别走错" },
+        { n: "楼兰古丽", loc: "", h: "", note: "分店很多，距离正儿八经的新疆馆子差得很远，是否清真存疑" },
+        { n: "喜阿婆", loc: "", h: "", note: "养生粥不错，这几年店很少了" },
+        { n: "晋香楼", loc: "", h: "09:30–21:30", note: "私房菜宴请不错" },
+        { n: "三德隆", loc: "", h: "11:00–14:30 / 17:00–21:00", note: "性价比不错，招牌菜铁板滑鸡很奈斯，有大包间适合 10 人以上" },
+        { n: "五韵丰", loc: "", h: "11:00–21:30", note: "服务菜品不错，适合宴请" },
+        { n: "丝路餐厅", loc: "大雁塔西侧", h: "", note: "性价比不错，靠近大雁塔适合旅游推荐，免费瓜子好吃" },
+        { n: "溪谷园新疆茶餐厅", loc: "朱宏路", h: "", note: "有特色咸奶茶，所有菜品都不错，好停车" },
+        { n: "老望炒菜", loc: "大学习巷", h: "", note: "大学习巷一绝，招牌菜不错，性价比不错" },
+        { n: "温师大盘鸡", loc: "", h: "", note: "肉很软烂，配的凉菜很好吃" },
+        { n: "蓝薄荷餐厅", loc: "大唐不夜城", h: "", note: "银泰楼上，去那边玩可以试试，露台可以看到大雁塔，鳕鱼不错" },
+        { n: "宁夏国强", loc: "未央路凤三店等", h: "11:00–14:30 / 17:00–21:30", note: "服务、环境好，价格贵" },
+        { n: "京荣手抓", loc: "", h: "11:00–22:00", note: "环境好，包间多，回民小拼盘（主食）好吃。门口车位很少且拥挤" },
+        { n: "艾力西域情新疆餐厅", loc: "会展中心翠华路", h: "", note: "有辣么一点贵" },
+        { n: "莉莉大盘鸡", loc: "回民街东南亚鑫桃北边", h: "", note: "美团超划算，大盘鸡西安第一" },
+        { n: "语上天山新疆宴", loc: "", h: "", note: "海陆空烧烤聚会必备，提前一小时预约" },
+        { n: "西域娜依新疆美食餐厅", loc: "", h: "", note: "环境很好，味道也不错" },
+        { n: "东乡手抓", loc: "莲湖区大麦市街 104 号", h: "", note: "手抓、炒肉片、白斩鸡等都不错" },
+        { n: "萨拉丁厨房", loc: "陕师大长安校区东门", h: "", note: "老板青海人，炒菜味道都不错" }
+      ]
+    },
+    {
+      id: "xiaochi2", name: "小吃", en: "SNACK",
+      rows: [
+        { n: "曹家蒸碗", loc: "", h: "", note: "" },
+        { n: "定家小酥肉", loc: "大皮院", h: "", note: "" },
+        { n: "馅饼（大皮院东街口）", loc: "大皮院东街口", h: "", note: "排队挺多的，味道没得说" },
+        { n: "彦彬炸元宵", loc: "大皮院", h: "", note: "" },
+        { n: "陕拾叁", loc: "", h: "", note: "品种多，榴莲、油泼辣子冰淇淋具有老陕特色" },
+        { n: "矮子酥饼（麻家十字）", loc: "麻家十字", h: "08:00–20:00", note: "莲湖路有分店" },
+        { n: "小贾八宝粥", loc: "大学习巷", h: "", note: "知道的人少，多年老店，首推山楂稀饭、炒八宝、腊牛肉" },
+        { n: "贾家肉丸胡辣汤", loc: "", h: "只卖早上", note: "肉丸多，味道好" },
+        { n: "全盛斋", loc: "", h: "", note: "西安糕点，自己吃、送人都可以" },
+        { n: "花干夹馍", loc: "", h: "", note: "" },
+        { n: "马海龙螺蛳粉", loc: "朝阳门外", h: "", note: "朝阳门外的小店面，外卖全城送" },
+        { n: "尹食记（炸串、大盘鸡）", loc: "朝阳门内 150 米路", h: "", note: "" },
+        { n: "杨钊锅贴", loc: "洒金桥路中段路东", h: "", note: "必吃素锅贴，门面比较小" },
+        { n: "羊杂、羊头", loc: "新城区尚爱路", h: "", note: "羊杂鲜得不得了，13 元带饼子；羊头 55 块小的、75 块大的，绝了。门面比较小" }
+      ]
+    },
+    {
+      id: "xicai", name: "西餐 · 甜点", en: "CAFE",
+      rows: [
+        { n: "维罗纳", loc: "", h: "11:30–20:30", note: "价格贵，菜品不错，披萨、牛排都很不错，有团购优惠" },
+        { n: "乌先生", loc: "维罗纳往南走十来米", h: "", note: "性价比还行" },
+        { n: "穆巴拉克", loc: "麻家十字往西", h: "", note: "服务没以前好了" },
+        { n: "芝麻开门", loc: "麻家十字南口", h: "", note: "菜品一般，价格不贵" },
+        { n: "迈德堡", loc: "坊上", h: "", note: "清真西式快餐，店都在坊上" },
+        { n: "塔西尔蛋糕甜品", loc: "红庙坡", h: "", note: "" },
+        { n: "寺门儿", loc: "化觉巷", h: "", note: "店面很小清新" },
+        { n: "拾叁坊", loc: "大皮院", h: "", note: "" },
+        { n: "回坊伊之轩", loc: "", h: "", note: "" },
+        { n: "佰乐客蛋糕", loc: "", h: "", note: "" }
+      ]
+    }
+  ];
+
+  /* 三天行程：前提是住在西安站附近 */
+  var DAYS = [
+    {
+      id: 1, label: "Day 1", date: "11.1 周日", tag: "抵达 · 就近",
+      lede: "以中午 12:00 到站为例。住得近的最大好处：行李先扔回酒店，两手空空出门。",
+      items: [
+        { t: "12:00", h: "西安站 · 出站", q: "西安站", d: "出站口往南是解放路。先别急着找吃的，行李在手上什么都不方便。", move: "步行 10 分" },
+        { t: "12:15", h: "酒店 · 放行李", q: "", d: "站前一圈的酒店走路都在 15 分钟内。放下箱子，只带手机出门。", move: "打车 12 分" },
+        { t: "13:20", h: "刘信小炒泡馍", q: "刘信牛羊肉小炒泡馍", d: "洒金桥。小炒比汤泡馍够味，不会掰馍就让师傅机器掰。", key: true, move: "步行 8 分" },
+        { t: "15:20", h: "大皮院 · 凉皮 + 小酥肉", q: "西安大皮院", d: "盛志望 + 定家，两个人各点一份。吃完可以回酒店歇一小时。", move: "打车 12 分" },
+        { t: "18:30", h: "南门 · 上城墙", q: "西安城墙永宁门", d: "17:40 左右天暗，灯刚亮最好看。南门上、南门下最省事。", move: "打车 10 分" },
+        { t: "20:30", h: "东新街 · 烩菜 + 包子", q: "西安东新街", d: "老陈家烩菜配郑家包子，营业到凌晨。", key: true, move: "步行 12 分" },
+        { t: "22:00", h: "回酒店", q: "", d: "从东新街走回去十几分钟，是这三天里最舒服的一段路。", end: true }
+      ],
+      tips: [
+        { h: "如果是上午到", p: "把 13:20 那顿换成洒金桥早市：白牙牙的糊辣汤、胖子的甑糕，过了中午就没了。中午再吃泡馍。" },
+        { h: "如果深夜到", p: "直接去东新街。营业到凌晨两三点，一碗烩菜、五个牛肉包，就是西安的待客方式。" },
+        { h: "这一天的量", p: "打车 3 次（坊上、南门、东新街），步行约 6 公里。城墙门票现场买。" }
+      ]
+    },
+    {
+      id: 2, label: "Day 2", date: "11.2 周一", tag: "坊上 · 早市到夜市",
+      lede: "这一天全在坊上，基本靠走。穿双好走的鞋，别叫车——巷子窄，车比人慢。",
+      items: [
+        { t: "07:00", h: "酒店 · 出发", q: "", d: "早市不等人，7 点半到刚好是第一锅。", move: "打车 12 分" },
+        { t: "07:20", h: "红埠街 · 白牙牙糊辣汤", q: "白牙牙肉丸糊辣汤", d: "西安的糊辣汤是牛肉丸、土豆、莲花白勾芡，不是河南版。要「多丸子」。", key: true, move: "步行 6 分" },
+        { t: "08:30", h: "洒金桥 · 胖子甑糕", q: "胖子甑糕", d: "只卖早上，卖完收摊。要刚出锅那层，多要枣。", move: "步行 4 分" },
+        { t: "09:30", h: "化觉巷 · 清真大寺", q: "西安清真大寺", d: "藏在巷子里的院子，门票不贵。想补觉就回酒店，来回 20 分钟。", move: "步行 10 分" },
+        { t: "12:00", h: "马宾小炒", q: "马宾小炒", d: "本地人提小炒只回这两个字。酸辣、油大，配糖蒜。", key: true, move: "步行 5 分" },
+        { t: "14:00", h: "大皮院 · 陕拾叁 + 闲逛", q: "陕拾叁", d: "油泼辣子味冰淇淋尝一口就行。往西羊市、大皮院巷子里钻，别在主街买。", move: "步行 12 分" },
+        { t: "18:00", h: "红埠街 · 壹佳烤肉", q: "壹佳烤肉", d: "1.2 元一串，有暖锅。不吃辣提前说，先点十串试味。", key: true, move: "步行 6 分" },
+        { t: "21:00", h: "马二酸汤水饺", q: "马二优质酸汤水饺", d: "汤是主角，醋和辣油喝完再走。", move: "打车 12 分" },
+        { t: "22:00", h: "回酒店", q: "", d: "这一天走下来，脚会告诉你值不值。", end: true }
+      ],
+      tips: [
+        { h: "这一天的量", p: "全程步行 8–10 公里，只在头尾打车。坊里巷子窄，中途叫车反而慢。" },
+        { h: "排队这件事", p: "烤肉和泡馍都是现做，等 20–30 分钟很正常。先点、再逛、回来吃，是本地人的做法。" },
+        { h: "买什么带走", p: "全盛斋、德懋恭的糕点，矮子酥饼。看生产日期，怕有陈货。" }
+      ]
+    },
+    {
+      id: 3, label: "Day 3", date: "11.3 周二", tag: "临潼 · 兵马俑",
+      lede: "住西安站最值的一天：去兵马俑的游 5（306）就在东广场发车，不用先挤到市区。",
+      items: [
+        { t: "06:50", h: "酒店 · 出发", q: "", d: "退房，行李寄存在酒店或车站，别带着箱子去临潼。", move: "步行 10 分" },
+        { t: "07:00", h: "西安站东广场 · 游 5", q: "西安站东广场", d: "直达兵马俑，车程约 1 小时。认准国营大巴，别跟举牌子拉客的走。", key: true, move: "车程 1 小时" },
+        { t: "08:30", h: "兵马俑", q: "秦始皇兵马俑博物馆", d: "三个坑按 1→3→2 看，一号坑最后回头再看一眼。请个讲解，不然就是看土坑。", key: true, move: "车程 1 小时" },
+        { t: "14:00", h: "魏家凉皮 · 简单吃", q: "魏家凉皮", d: "回城后在解放路解决，这顿不用讲究，胃留给晚上。", move: "打车 10 分" },
+        { t: "17:00", h: "春发生葫芦头", q: "春发生葫芦头泡馍", d: "南院门。葫芦头就是猪大肠，汤是奶白色；过不了这关就点梆梆肉。", key: true, move: "步行 12 分" },
+        { t: "19:00", h: "书院门 · 碑林外墙", q: "西安书院门", d: "晚上人少，适合收尾。", move: "打车 10 分" },
+        { t: "21:00", h: "东新街 · 打包桶子鸡", q: "西安东新街", d: "让师傅多浇两勺卤汁，带上火车当夜宵。", move: "步行 10 分" },
+        { t: "22:00", h: "回酒店", q: "", d: "三天走完，最后一顿还是在家门口。", end: true }
+      ],
+      tips: [
+        { h: "不去兵马俑的话", p: "把这一天换成：上午秦豫肉夹馍（卖完收，要早）→ 碑林 → 春发生 → 书院门。老城一天走得完。" },
+        { h: "游 5 的坑", p: "东广场排队上车，别信「一日游」拉客。回程别赶最后一班，留半小时余量。" },
+        { h: "行李", p: "退房后寄存在酒店或车站。兵马俑景区寄存要排队，不如放在城里。" }
+      ]
+    }
+  ];
+
+  /* ---------- state ---------- */
+  var state = { slot: "noon", filter: "all", q: "" };
+  var favs = [];
+  try {
+    var raw = localStorage.getItem("xian-food-favs");
+    if (raw) favs = JSON.parse(raw) || [];
+  } catch (e) { favs = []; }
+  if (!Array.isArray(favs)) favs = [];
+
+  var $ = function (id) { return document.getElementById(id); };
+  var grid = $("grid");
+  var sheet = $("sheet");
+  var scrim = $("scrim");
+  var sheetBody = $("sheetBody");
+
+  function esc(s) {
+    return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  }
+  function isFav(id) { return favs.indexOf(id) > -1; }
+  function saveFavs() {
+    try { localStorage.setItem("xian-food-favs", JSON.stringify(favs)); } catch (e) {}
+  }
+  function pad(n) { return n < 10 ? "0" + n : "" + n; }
+
+  /* ---------- slot chips ---------- */
+  var slotWrap = $("slotChips");
+  slotWrap.innerHTML = SLOTS.map(function (s) {
+    return '<button class="chip' + (s.id === state.slot ? " on" : "") + '" data-slot="' + s.id + '">' +
+      esc(s.label) + '<span class="num">' + esc(s.time) + "</span></button>";
+  }).join("");
+
+  slotWrap.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-slot]");
+    if (!b) return;
+    state.slot = b.getAttribute("data-slot");
+    Array.prototype.forEach.call(slotWrap.children, function (c) {
+      c.classList.toggle("on", c.getAttribute("data-slot") === state.slot);
+    });
+    render();
+  });
+
+  /* ---------- filter chips ---------- */
+  var filterWrap = $("filterChips");
+  filterWrap.innerHTML = FILTERS.map(function (f) {
+    return '<button class="chip' + (f.id === state.filter ? " on" : "") + '" data-filter="' + f.id + '">' + esc(f.label) + "</button>";
+  }).join("");
+
+  filterWrap.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-filter]");
+    if (!b) return;
+    state.filter = b.getAttribute("data-filter");
+    Array.prototype.forEach.call(filterWrap.children, function (c) {
+      c.classList.toggle("on", c.getAttribute("data-filter") === state.filter);
+    });
+    render();
+  });
+
+  /* ---------- search ---------- */
+  var searchEl = $("search");
+  searchEl.addEventListener("input", function () {
+    state.q = this.value.trim().toLowerCase();
+    render();
+  });
+
+  /* ---------- render ---------- */
+  function matchFilter(d) {
+    if (state.filter === "all") return true;
+    if (state.filter === "station") return d.tier === "station";
+    if (state.filter === "old") return d.tier === "old";
+    if (state.filter === "late") return d.windows.indexOf("late") > -1;
+    if (state.filter === "fav") return isFav(d.id);
+    return true;
+  }
+  function matchQuery(d) {
+    if (!state.q) return true;
+    var hay = [d.name, d.sub, d.area, d.type].concat(d.must).join(" ").toLowerCase();
+    return hay.indexOf(state.q) > -1;
+  }
+
+  function score(d) {
+    var open = d.windows.indexOf(state.slot) > -1 ? 0 : 100;
+    return open + d.dist * 2.5 - d.local * 3;
+  }
+
+  function slotHint() {
+    for (var i = 0; i < SLOTS.length; i++) {
+      if (SLOTS[i].id === state.slot) return SLOTS[i].hint;
+    }
+    return "";
+  }
+
+  function cardHTML(d, closed, seq) {
+    var bars = "";
+    for (var i = 1; i <= 5; i++) bars += '<i class="' + (i <= d.local ? "f" : "") + '"></i>';
+    var tag = closed
+      ? '<span class="tag">已过点</span>'
+      : '<span class="tag t-jade">此刻可吃</span>';
+    var tierTag = d.tier === "station"
+      ? '<span class="tag t-red">出站即吃</span>'
+      : d.tier === "near" ? '<span class="tag">打车 10 分</span>' : "";
+
+    return '<article class="card' + (closed ? " is-closed" : "") + '" data-id="' + d.id + '">' +
+      '<div class="card-top">' +
+        '<div class="idx">' + pad(seq) + "</div>" +
+        '<h3 class="name">' + esc(d.name) + "</h3>" +
+        '<button class="mark' + (isFav(d.id) ? " on" : "") + '" data-fav="' + d.id + '" aria-label="收藏' + esc(d.name) + '">' +
+          '<svg viewBox="0 0 24 24"><path d="M12 20.2s-7-4.4-7-9.2A4.1 4.1 0 0 1 12 7.8a4.1 4.1 0 0 1 7 3.2c0 4.8-7 9.2-7 9.2z"/></svg>' +
+        "</button>" +
+      "</div>" +
+      '<div class="meta">' +
+        tierTag + tag +
+        "<span>" + esc(d.area) + "</span>" +
+        '<span class="sep">·</span>' +
+        "<span>" + esc(d.price) + " / 人</span>" +
+        '<span class="sep">·</span>' +
+        "<span>" + esc(d.dist) + " km</span>" +
+      "</div>" +
+      '<div class="must"><b>吃什么</b><span>' + d.must.map(esc).join(" / ") + "</span></div>" +
+      "</article>";
+  }
+
+  function render() {
+    var list = DATA.filter(function (d) { return matchFilter(d) && matchQuery(d); });
+    var openList = [];
+    var closedList = [];
+    list.forEach(function (d) {
+      (d.windows.indexOf(state.slot) > -1 ? openList : closedList).push(d);
+    });
+    function byScore(a, b) {
+      var s = score(a) - score(b);
+      if (Math.abs(s) < 0.001) return a.dist - b.dist;
+      return s;
+    }
+    openList.sort(byScore);
+    closedList.sort(byScore);
+
+    $("slotHint").textContent = slotHint();
+    $("favCount").textContent = favs.length;
+
+    if (!list.length) {
+      grid.innerHTML = '<div class="empty">' +
+        (state.filter === "fav" ? "清单还是空的，点卡片右上角的圆点收藏几家。" : "没有匹配的店，换个词试试。") +
+        "</div>";
+      $("count").textContent = "0 家";
+      return;
+    }
+
+    var seq = 0;
+    var html = openList.map(function (d) { seq += 1; return cardHTML(d, false, seq); }).join("");
+    if (closedList.length) {
+      html += '<div class="divider"><i></i><span>这个点吃不上了 · 留着下次</span><i></i></div>' +
+        closedList.map(function (d) { seq += 1; return cardHTML(d, true, seq); }).join("");
+    }
+    grid.innerHTML = html;
+
+    var label = "此刻";
+    for (var i = 0; i < SLOTS.length; i++) {
+      if (SLOTS[i].id === state.slot) label = SLOTS[i].label + "出站";
+    }
+    $("count").textContent = "此刻能吃 " + openList.length + " 家" +
+      (closedList.length ? " · 另 " + closedList.length + " 家已过点" : "") +
+      " · 按腿程排序";
+  }
+
+  /* ---------- card events ---------- */
+  grid.addEventListener("click", function (e) {
+    var favBtn = e.target.closest("[data-fav]");
+    if (favBtn) {
+      e.stopPropagation();
+      var fid = parseInt(favBtn.getAttribute("data-fav"), 10);
+      var pos = favs.indexOf(fid);
+      if (pos > -1) favs.splice(pos, 1); else favs.push(fid);
+      saveFavs();
+      favBtn.classList.toggle("on", isFav(fid));
+      $("favCount").textContent = favs.length;
+      if (state.filter === "fav") render();
+      return;
+    }
+    var card = e.target.closest(".card");
+    if (!card) return;
+    var id = parseInt(card.getAttribute("data-id"), 10);
+    var d = null;
+    for (var i = 0; i < DATA.length; i++) if (DATA[i].id === id) d = DATA[i];
+    if (d) openSheet(d);
+  });
+
+  /* ---------- sheet ---------- */
+  function openSheet(d) {
+    var tierName = d.tier === "station" ? "出站 20 分钟内" : d.tier === "near" ? "打车 10 分钟" : "城墙里 · 回坊老城";
+    var stars = "";
+    for (var i = 1; i <= 5; i++) stars += i <= d.local ? "●" : "○";
+
+    sheetBody.innerHTML =
+      '<div class="sh-kicker">' + esc(tierName) + "</div>" +
+      '<h2 class="sh-name">' + esc(d.name) + "</h2>" +
+      '<div class="sh-tags">' +
+        '<span class="tag t-jade">' + esc(d.type) + "</span>" +
+        '<span class="tag">' + esc(d.area) + "</span>" +
+        '<span class="tag t-gold">' + esc(d.sub) + "</span>" +
+      "</div>" +
+      '<div class="sh-grid">' +
+        '<div class="sh-cell"><span>人均</span><b>' + esc(d.price) + "</b></div>" +
+        '<div class="sh-cell"><span>距西安站</span><b>' + d.dist + " km · " + esc(d.walk) + "</b></div>" +
+        '<div class="sh-cell"><span>适合时段</span><b>' + d.windows.map(function (w) { return WIN_LABEL[w]; }).join(" / ") + "</b></div>" +
+      "</div>" +
+      '<div class="sh-sec"><p class="sh-h">怎么走</p><p>' + esc(d.route) + "</p></div>" +
+      '<div class="sh-sec"><p class="sh-h">吃什么</p><div class="sh-must">' +
+        d.must.map(function (m) { return "<span>" + esc(m) + "</span>"; }).join("") +
+      "</div></div>" +
+      '<button class="mark-wide sh-close" id="closeSheet">收起</button>';
+
+    sheet.classList.add("on");
+    scrim.classList.add("on");
+    document.body.style.overflow = "hidden";
+    sheet.scrollTop = 0;
+    $("closeSheet").addEventListener("click", closeSheet);
+  }
+
+  function closeSheet() {
+    sheet.classList.remove("on");
+    scrim.classList.remove("on");
+    document.body.style.overflow = "";
+  }
+  scrim.addEventListener("click", closeSheet);
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") closeSheet();
+  });
+
+  /* ---------- tier jump ---------- */
+  $("tiers").addEventListener("click", function (e) {
+    var a = e.target.closest("[data-jump]");
+    if (!a) return;
+    e.preventDefault();
+    var id = a.getAttribute("data-jump");
+    state.filter = "all";
+    state.q = "";
+    searchEl.value = "";
+    Array.prototype.forEach.call(filterWrap.children, function (c) {
+      c.classList.toggle("on", c.getAttribute("data-filter") === "all");
+    });
+    render();
+    setTimeout(function () {
+      var el = grid.querySelector('[data-id="' + id + '"]');
+      if (!el) return;
+      el.scrollIntoView({ behavior: "smooth", block: "center" });
+      el.classList.add("flash", "hit");
+      setTimeout(function () { el.classList.remove("flash", "hit"); }, 1900);
+    }, 60);
+  });
+
+  /* ---------- fav button ---------- */
+  $("favBtn").addEventListener("click", function () {
+    setView("list", true);
+    state.filter = state.filter === "fav" ? "all" : "fav";
+    Array.prototype.forEach.call(filterWrap.children, function (c) {
+      c.classList.toggle("on", c.getAttribute("data-filter") === state.filter);
+    });
+    render();
+    if (state.filter === "fav") {
+      window.scrollTo({ top: grid.offsetTop - 90, behavior: "smooth" });
+    }
+  });
+
+  /* ---------- random ---------- */
+  $("fab").addEventListener("click", function () {
+    setView("list", true);
+    var list = DATA.filter(function (d) {
+      return d.windows.indexOf(state.slot) > -1 && matchFilter(d) && matchQuery(d);
+    });
+    if (!list.length) list = DATA.filter(function (d) { return d.windows.indexOf(state.slot) > -1; });
+    if (!list.length) list = DATA.slice();
+    var pick = list[Math.floor(Math.random() * list.length)];
+
+    // 确保它当前是可见的
+    if (state.filter !== "all" && !matchFilter(pick)) {
+      state.filter = "all";
+      Array.prototype.forEach.call(filterWrap.children, function (c) {
+        c.classList.toggle("on", c.getAttribute("data-filter") === "all");
+      });
+      render();
+    }
+    var el = grid.querySelector('[data-id="' + pick.id + '"]');
+    if (!el) {
+      state.q = "";
+      searchEl.value = "";
+      render();
+      el = grid.querySelector('[data-id="' + pick.id + '"]');
+    }
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "center" });
+      el.classList.add("flash");
+      setTimeout(function () { el.classList.remove("flash"); }, 1600);
+    }
+    setTimeout(function () { openSheet(pick); }, 420);
+  });
+
+  /* ---------- views ---------- */
+  var indexBuilt = false;
+
+  function buildIndex() {
+    if (indexBuilt) return;
+    $("catNav").innerHTML = INDEX.map(function (c) {
+      return '<a href="#cat-' + c.id + '">' + esc(c.name) + "</a>";
+    }).join("");
+
+    $("indexBody").innerHTML = INDEX.map(function (c) {
+      var rows = c.items.map(function (it) {
+        return '<div class="entry">' +
+          '<div class="nm">' + esc(it.n) + (it.near ? "<small>城内</small>" : "") + "</div>" +
+          '<div class="loc">' + esc(it.loc) + "</div>" +
+          "</div>";
+      }).join("");
+      return '<section class="cat" id="cat-' + c.id + '">' +
+        '<div class="cat-head"><h3>' + esc(c.name) + '</h3><span class="n">' + c.items.length + " 条</span></div>" +
+        '<p class="cat-tip">' + esc(c.tip) + "</p>" +
+        '<div class="entries">' + rows + "</div>" +
+        "</section>";
+    }).join("");
+    indexBuilt = true;
+  }
+
+  function setView(v, noScroll) {
+    Array.prototype.forEach.call($("viewTabs").children, function (c) {
+      c.classList.toggle("on", c.getAttribute("data-view") === v);
+    });
+    $("listView").hidden = v !== "list";
+    $("indexView").hidden = v !== "index";
+    $("marketView").hidden = v !== "market";
+    $("tableView").hidden = v !== "table";
+    if (v === "index") buildIndex();
+    if (v === "market") buildMarket();
+    if (v === "table") buildTable();
+    if (noScroll) return;
+    var y = window.scrollY + $("viewTabs").getBoundingClientRect().top - 58;
+    window.scrollTo({ top: y < 0 ? 0 : y, behavior: "smooth" });
+  }
+
+  /* ---------- market ---------- */
+  var marketBuilt = false;
+
+  function buildMarket() {
+    if (marketBuilt) return;
+
+    $("mkPick").innerHTML = MARKET.filter(function (m) { return m.pick; }).map(function (m) {
+      return '<div class="mk-pickcard">' +
+        '<div class="lbl">值得专程 · ' + esc(m.area.split(" · ")[0]) + "</div>" +
+        "<h4>" + esc(m.name) + "</h4>" +
+        '<div class="m">约 ' + m.dist + " km · 打车 " + esc(m.time) + "</div>" +
+        "<p>" + esc(m.why) + "</p>" +
+        "</div>";
+    }).join("");
+
+    $("mkList").innerHTML = MARKET.map(function (m, i) {
+      var w = Math.min(100, Math.round((m.dist / 14) * 100));
+      return '<div class="mk-row" data-mk="' + i + '">' +
+        '<div class="mk-head">' +
+          '<div class="mk-rank">' + pad(i + 1) + "</div>" +
+          '<div class="mk-name">' + esc(m.name) + (m.badge ? "<em>" + esc(m.badge) + "</em>" : "") + "</div>" +
+          '<div class="mk-time">打车 ' + esc(m.time) + "</div>" +
+        "</div>" +
+        '<div class="mk-meta"><span>' + esc(m.area) + "</span><span>约 " + m.dist + " km</span>" +
+          '<span class="mk-bar"><i style="width:' + w + '%"></i></span></div>' +
+        '<div class="mk-detail">' +
+          "<p><b>怎么去</b>　" + esc(m.go) + "</p>" +
+          "<p><b>有什么</b>　" + esc(m.what) + "</p>" +
+        "</div>" +
+        "</div>";
+    }).join("");
+
+    marketBuilt = true;
+  }
+
+  $("mkList").addEventListener("click", function (e) {
+    var row = e.target.closest(".mk-row");
+    if (row) row.classList.toggle("open");
+  });
+
+  /* ---------- full table ---------- */
+  var tableBuilt = false;
+  var tbState = { cat: "all", q: "" };
+
+  function buildTable() {
+    if (tableBuilt) return;
+    var cats = [{ id: "all", name: "全部" }].concat(TABLE.map(function (c) {
+      return { id: c.id, name: c.name };
+    }));
+    $("tbCats").innerHTML = cats.map(function (c) {
+      return '<button class="chip' + (c.id === tbState.cat ? " on" : "") + '" data-tbcat="' + c.id + '">' +
+        esc(c.name) + "</button>";
+    }).join("");
+    renderTable();
+    tableBuilt = true;
+  }
+
+  function renderTable() {
+    var q = tbState.q.toLowerCase();
+    var html = "";
+    var total = 0;
+
+    TABLE.forEach(function (c) {
+      if (tbState.cat !== "all" && tbState.cat !== c.id) return;
+      var rows = c.rows.filter(function (r) {
+        if (!q) return true;
+        return (r.n + " " + r.loc + " " + r.h + " " + r.note).toLowerCase().indexOf(q) > -1;
+      });
+      if (!rows.length) return;
+      total += rows.length;
+
+      html += '<section class="tb-sec"><h3>' + esc(c.name) + "<span>" + rows.length + " 家</span></h3>" +
+        rows.map(function (r) {
+          var meta = [];
+          if (r.loc) meta.push(esc(r.loc));
+          if (r.h) meta.push('<span class="tb-time">' + esc(r.h) + "</span>");
+          return '<div class="tb-row">' +
+            '<div class="tb-n">' + esc(r.n) + "</div>" +
+            '<div class="tb-l' + (meta.length ? "" : " is-empty") + '">' + (meta.length ? meta.join(" · ") : "—") + "</div>" +
+            "</div>";
+        }).join("") + "</section>";
+    });
+
+    if (!html) html = '<div class="empty">没搜到。换个词，或者回第一页看推荐。</div>';
+    $("tbBody").innerHTML = html;
+    $("tbCount").textContent = "共 " + total + " 家" +
+      (tbState.cat !== "all" || q ? "（筛选后）" : " · 按品类分");
+  }
+
+  $("tbCats").addEventListener("click", function (e) {
+    var b = e.target.closest("[data-tbcat]");
+    if (!b) return;
+    tbState.cat = b.getAttribute("data-tbcat");
+    Array.prototype.forEach.call($("tbCats").children, function (c) {
+      c.classList.toggle("on", c.getAttribute("data-tbcat") === tbState.cat);
+    });
+    renderTable();
+  });
+
+  $("tbSearch").addEventListener("input", function () {
+    tbState.q = this.value.trim();
+    renderTable();
+  });
+
+  $("viewTabs").addEventListener("click", function (e) {
+    var b = e.target.closest("[data-view]");
+    if (b) setView(b.getAttribute("data-view"));
+  });
+
+  var mapObj = null;
+
+  function distKm(a, b) {
+    var R = 6371, rad = Math.PI / 180;
+    var dLat = (b[0] - a[0]) * rad;
+    var dLng = (b[1] - a[1]) * rad;
+    var x = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos(a[0] * rad) * Math.cos(b[0] * rad) * Math.sin(dLng / 2) * Math.sin(dLng / 2);
+    return 2 * R * Math.asin(Math.sqrt(x));
+  }
+
+  function initMap() {
+    var card = document.getElementById("mapCard");
+    if (!card) return;
+    if (typeof AMap === "undefined" || window.__mapFailed) {
+      var cv = document.getElementById("mapCanvas");
+      if (cv) {
+        cv.innerHTML = '<div class="map-fail">地图没加载出来<br>域名可能不在高德白名单里，或者没联网<br><b>本地双击打开一定会这样</b><br>改用线上地址</div>';
+      }
+      $("mapTitle").textContent = "地图未加载";
+      $("mapStat").textContent = "";
+      return;
+    }
+    try {
+      mapObj = new AMap.Map("mapCanvas", {
+        zoom: 14,
+        center: [108.948, 34.267],
+        viewMode: "2D",
+        resizeEnable: true
+      });
+      // 预加载要用的插件，避免后续 new AMap.Walking 时报 not a constructor
+      AMap.plugin(["AMap.Geolocation", "AMap.Walking", "AMap.Driving", "AMap.PlaceSearch"], function () {});
+    } catch (e) {
+      mapObj = null;
+      var cv2 = document.getElementById("mapCanvas");
+      if (cv2) cv2.innerHTML = '<div class="map-fail">地图初始化失败，刷新试试。</div>';
+    }
+  }
+
+  function renderMap(dayId) {
+    var pts = MAP_PTS[dayId];
+    var items = DAYS[dayId - 1] ? DAYS[dayId - 1].items : null;
+    if (!pts || !items) return;
+
+    var t = document.getElementById("mapTitle");
+    if (t) {
+      var dd = DAYS[dayId - 1];
+      t.textContent = dd.label + " · " + dd.tag;
+    }
+
+    var total = 0;
+    for (var i = 0; i < pts.length - 1; i++) total += distKm(pts[i], pts[i + 1]);
+    var st = document.getElementById("mapStat");
+    if (st) st.textContent = pts.length + " 站 · 直线 " + total.toFixed(1) + " km";
+
+    if (!mapObj) return;
+
+    try { mapObj.clearMap(); } catch (e) {}
+
+    var markers = [];
+    var path = [];
+
+    pts.forEach(function (p, i) {
+      var lat = p[0], lng = p[1];
+      var isEnd = items[i] && items[i].end;
+      var color = "#B9AE9C", size = 26;
+      if (i === 0 || isEnd) { color = "#1D4A46"; size = 34; }
+      else if (items[i] && items[i].key) { color = "#A6392B"; size = 32; }
+
+      var label = i === 0 ? "起" : isEnd ? "终" : String(i);
+      var mk = new AMap.Marker({
+        position: [lng, lat],
+        content: '<div class="amap-pin" style="width:' + size + "px;height:" + size +
+          "px;background:" + color + ";line-height:" + (size - 6) + 'px">' + label + "</div>",
+        offset: new AMap.Pixel(-size / 2, -size / 2),
+        zIndex: 100 + i,
+        title: items[i] ? items[i].h : ""
+      });
+      markers.push(mk);
+      path.push([lng, lat]);
+    });
+
+    var line = new AMap.Polyline({
+      path: path,
+      strokeColor: "#BBA88E",
+      strokeWeight: 2,
+      strokeOpacity: 0.95,
+      lineJoin: "round",
+      zIndex: 50
+    });
+
+    try {
+      mapObj.add([line].concat(markers));
+      var narrow = window.innerWidth < 700;
+      var sumLat = 0, sumLng = 0;
+      for (var j = 0; j < pts.length; j++) { sumLat += pts[j][0]; sumLng += pts[j][1]; }
+      var cx = sumLng / pts.length, cy = sumLat / pts.length;
+      var z = dayId === 3 ? (narrow ? 9 : 10) : (narrow ? 13 : 14);
+      mapObj.setZoomAndCenter(z, [cx, cy]);
+      // 再按实际点位收敛视野，保证每一站都在画面里
+      if (markers.length) {
+        try { mapObj.setFitView(markers, false, [46, 46, 46, 46], dayId === 3 ? 12 : 15); } catch (e) {}
+      }
+    } catch (e) {}
+  }
+
+  /* ---------- 店铺侧边栏 ---------- */
+  var SHOP_PTS = {
+    1: [34.2710, 108.9535], 2: [34.2708, 108.9640], 3: [34.2706, 108.9645],
+    4: [34.2710, 108.9635], 5: [34.2680, 108.9678], 6: [34.2618, 108.9360],
+    7: [34.2652, 108.9392], 8: [34.2660, 108.9368], 9: [34.2672, 108.9348],
+    10: [34.2674, 108.9352], 11: [34.2658, 108.9335], 12: [34.2652, 108.9338],
+    13: [34.2655, 108.9330], 14: [34.2648, 108.9395], 15: [34.2650, 108.9388],
+    16: [34.2564, 108.9502], 17: [34.2568, 108.9510], 18: [34.2582, 108.9402]
+  };
+
+  var myPos = null;
+  var activeShop = null;
+  var shopState = { slot: "", cat: "all", q: "" };
+
+  var SHOP_CATS = [
+    { id: "all", name: "全部" },
+    { id: "staple", name: "主食" },
+    { id: "snack", name: "小吃" },
+    { id: "bbq", name: "烤肉" },
+    { id: "meal", name: "正餐" },
+    { id: "dessert", name: "甜点" },
+    { id: "morning", name: "早市" }
+  ];
+
+  function shopCat(t) {
+    if (t.indexOf("烤肉") > -1) return "bbq";
+    if (t.indexOf("凉皮") > -1 || t.indexOf("肉夹馍") > -1 || t.indexOf("包子") > -1 ||
+        t.indexOf("甑糕") > -1 || t.indexOf("糊辣汤") > -1 || t.indexOf("卤味") > -1 ||
+        t.indexOf("小吃") > -1) return "snack";
+    if (t.indexOf("泡馍") > -1 || t.indexOf("小炒") > -1 || t.indexOf("面食") > -1 ||
+        t.indexOf("饺子") > -1 || t.indexOf("烩菜") > -1) return "staple";
+    return "meal";
+  }
+
+  function tableCat(id) {
+    if (id === "kaorou2") return "bbq";
+    if (id === "xiaochi2") return "snack";
+    if (id === "xicai") return "dessert";
+    if (id === "huoguo") return "meal";
+    if (id === "chaocai2") return "meal";
+    return "staple";
+  }
+
+  var SHOPS = null;
+
+  function buildShops() {
+    if (SHOPS) return SHOPS;
+    var out = [], seen = {};
+
+    DATA.forEach(function (d) {
+      seen[d.name] = 1;
+      out.push({
+        key: "d" + d.id, name: d.name, sub: d.sub, area: d.area, type: d.type,
+        price: d.price, dist: d.dist, windows: d.windows, must: d.must,
+        pt: SHOP_PTS[d.id] || null, cat: shopCat(d.type),
+        note: "", hours: "", brief: d.blurb
+      });
+    });
+
+    TABLE.forEach(function (c) {
+      c.rows.forEach(function (r) {
+        if (seen[r.n]) return;
+        seen[r.n] = 1;
+        var m = /约\s*([\d.]+)\s*km/.exec(r.loc || "");
+        out.push({
+          key: "t" + out.length, name: r.n, sub: "", area: r.loc || c.name,
+          type: c.name, price: "", dist: m ? parseFloat(m[1]) : null,
+          windows: [], must: [], pt: null, cat: tableCat(c.id),
+          note: r.note || "", hours: r.h || "", brief: ""
+        });
+      });
+    });
+
+    /* 本地清单：同一家店换个叫法的，跳过（前面两批已经收了） */
+    var ALIAS = {
+      "大皮院一真楼": 1, "马宾（小炒）": 1, "春发生葫芦头": 1,
+      "红埠街白牙牙": 1, "红埠街壹佳烤肉": 1, "郭楠": 1, "全盛斋": 1
+    };
+    var IDX_CAT = {
+      paomo: "staple", hulatang: "snack", kaorou: "bbq", mipi: "snack",
+      roujiamo: "snack", shuipen: "staple", chaocai: "meal", dianxin: "dessert"
+    };
+
+    INDEX.forEach(function (c) {
+      c.items.forEach(function (r) {
+        if (ALIAS[r.n] || seen[r.n]) return;
+        seen[r.n] = 1;
+        out.push({
+          key: "i" + out.length, name: r.n, sub: "", area: r.loc || c.name,
+          type: c.name, price: "", dist: null, windows: [], must: [],
+          pt: null, cat: IDX_CAT[c.id] || "snack",
+          note: r.note || "", hours: "", brief: ""
+        });
+      });
+    });
+
+    /* 早市：14 个点位，按早上算 */
+    MARKET.forEach(function (m) {
+      if (seen[m.name]) return;
+      seen[m.name] = 1;
+      out.push({
+        key: "m" + out.length, name: m.name, sub: "", area: m.area,
+        type: "早市", price: "", dist: m.dist, windows: ["morning"], must: [],
+        pt: null, cat: "morning",
+        note: (m.why || "") + (m.go ? "  " + m.go : ""), hours: "6:30–9:30", brief: ""
+      });
+    });
+
+    SHOPS = out;
+    return out;
+  }
+
+  function myDist(d) {
+    if (!myPos || !d.pt) return null;
+    return distKm([myPos[1], myPos[0]], d.pt);
+  }
+
+  function shopFiltered() {
+    var arr = buildShops().filter(function (d) {
+      if (shopState.slot && d.windows.length && d.windows.indexOf(shopState.slot) < 0) return false;
+      if (shopState.cat !== "all" && d.cat !== shopState.cat) return false;
+      if (shopState.q) {
+        var hay = (d.name + d.sub + d.area + d.type + d.must.join("")).toLowerCase();
+        if (hay.indexOf(shopState.q) < 0) return false;
+      }
+      return true;
+    });
+    arr.sort(function (a, b) {
+      var da = myPos ? (myDist(a) === null ? 99 : myDist(a)) : (a.dist === null ? 99 : a.dist);
+      var db = myPos ? (myDist(b) === null ? 99 : myDist(b)) : (b.dist === null ? 99 : b.dist);
+      return da - db;
+    });
+    return arr;
+  }
+
+  function renderShops() {
+    var list = shopFiltered();
+    var total = buildShops().length;
+    $("sideCount").textContent = (shopState.slot || shopState.cat !== "all" || shopState.q)
+      ? "筛出 " + list.length + " 家 / 共 " + total + " 家"
+      : total + " 家 · 按" + (myPos ? "离你" : "到西安站") + "的距离排";
+
+    if (!list.length) {
+      $("shopList").innerHTML = '<p style="padding:16px 10px;font-size:12px;color:var(--ink-3)">没有符合条件的店，放宽一下筛选。</p>';
+      return;
+    }
+
+    $("shopList").innerHTML = list.map(function (d) {
+      var md = myDist(d);
+      var distTxt = md !== null ? md.toFixed(1) : (d.dist !== null ? d.dist.toFixed(1) : "");
+      var distLbl = md !== null ? "距我" : "距站";
+      var tag = "";
+      if (shopState.slot && d.windows.length) {
+        tag = d.windows.indexOf(shopState.slot) > -1
+          ? '<span class="tag-now">开着</span>'
+          : '<span class="tag-over">已过点</span>';
+      }
+      var meta = [d.area.split(" · ")[0], d.type].filter(Boolean).join(" · ");
+      return '<div class="shop' + (activeShop === d.key ? " on" : "") + '" data-key="' + d.key + '">' +
+        '<div class="shop-r">' +
+          '<div class="shop-n">' + esc(d.name) + tag + "</div>" +
+          '<div class="shop-m">' + esc(meta) + "</div>" +
+          '<div class="shop-acts">' +
+            '<button class="act" data-act="go">地图上看</button>' +
+            '<button class="act nav" data-act="nav">导航过去</button>' +
+            '<button class="act pick' + (isPicked(d.key) ? " on" : "") + '" data-act="pick">' +
+              (isPicked(d.key) ? "已加入" : "＋ 路线") + "</button>" +
+          "</div>" +
+        "</div>" +
+        (distTxt ? '<div class="shop-d"><b>' + distTxt + "</b><span>" + distLbl + "</span></div>" : "") +
+        "</div>";
+    }).join("");
+  }
+
+  function drawAllPins() {
+    if (!mapObj) return;
+    try { mapObj.clearMap(); } catch (e) {}
+    var mk = [];
+    buildShops().forEach(function (s) {
+      if (!s.pt) return;
+      mk.push(new AMap.Marker({
+        position: [s.pt[1], s.pt[0]],
+        content: '<div class="amap-dot"></div>',
+        offset: new AMap.Pixel(-5, -5),
+        zIndex: 100
+      }));
+    });
+    if (mk.length) {
+      try {
+        mapObj.add(mk);
+        mapObj.setFitView(mk, false, [50, 50, 50, 50], 14);
+      } catch (e) {}
+    }
+    $("mapTitle").textContent = "全部点位";
+    $("mapStat").textContent = mk.length + " 个有坐标";
+  }
+
+  function shopByKey(k) {
+    var all = buildShops();
+    for (var i = 0; i < all.length; i++) if (all[i].key === k) return all[i];
+    return null;
+  }
+
+  function drawShop(shop) {
+    if (!mapObj || !shop.pt) return;
+    try { mapObj.clearMap(); } catch (e) {}
+
+    var overlays = [new AMap.Marker({
+      position: [shop.pt[1], shop.pt[0]],
+      content: '<div class="amap-pin" style="width:38px;height:38px;background:#A6392B;line-height:32px">店</div>',
+      offset: new AMap.Pixel(-19, -19),
+      zIndex: 120
+    })];
+
+    if (myPos) {
+      overlays.push(new AMap.Marker({
+        position: myPos,
+        content: '<div class="amap-me"></div>',
+        offset: new AMap.Pixel(-9, -9),
+        zIndex: 130
+      }));
+    }
+
+    try {
+      mapObj.add(overlays);
+      mapObj.setZoomAndCenter(myPos ? 15 : 16, [shop.pt[1], shop.pt[0]]);
+    } catch (e) {}
+
+    $("mapTitle").textContent = shop.name;
+    var md = myDist(shop);
+    $("mapStat").textContent = md !== null
+      ? "距我 " + md.toFixed(1) + " km"
+      : (shop.dist !== null ? "距西安站 " + shop.dist + " km" : "");
+
+  }
+
+  /* ---------- 手机全屏地图 ---------- */
+  function resizeMap() {
+    setTimeout(function () {
+      try { if (mapObj && mapObj.resize) mapObj.resize(); } catch (e) {}
+      try { window.dispatchEvent(new Event("resize")); } catch (e) {}
+    }, 60);
+  }
+
+  function enterMapMode() {
+    if (window.innerWidth >= 900) return;
+    if (document.body.classList.contains("map-mode")) return;
+    document.body.classList.add("map-mode");
+    resizeMap();
+  }
+
+  function exitMapMode() {
+    if (!document.body.classList.contains("map-mode")) return;
+    document.body.classList.remove("map-mode");
+    resizeMap();
+  }
+
+  /* 交给手机上的地图 App 去导航 */
+  function openInApp() {
+    var shop = activeShop ? shopByKey(activeShop) : null;
+
+    if (!shop || !shop.pt) {
+      $("navPanel").hidden = false;
+      $("navTitle").textContent = "先选一家店";
+      $("navMeta").textContent = "";
+      $("navSteps").innerHTML = '<p class="nav-tip">先在列表里点任意一家的「地图上看」，再点「App 导航」。这样才有确定的终点。</p>';
+      return;
+    }
+
+    var lat = shop.pt[0];
+    var lng = shop.pt[1];
+    var name = encodeURIComponent(shop.name);
+    var mode = navMode === "drive" ? "car" : "walk";
+
+    // 高德 URI：装了 App 就直接唤起并开始导航，没装会落到网页版
+    var url = "https://uri.amap.com/navigation?to=" + lng + "," + lat + "," + name +
+      "&mode=" + mode + "&callnative=1&coordinate=gaode&src=xianfoodmap";
+
+    window.open(url, "_blank");
+  }
+
+  function focusShop(key, thenNav) {
+    activeShop = key;
+    renderShops();
+    var shop = shopByKey(key);
+    if (!shop) return;
+
+    if (window.innerWidth < 900) {
+      enterMapMode();
+      setTimeout(function () { doFocusShop(shop, thenNav); }, 150);
+    } else {
+      doFocusShop(shop, thenNav);
+    }
+  }
+
+  function doFocusShop(shop, thenNav) {
+    if (shop.pt) {
+      drawShop(shop);
+      if (thenNav) startRoute(shop);
+      return;
+    }
+
+    // 没有静态点位：用地名搜索一次，拿到真实坐标
+    $("mapTitle").textContent = shop.name;
+    $("mapStat").textContent = "正在定位…";
+    if (typeof AMap === "undefined") return;
+
+    AMap.plugin("AMap.PlaceSearch", function () {
+      var ps = new AMap.PlaceSearch({ city: "西安", citylimit: true, pageSize: 1 });
+      ps.search(shop.name, function (status, result) {
+        var pois = result && result.poiList && result.poiList.pois;
+        if (status === "complete" && pois && pois.length) {
+          shop.pt = [pois[0].location.lat, pois[0].location.lng];
+          drawShop(shop);
+          if (thenNav) startRoute(shop);
+        } else {
+          $("mapStat").textContent = "没搜到这个点位";
+        }
+      });
+    });
+  }
+
+  /* ---------- 页面内导航 ---------- */
+  var navMode = "walk";
+  var navObj = null;
+
+  function clearRoute() {
+    if (navObj && navObj.clear) { try { navObj.clear(); } catch (e) {} }
+    navObj = null;
+    $("navPanel").hidden = true;
+    $("navSteps").innerHTML = "";
+  }
+
+  function startRoute(shop) {
+    if (!shop.pt) return;
+    if (!myPos) {
+      $("navPanel").hidden = false;
+      $("navTitle").textContent = "先定位";
+      $("navMeta").textContent = "";
+      $("navSteps").innerHTML = '<p class="nav-tip">导航要以你所在的位置为起点。先点右上角「我的位置」，授权之后再点导航。</p>';
+      return;
+    }
+    if (typeof AMap === "undefined") return;
+
+    clearRoute();
+    $("navPanel").hidden = false;
+    $("navTitle").textContent = (navMode === "walk" ? "步行" : "驾车") + " · " + shop.name;
+    $("navMeta").textContent = "";
+    $("navSteps").innerHTML = '<p class="nav-tip">正在算路线…</p>';
+
+    var dest = [shop.pt[1], shop.pt[0]];
+
+    if (navMode === "walk") {
+      AMap.plugin("AMap.Walking", function () {
+        navObj = new AMap.Walking({ map: mapObj, panel: "navSteps", hideMarkers: true });
+        navObj.search(myPos, dest, function (status, result) {
+          if (status === "complete" && result.routes && result.routes.length) {
+            var r = result.routes[0];
+            $("navMeta").textContent = (r.distance / 1000).toFixed(1) + " km · 约 " + Math.round(r.time / 60) + " 分钟";
+          } else {
+            $("navSteps").innerHTML = '<p class="nav-tip">这段路步行算不出来，换「驾车路线」试试。</p>';
+          }
+        });
+      });
+    } else {
+      AMap.plugin("AMap.Driving", function () {
+        navObj = new AMap.Driving({ map: mapObj, panel: "navSteps", policy: 0, hideMarkers: true });
+        navObj.search(myPos, dest, function (status, result) {
+          if (status === "complete" && result.routes && result.routes.length) {
+            var r = result.routes[0];
+            $("navMeta").textContent = (r.distance / 1000).toFixed(1) + " km · 约 " + Math.round(r.time / 60) + " 分钟";
+          } else {
+            $("navSteps").innerHTML = '<p class="nav-tip">这段路驾车算不出来。</p>';
+          }
+        });
+      });
+    }
+  }
+
+  var geoCtrl = null;
+
+  function locateMe() {
+    var btn = $("locBtn");
+    if (!mapObj || typeof AMap === "undefined") {
+      $("sideCount").textContent = "地图没加载，定位用不了。";
+      return;
+    }
+    btn.classList.add("loading");
+    $("locTxt").textContent = "定位中";
+
+    AMap.plugin("AMap.Geolocation", function () {
+      if (!geoCtrl) {
+        geoCtrl = new AMap.Geolocation({
+          enableHighAccuracy: true,
+          timeout: 8000,
+          showButton: false,
+          showMarker: false,
+          showCircle: false,
+          panToLocation: false,
+          zoomToAccuracy: false
+        });
+        mapObj.addControl(geoCtrl);
+      }
+      geoCtrl.getCurrentPosition(function (status, result) {
+        btn.classList.remove("loading");
+        if (status === "complete" && result && result.position) {
+          myPos = [result.position.lng, result.position.lat];
+          btn.classList.add("on");
+          $("locTxt").textContent = "已定位";
+          renderShops();
+          if (activeShop) focusShop(activeShop);
+          else { try { mapObj.setZoomAndCenter(14, myPos); } catch (e) {} }
+          var near = shopFiltered().filter(function (d) {
+            var m = myDist(d);
+            return m !== null && m <= 1;
+          }).length;
+          $("sideCount").textContent = "以你为中心 · " + shopFiltered().length + " 家，1 km 内 " + near + " 家";
+        } else {
+          $("locTxt").textContent = "定位失败";
+          $("sideCount").textContent = "定位没成功：需要允许定位权限，且页面跑在 https 或 localhost。现在可以先用「距站」排序。";
+          setTimeout(function () { $("locTxt").textContent = "我的位置"; }, 3000);
+        }
+      });
+    });
+  }
+
+  /* ---------- 自动排线 ---------- */
+  var COORDS = {
+    1: [0.2, -0.85], 2: [1.0, -0.85], 3: [1.0, -0.9], 4: [1.0, -0.9],
+    5: [1.7, -1.85], 6: [-2.2, -2.6], 7: [-1.9, -2.7], 8: [-1.75, -2.5],
+    9: [-1.7, -2.4], 10: [-1.7, -2.4], 11: [-2.0, -2.4], 12: [-2.1, -2.45],
+    13: [-2.0, -2.5], 14: [-1.9, -2.6], 15: [-1.9, -2.6], 16: [-1.2, -3.1],
+    17: [-1.2, -3.1], 18: [-1.8, -3.0]
+  };
+
+  function pickSlotByHour() {
+    var h = new Date().getHours();
+    if (h >= 6 && h < 11) return "morning";
+    if (h >= 11 && h < 14) return "noon";
+    if (h >= 14 && h < 17) return "afternoon";
+    if (h >= 17 && h < 20) return "evening";
+    return "late";
+  }
+
+  function catKey(t) {
+    if (t.indexOf("泡馍") > -1) return "泡馍";
+    if (t.indexOf("凉皮") > -1) return "凉皮";
+    if (t.indexOf("肉夹馍") > -1) return "肉夹馍";
+    return t.slice(0, 2);
+  }
+
+  function autoPlan(slotId) {
+    var pool = DATA.filter(function (d) { return d.windows.indexOf(slotId) > -1; });
+    if (!pool.length) return [];
+    var cur = [0, 0], used = {}, picked = [];
+
+    for (var n = 0; n < 4; n++) {
+      var best = null, bestScore = 1e9;
+      for (var k = 0; k < pool.length; k++) {
+        var d = pool[k];
+        if (used[d.id]) continue;
+        var c = COORDS[d.id];
+        if (!c) continue;
+        var dist = Math.hypot(c[0] - cur[0], c[1] - cur[1]);
+        if (n > 0 && dist > 2.0) continue;                    // 第一站之后只在同一片区内走
+        if (Math.hypot(c[0], c[1]) > 4.2) continue;           // 离西安站不超过 4.2 km
+        var hd = catKey(d.type);
+        if (picked.some(function (p) { return catKey(p.d.type) === hd; })) continue; // 同类不重复
+        var score = dist - d.local * 0.8;
+        // 只做早上的（甑糕、糊辣汤），必须排在最前
+        if (slotId === "morning" && d.windows.length === 1) score -= 3;
+        if (score < bestScore) { bestScore = score; best = d; }
+      }
+      if (!best) break;
+      used[best.id] = 1;
+      var from = cur.slice();
+      cur = COORDS[best.id];
+      picked.push({ d: best, from: from, to: cur });
+    }
+    return picked;
+  }
+
+  function renderAutoPlan(slotId) {
+    Array.prototype.forEach.call($("startChips").children, function (c) {
+      c.classList.toggle("on", c.getAttribute("data-start") === slotId);
+    });
+
+    var picked = autoPlan(slotId);
+    if (!picked.length) {
+      $("replanOut").innerHTML = '<p class="replan-meta">这个点没有合适的店，换个时间试试。</p>';
+      return;
+    }
+
+    var nodes = [];
+    var totalKm = 0;
+    picked.forEach(function (p, i) {
+      var km = Math.hypot(p.from[0] - p.to[0], p.from[1] - p.to[1]);
+      totalKm += km;
+      var way = km < 1.2 ? "步行 " + km.toFixed(1) : "打车 " + km.toFixed(1);
+      if (i > 0) nodes.push('<span class="rr-arrow">' + way + ' km →</span>');
+      nodes.push('<span class="rr-node"><b>' + (i + 1) + "</b>" + esc(p.d.name) + "</span>");
+    });
+    var back = Math.hypot(picked[picked.length - 1].to[0], picked[picked.length - 1].to[1]);
+    totalKm += back;
+    nodes.push('<span class="rr-arrow">' + (back < 1.2 ? "步行 " : "打车 ") + back.toFixed(1) + " km 回站</span>");
+
+    var hours = Math.round((picked.length * 0.8 + totalKm * 0.12) * 10) / 10;
+    $("replanOut").innerHTML =
+      '<div class="replan-route">' + nodes.join("") + "</div>" +
+      '<p class="replan-meta">' + picked.length + " 站，绕行约 " + totalKm.toFixed(1) +
+      " km，含吃的时间约 " + hours + " 小时。机器排的，只保证不跨片区和此刻有营业，具体吃哪家还得看排队。</p>";
+  }
+
+
+  /* ---------- 选点组路线 ---------- */
+  var picked = [];
+
+  function isPicked(k) { return picked.indexOf(k) > -1; }
+
+  function renderPickBar() {
+    var bar = $("pickBar");
+    if (!picked.length) { bar.hidden = true; return; }
+    bar.hidden = false;
+    $("pickCount").textContent = "已选 " + picked.length + " 家";
+  }
+
+  function togglePick(key) {
+    var i = picked.indexOf(key);
+    if (i > -1) picked.splice(i, 1); else picked.push(key);
+    renderPickBar();
+    renderShops();
+  }
+
+  function routeLen(order, startPt) {
+    var len = 0;
+    var prev = [startPt[1], startPt[0]];   // myPos 是 [lng,lat]，统一成 [lat,lng]
+    for (var i = 0; i < order.length; i++) {
+      len += distKm(prev, order[i].pt);
+      prev = order[i].pt;
+    }
+    return len;
+  }
+
+  function twoOpt(order, startPt) {
+    var n = order.length;
+    if (n < 3) return order.slice();
+    var best = order.slice(), bestLen = routeLen(best, startPt);
+    var improved = true, guard = 0;
+    while (improved && guard++ < 120) {
+      improved = false;
+      for (var i = 0; i < n - 1; i++) {
+        for (var j = i + 1; j < n; j++) {
+          var cand = best.slice(0, i).concat(best.slice(i, j + 1).reverse(), best.slice(j + 1));
+          var l = routeLen(cand, startPt);
+          if (l < bestLen - 1e-6) { best = cand; bestLen = l; improved = true; }
+        }
+      }
+    }
+    return best;
+  }
+
+  function nearestOrder(shops, startPt) {
+    var rest = shops.slice(), order = [];
+    var cur = [startPt[1], startPt[0]];
+    while (rest.length) {
+      var bi = 0, bd = 1e9;
+      for (var i = 0; i < rest.length; i++) {
+        var d = distKm(cur, rest[i].pt);
+        if (d < bd) { bd = d; bi = i; }
+      }
+      var p = rest.splice(bi, 1)[0];
+      order.push(p);
+      cur = p.pt;
+    }
+    return order;
+  }
+
+  function ensurePoints(shops, cb) {
+    var need = shops.filter(function (s) { return !s.pt; });
+    if (!need.length || typeof AMap === "undefined") { cb(); return; }
+    var i = 0;
+    (function next() {
+      if (i >= need.length) { cb(); return; }
+      var sh = need[i++];
+      AMap.plugin("AMap.PlaceSearch", function () {
+        var ps = new AMap.PlaceSearch({ city: "西安", citylimit: true, pageSize: 1 });
+        ps.search(sh.name, function (st, res) {
+          var pois = res && res.poiList && res.poiList.pois;
+          if (st === "complete" && pois && pois.length) {
+            sh.pt = [pois[0].location.lat, pois[0].location.lng];
+          }
+          next();
+        });
+      });
+    })();
+  }
+
+  function planPicked() {
+    if (window.innerWidth < 900) {
+      enterMapMode();
+      setTimeout(doPlan, 150);
+    } else {
+      doPlan();
+    }
+  }
+
+  function doPlan() {
+    var all = picked.map(shopByKey).filter(Boolean);
+    if (all.length < 2) {
+      $("navPanel").hidden = false;
+      $("navTitle").textContent = "至少选两家";
+      $("navMeta").textContent = "";
+      $("navSteps").innerHTML = '<p class="nav-tip">在列表里点「加入路线」，选两家以上再规划。</p>';
+      return;
+    }
+    if (!myPos) {
+      $("navPanel").hidden = false;
+      $("navTitle").textContent = "先定位";
+      $("navMeta").textContent = "";
+      $("navSteps").innerHTML = '<p class="nav-tip">多点路线从你所在的位置出发。先点右上角「我的位置」授权。</p>';
+      return;
+    }
+
+    $("navPanel").hidden = false;
+    $("navTitle").textContent = "正在规划 " + all.length + " 家…";
+    $("navMeta").textContent = "";
+    $("navSteps").innerHTML = '<p class="nav-tip">先把没有点位的店在地图上找出来，再算顺序。</p>';
+
+    ensurePoints(all, function () {
+      var usable = all.filter(function (s) { return s.pt; });
+      var lost = all.length - usable.length;
+      if (usable.length < 2) {
+        $("navTitle").textContent = "点位不够";
+        $("navSteps").innerHTML = '<p class="nav-tip">选中的店里有 ' + lost + ' 家在地图上找不到，换几家试试。</p>';
+        return;
+      }
+      var order = twoOpt(nearestOrder(usable, myPos), myPos);
+      drawMultiRoute(order, lost);
+    });
+  }
+
+  function drawMultiRoute(order, lost) {
+    if (!mapObj) return;
+    try { mapObj.clearMap(); } catch (e) {}
+
+    var pts = [myPos].concat(order.map(function (s) { return [s.pt[1], s.pt[0]]; }));
+
+    try {
+      mapObj.add(new AMap.Marker({
+        position: myPos,
+        content: '<div class="amap-me"></div>',
+        offset: new AMap.Pixel(-9, -9),
+        zIndex: 140
+      }));
+    } catch (e) {}
+
+    order.forEach(function (s, i) {
+      try {
+        mapObj.add(new AMap.Marker({
+          position: [s.pt[1], s.pt[0]],
+          content: '<div class="amap-pin" style="width:32px;height:32px;background:#A6392B;line-height:27px">' + (i + 1) + "</div>",
+          offset: new AMap.Pixel(-16, -16),
+          zIndex: 130
+        }));
+      } catch (e) {}
+    });
+
+    var segDist = [];
+    var total = 0, totalTime = 0, i = 0;
+
+    (function step() {
+      if (i >= pts.length - 1) { finish(); return; }
+      var a = pts[i], b = pts[i + 1];
+      var svc = navMode === "walk"
+        ? new AMap.Walking({ hideMarkers: true })
+        : new AMap.Driving({ hideMarkers: true, policy: 0 });
+
+      svc.search(a, b, function (status, result) {
+        if (status === "complete" && result.routes && result.routes.length) {
+          var r = result.routes[0];
+          var path = [];
+          (r.steps || []).forEach(function (st) {
+            (st.path || []).forEach(function (pp) { path.push([pp.lng, pp.lat]); });
+          });
+          if (path.length) {
+            try {
+              mapObj.add(new AMap.Polyline({
+                path: path,
+                strokeColor: "#2A5560",
+                strokeWeight: 4,
+                strokeOpacity: 0.85,
+                lineJoin: "round",
+                zIndex: 90
+              }));
+            } catch (e) {}
+          }
+          segDist.push(r.distance);
+          total += r.distance;
+          totalTime += r.time;
+        } else {
+          segDist.push(null);
+        }
+        i++;
+        step();
+      });
+    })();
+
+    function finish() {
+      try {
+        mapObj.setFitView(null, false, [60, 60, 60, 60], 15);
+      } catch (e) {}
+
+      $("mapTitle").textContent = order.length + " 家串联";
+      $("mapStat").textContent = (total / 1000).toFixed(1) + " km";
+      $("navTitle").textContent = (navMode === "walk" ? "步行" : "驾车") + " · " + order.length + " 家串联";
+      $("navMeta").textContent = (total / 1000).toFixed(1) + " km · 约 " + Math.round(totalTime / 60) + " 分钟";
+
+      var html = '<div class="seq">';
+      html += '<div class="seq-i seq-start"><b>起</b><span>我的位置</span><em></em></div>';
+      order.forEach(function (s, idx) {
+        var d = segDist[idx];
+        html += '<div class="seq-i"><b>' + (idx + 1) + "</b><span>" + esc(s.name) + "</span><em>" +
+          (d !== null ? (d / 1000).toFixed(1) + " km" : "—") + "</em></div>";
+      });
+      html += "</div>";
+      if (lost) html += '<p class="nav-tip" style="margin-top:8px">有 ' + lost + " 家在地图上找不到点位，已跳过。</p>";
+      $("navSteps").innerHTML = html;
+    }
+  }
+
+  /* ---------- 侧边栏事件 ---------- */
+  $("timeChips").innerHTML = '<button class="chip on" data-t="">不限</button>' +
+    SLOTS.map(function (s) {
+      return '<button class="chip" data-t="' + s.id + '">' + esc(s.label) + "</button>";
+    }).join("");
+
+  $("timeChips").addEventListener("click", function (e) {
+    var b = e.target.closest("[data-t]");
+    if (!b) return;
+    shopState.slot = b.getAttribute("data-t");
+    Array.prototype.forEach.call($("timeChips").children, function (c) {
+      c.classList.toggle("on", c.getAttribute("data-t") === shopState.slot);
+    });
+    renderShops();
+  });
+
+  $("catChips").innerHTML = SHOP_CATS.map(function (c) {
+    return '<button class="chip' + (c.id === "all" ? " on" : "") + '" data-c="' + c.id + '">' +
+      esc(c.name) + "</button>";
+  }).join("");
+
+  $("catChips").addEventListener("click", function (e) {
+    var b = e.target.closest("[data-c]");
+    if (!b) return;
+    shopState.cat = b.getAttribute("data-c");
+    Array.prototype.forEach.call($("catChips").children, function (c) {
+      c.classList.toggle("on", c.getAttribute("data-c") === shopState.cat);
+    });
+    renderShops();
+  });
+
+  $("shopSearch").addEventListener("input", function () {
+    shopState.q = this.value.trim().toLowerCase();
+    renderShops();
+  });
+
+  $("shopList").addEventListener("click", function (e) {
+    var el = e.target.closest("[data-key]");
+    if (!el) return;
+    var key = el.getAttribute("data-key");
+    var actBtn = e.target.closest("[data-act]");
+    if (actBtn) {
+      var act = actBtn.getAttribute("data-act");
+      if (act === "nav") { e.stopPropagation(); focusShop(key, true); return; }
+      if (act === "pick") { e.stopPropagation(); togglePick(key); return; }
+    }
+    focusShop(key, false);
+  });
+
+  function setNavMode(m) {
+    navMode = m;
+    $("modeWalk").classList.toggle("on", m === "walk");
+    $("modeDrive").classList.toggle("on", m === "drive");
+    if (activeShop) {
+      var sp = shopByKey(activeShop);
+      if (sp && sp.pt) startRoute(sp);
+    }
+  }
+  $("modeWalk").addEventListener("click", function () { setNavMode("walk"); });
+  $("modeDrive").addEventListener("click", function () { setNavMode("drive"); });
+  $("modeClear").addEventListener("click", function () {
+    clearRoute();
+    var sp = activeShop ? shopByKey(activeShop) : null;
+    if (sp) drawShop(sp);
+  });
+  $("navClose").addEventListener("click", clearRoute);
+
+  $("pickGo").addEventListener("click", planPicked);
+  $("pickClear").addEventListener("click", function () {
+    picked = [];
+    renderPickBar();
+    renderShops();
+    clearRoute();
+    drawAllPins();
+  });
+
+  $("modeApp").addEventListener("click", openInApp);
+
+  $("mapOpen").addEventListener("click", enterMapMode);
+  $("mapBack").addEventListener("click", exitMapMode);
+
+  $("locBtn").addEventListener("click", locateMe);
+
+  /* ---------- init ---------- */
+  initMap();
+  render();
+  renderShops();
+  drawAllPins();
+
+
+})();
+</script>
+</body>
+</html>

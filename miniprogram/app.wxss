@@ -1,0 +1,47 @@
+page {
+  --paper: #F6F1E7;
+  --card: #FFFCF6;
+  --ink: #241F1A;
+  --ink-2: #5B5145;
+  --ink-3: #8A7E6C;
+  --red: #A6392B;
+  --jade: #2F5D57;
+  --dawn: #2A5560;
+  --line: #E2D8C6;
+  --line-2: #EAE1D2;
+
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 28rpx;
+}
+
+.page {
+  padding: 0 24rpx 40rpx;
+  box-sizing: border-box;
+}
+
+.chip {
+  display: inline-block;
+  padding: 10rpx 22rpx;
+  margin-right: 12rpx;
+  border-radius: 999rpx;
+  border: 1rpx solid var(--line);
+  background: var(--card);
+  color: var(--ink-2);
+  font-size: 24rpx;
+  line-height: 1.2;
+}
+
+.chip.on {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #FBF6EC;
+}
+
+.empty {
+  padding: 60rpx 0;
+  text-align: center;
+  color: var(--ink-3);
+  font-size: 26rpx;
+}

@@ -1,0 +1,159 @@
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+  padding: 20rpx 0 12rpx;
+}
+
+.search {
+  flex: 1;
+  height: 74rpx;
+  padding: 0 24rpx;
+  border-radius: 16rpx;
+  border: 1rpx solid var(--line);
+  background: var(--card);
+  font-size: 26rpx;
+}
+
+.ph { color: #B3A896; }
+
+.loc {
+  flex: 0 0 auto;
+  padding: 0 24rpx;
+  height: 74rpx;
+  line-height: 74rpx;
+  border-radius: 16rpx;
+  border: 1rpx solid var(--line);
+  background: var(--card);
+  color: var(--ink-2);
+  font-size: 24rpx;
+}
+
+.loc.on {
+  background: var(--dawn);
+  border-color: var(--dawn);
+  color: #F2F8F7;
+}
+
+.frow {
+  display: flex;
+  align-items: center;
+  padding: 8rpx 0;
+}
+
+.fl {
+  flex: 0 0 72rpx;
+  font-size: 22rpx;
+  color: var(--ink-3);
+  letter-spacing: 2rpx;
+}
+
+.chips {
+  flex: 1;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: row;
+}
+
+.count {
+  padding: 16rpx 4rpx 8rpx;
+  font-size: 22rpx;
+  color: var(--ink-3);
+  letter-spacing: 1rpx;
+}
+
+.item {
+  display: flex;
+  gap: 16rpx;
+  padding: 22rpx 4rpx;
+  border-bottom: 1rpx solid var(--line-2);
+}
+
+.item:active { background: #FBF7EF; }
+
+.r { flex: 1; min-width: 0; }
+
+.n {
+  font-size: 29rpx;
+  font-weight: 600;
+  line-height: 1.4;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 10rpx;
+}
+
+.tag {
+  font-size: 19rpx;
+  font-weight: 400;
+  color: var(--ink-3);
+  border: 1rpx solid var(--line);
+  border-radius: 6rpx;
+  padding: 0 8rpx;
+}
+
+.tag.ok {
+  color: var(--jade);
+  border-color: #CBDCD8;
+  background: #EEF5F3;
+}
+
+.m {
+  margin-top: 6rpx;
+  font-size: 22rpx;
+  color: var(--ink-3);
+  line-height: 1.5;
+}
+
+.note {
+  margin-top: 6rpx;
+  font-size: 23rpx;
+  color: var(--ink-2);
+  line-height: 1.55;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.acts {
+  display: flex;
+  gap: 12rpx;
+  margin-top: 12rpx;
+}
+
+.act {
+  font-size: 21rpx;
+  padding: 6rpx 18rpx;
+  border-radius: 8rpx;
+  border: 1rpx solid var(--line);
+  background: #F8F3E8;
+  color: var(--ink-2);
+}
+
+.act.nav {
+  background: #EDF4F4;
+  border-color: #CBDFE0;
+  color: var(--dawn);
+}
+
+.d {
+  flex: 0 0 auto;
+  text-align: right;
+  padding-top: 4rpx;
+}
+
+.dv {
+  display: block;
+  font-size: 26rpx;
+  font-weight: 600;
+  color: var(--dawn);
+  font-variant-numeric: tabular-nums;
+}
+
+.dl {
+  display: block;
+  font-size: 19rpx;
+  color: var(--ink-3);
+  margin-top: 2rpx;
+}

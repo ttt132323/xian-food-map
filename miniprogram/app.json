@@ -1,0 +1,23 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/map/map"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#F6F1E7",
+    "navigationBarTitleText": "西安吃在哪",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#F6F1E7"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "用来算你到各家店的距离、把路线画在地图上"
+    }
+  },
+  "requiredPrivateInfos": [
+    "getLocation"
+  ],
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}
