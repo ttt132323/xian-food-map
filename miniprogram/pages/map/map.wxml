@@ -22,6 +22,10 @@
     </view>
     <view class="acts" wx:if="{{!areaList.length}}">
       <view class="btn" bindtap="navTo">导航过去</view>
+      <view class="btn ghost" bindtap="copyName">复制店名</view>
+    </view>
+    <view class="acts" wx:if="{{areaList.length}}">
+      <view class="btn ghost wide" bindtap="copyArea">复制这一片的店名</view>
     </view>
   </view>
 

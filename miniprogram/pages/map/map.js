@@ -189,5 +189,28 @@ Page({
       latitude: s.la, longitude: s.ln,
       name: s.n, address: s.a, scale: 17
     });
+  },
+
+  /* 小程序跳不了美团（微信不让跳外部网页），只能复制店名让用户自己去搜 */
+  copyName() {
+    const s = this.data.cur;
+    if (!s) return;
+    wx.setClipboardData({
+      data: s.n,
+      success: function () {
+        wx.showToast({ title: "已复制，去美团搜", icon: "none", duration: 2000 });
+      }
+    });
+  },
+
+  copyArea() {
+    const list = this.data.areaList || [];
+    if (!list.length) return;
+    wx.setClipboardData({
+      data: list.join("\n"),
+      success: function () {
+        wx.showToast({ title: "已复制 " + list.length + " 个店名", icon: "none", duration: 2000 });
+      }
+    });
   }
 });
