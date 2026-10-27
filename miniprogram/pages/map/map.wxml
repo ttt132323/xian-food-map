@@ -5,21 +5,20 @@
        longitude="{{lng}}"
        scale="{{scale}}"
        markers="{{markers}}"
+       include-points="{{incPts}}"
        show-location="{{true}}"
        enable-zoom="{{true}}"
        enable-scroll="{{true}}"
        bindmarkertap="onMarker"></map>
 
-  <view class="tip" wx:if="{{markers.length === 0}}">
-    这家没有坐标，回列表用「导航过去」搜吧
-  </view>
+  <view class="tool" bindtap="showAll">全部</view>
 
   <view class="card" wx:if="{{cur}}">
     <view class="cn">{{cur.n}}</view>
     <view class="cm">{{cur.a}} · {{cur.t}}</view>
+    <view class="cd" wx:if="{{dist}}">{{dist}}</view>
     <view class="acts">
       <view class="btn" bindtap="navTo">导航过去</view>
-      <view class="btn ghost" bindtap="close">收起</view>
     </view>
   </view>
 

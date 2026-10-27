@@ -134,7 +134,15 @@ Page({
     const s = this.data.list[e.currentTarget.dataset.i];
     if (!s) return;
     if (s.la === null) {
-      wx.showToast({ title: '这家没有点位，用导航能搜到', icon: 'none' });
+      wx.showModal({
+        title: s.n,
+        content: '这家只记了名字和大概位置，没有精确坐标，地图上标不出来。\n复制店名，去高德或腾讯地图搜一下就有了。',
+        confirmText: '复制店名',
+        cancelText: '知道了',
+        success: function (r) {
+          if (r.confirm) wx.setClipboardData({ data: s.n });
+        }
+      });
       return;
     }
     wx.navigateTo({ url: '/pages/map/map?name=' + encodeURIComponent(s.n) });
@@ -145,9 +153,10 @@ Page({
     if (!s) return;
     if (s.la === null) {
       wx.showModal({
-        title: '这家没有精确点位',
-        content: '只有 18 家有坐标，其余是从清单里誊的名字。建议复制店名去高德或腾讯地图里搜。',
+        title: s.n,
+        content: '这家只记了名字和大概位置，没有精确坐标，导航算不出来。\n复制店名，去高德或腾讯地图搜一下就有了。',
         confirmText: '复制店名',
+        cancelText: '知道了',
         success: function (r) {
           if (r.confirm) wx.setClipboardData({ data: s.n });
         }
