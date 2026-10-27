@@ -46,6 +46,9 @@ const INDEX = grabArr('INDEX');
 const MARKET = grabArr('MARKET');
 const PTS = grabObj('SHOP_PTS');
 const GEO = grabObj('GEO');
+let GEO2 = {};
+try { GEO2 = grabObj('GEO2'); } catch (e) { GEO2 = {}; }
+Object.keys(GEO2).forEach(function (k) { if (!GEO[k]) GEO[k] = GEO2[k]; });
 
 const out = [];
 const seen = {};
