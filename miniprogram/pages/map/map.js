@@ -114,10 +114,8 @@ Page({
         lat = hit.la;
         lng = hit.ln;
         scale = 16;
-        // 关键：只看这家周边 300 米，不然 141 个点糊成一片
-        list = list.filter(function (s) {
-          return distKm(hit.la, hit.ln, s.la, s.ln) <= 0.3;
-        });
+        // 只显示这一家，别的不打扰
+        list = [hit];
       }
     }
 
