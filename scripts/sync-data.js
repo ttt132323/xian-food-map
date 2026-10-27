@@ -49,6 +49,9 @@ const GEO = grabObj('GEO');
 let GEO2 = {};
 try { GEO2 = grabObj('GEO2'); } catch (e) { GEO2 = {}; }
 Object.keys(GEO2).forEach(function (k) { if (!GEO[k]) GEO[k] = GEO2[k]; });
+let GEO3 = {};
+try { GEO3 = grabObj('GEO3'); } catch (e) { GEO3 = {}; }
+Object.keys(GEO3).forEach(function (k) { if (!GEO[k]) GEO[k] = GEO3[k]; });
 
 const out = [];
 const seen = {};
