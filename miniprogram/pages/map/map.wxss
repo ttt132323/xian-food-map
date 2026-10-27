@@ -53,6 +53,21 @@
   font-weight: 500;
 }
 
+.alist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10rpx;
+  margin-top: 16rpx;
+}
+
+.ai {
+  font-size: 22rpx;
+  color: var(--ink-2);
+  background: #F5F0E4;
+  border-radius: 6rpx;
+  padding: 6rpx 14rpx;
+}
+
 .acts {
   margin-top: 20rpx;
 }

@@ -15,46 +15,90 @@ function distKm(lat1, lng1, lat2, lng2) {
   return 2 * R * Math.asin(Math.sqrt(x));
 }
 
+/* 把同一片区的店合并成一个点，避免灰点堆成一坨 */
+function buildMarkers() {
+  const pts = points();
+  const exact = pts.filter(function (s) { return s.lv === 1; });
+  const loose = pts.filter(function (s) { return s.lv !== 1; });
+
+  const groups = {};
+  loose.forEach(function (s) {
+    const key = (s.a || "未知").split(" · ")[0];
+    if (!groups[key]) groups[key] = [];
+    groups[key].push(s);
+  });
+
+  const markers = [];
+  exact.forEach(function (s) {
+    markers.push({
+      id: markers.length,
+      latitude: s.la,
+      longitude: s.ln,
+      width: 26,
+      height: 26,
+      iconPath: "/images/pin.png",
+      shopName: s.n,
+      isArea: false,
+      callout: {
+        content: s.n,
+        color: "#241F1A",
+        fontSize: 11,
+        borderRadius: 6,
+        padding: 6,
+        bgColor: "#FFFCF6",
+        display: "BYCLICK"
+      }
+    });
+  });
+
+  Object.keys(groups).forEach(function (key) {
+    const arr = groups[key];
+    // 用组内第一家店的坐标当这个片区的位置
+    const anchor = arr[0];
+    markers.push({
+      id: markers.length,
+      latitude: anchor.la,
+      longitude: anchor.ln,
+      width: 22,
+      height: 22,
+      iconPath: "/images/dot.png",
+      shopName: "",
+      isArea: true,
+      areaName: key,
+      areaShops: arr.map(function (s) { return s.n; }),
+      callout: {
+        content: key + " · " + arr.length + " 家",
+        color: "#5B5145",
+        fontSize: 11,
+        borderRadius: 6,
+        padding: 6,
+        bgColor: "#FFFCF6",
+        display: "BYCLICK"
+      }
+    });
+  });
+
+  return markers;
+}
+
 Page({
   data: {
     lat: 34.267,
     lng: 108.948,
-    scale: 14,
+    scale: 13,
     markers: [],
-    incPts: [],
     cur: null,
-    dist: ''
+    dist: "",
+    areaList: []
   },
 
   onLoad(q) {
-    const pts = points();
-    const markers = pts.map(function (s, i) {
-      // lv=1 店门口（红pin），lv=0 街区中心（灰点）
-      const exact = s.lv === 1;
-      return {
-        id: i,
-        latitude: s.la,
-        longitude: s.ln,
-        width: exact ? 26 : 20,
-        height: exact ? 26 : 20,
-        iconPath: exact ? '/images/pin.png' : '/images/dot.png',
-        callout: {
-          content: s.n,
-          color: '#241F1A',
-          fontSize: 11,
-          borderRadius: 6,
-          padding: 6,
-          bgColor: '#FFFCF6',
-          display: 'BYCLICK'
-        }
-      };
-    });
-
+    const markers = buildMarkers();
     const my = app.globalData;
 
     let lat = 34.267;
     let lng = 108.948;
-    let scale = 14;
+    let scale = 13;          // 默认宽一点，能看见一片
     let cur = null;
 
     if (my.myLat !== null) {
@@ -64,79 +108,86 @@ Page({
 
     if (q && q.name) {
       const n = decodeURIComponent(q.name);
-      for (let i = 0; i < pts.length; i++) {
-        if (pts[i].n === n) {
-          cur = pts[i];
-          lat = cur.la;
-          lng = cur.ln;
-          scale = 15;
-          break;
-        }
+      const hit = points().filter(function (s) { return s.n === n; })[0];
+      if (hit) {
+        cur = hit;
+        lat = hit.la;
+        lng = hit.ln;
+        scale = 14;          // 看单店时也不用 15，留点周边
       }
     }
 
     this.setData({
-      lat: lat,
-      lng: lng,
-      scale: scale,
-      markers: markers,
-      incPts: [],
-      cur: cur,
-      dist: this.distText(cur)
+      lat: lat, lng: lng, scale: scale,
+      markers: markers, cur: cur,
+      dist: this.distText(cur), areaList: []
     });
 
-    if (cur) {
-      wx.setNavigationBarTitle({ title: cur.n });
-    } else {
-      wx.setNavigationBarTitle({ title: '附近 ' + pts.length + ' 家' });
-    }
+    wx.setNavigationBarTitle({
+      title: cur ? cur.n : "附近 " + markers.length + " 个点"
+    });
   },
 
   distText(s) {
-    if (!s || s.la === null) return '';
+    if (!s || s.la === null) return "";
     const my = app.globalData;
     if (my.myLat !== null) {
-      return '距我 ' + distKm(my.myLat, my.myLng, s.la, s.ln).toFixed(1) + ' km';
+      return "距我 " + distKm(my.myLat, my.myLng, s.la, s.ln).toFixed(1) + " km";
     }
     if (s.d !== null && s.d !== undefined) {
-      return '距西安站 ' + Number(s.d).toFixed(1) + ' km';
+      return "距西安站 " + Number(s.d).toFixed(1) + " km";
     }
-    return '';
+    return "";
   },
 
   onMarker(e) {
-    const s = points()[e.detail.markerId];
+    const m = this.data.markers.filter(function (x) { return x.id === e.detail.markerId; })[0];
+    if (!m) return;
+
+    if (m.isArea) {
+      this.setData({
+        cur: {
+          n: m.areaName + " 一带",
+          a: "这一片没有精确坐标",
+          t: m.areaShops.length + " 家店",
+          la: m.latitude,
+          ln: m.longitude
+        },
+        areaList: m.areaShops,
+        lat: m.latitude,
+        lng: m.longitude,
+        scale: this.data.scale,
+        dist: ""
+      });
+      wx.setNavigationBarTitle({ title: m.areaName });
+      return;
+    }
+
+    const s = points().filter(function (x) { return x.n === m.shopName; })[0];
     if (!s) return;
     this.setData({
-      cur: s,
-      lat: s.la,
-      lng: s.ln,
-      scale: 15,
-      incPts: [],
+      cur: s, areaList: [],
+      lat: s.la, lng: s.ln, scale: 15,
       dist: this.distText(s)
     });
     wx.setNavigationBarTitle({ title: s.n });
   },
 
   showAll() {
-    const pts = points();
+    const markers = this.data.markers;
     this.setData({
-      incPts: pts.map(function (s) { return { latitude: s.la, longitude: s.ln }; }),
-      cur: null,
-      dist: ''
+      incPts: markers.map(function (m) { return { latitude: m.latitude, longitude: m.longitude }; }),
+      cur: null, dist: "", areaList: []
     });
-    wx.setNavigationBarTitle({ title: '全部 ' + pts.length + ' 家' });
+    wx.setNavigationBarTitle({ title: "全部 " + markers.length + " 个点" });
   },
 
   navTo() {
     const s = this.data.cur;
     if (!s) return;
     wx.openLocation({
-      latitude: s.la,
-      longitude: s.ln,
-      name: s.n,
-      address: s.a,
-      scale: 17
+      latitude: s.la, longitude: s.ln,
+      name: s.n, address: s.a, scale: 17
     });
   }
 });

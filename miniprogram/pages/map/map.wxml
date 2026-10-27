@@ -17,7 +17,10 @@
     <view class="cn">{{cur.n}}</view>
     <view class="cm">{{cur.a}} · {{cur.t}}</view>
     <view class="cd" wx:if="{{dist}}">{{dist}}</view>
-    <view class="acts">
+    <view class="alist" wx:if="{{areaList.length}}">
+      <text class="ai" wx:for="{{areaList}}" wx:key="*this">{{item}}</text>
+    </view>
+    <view class="acts" wx:if="{{!areaList.length}}">
       <view class="btn" bindtap="navTo">导航过去</view>
     </view>
   </view>
