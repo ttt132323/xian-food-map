@@ -22,3 +22,6 @@ android/.idea/
 android/*.iml
 *.apk
 !dist/*.apk
+
+# 临时脚本与截图
+_*.*
