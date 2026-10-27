@@ -103,19 +103,28 @@ Page({
         dd = Number(s.d).toFixed(1);
         dl = '距站';
       }
-      const openTag = !!slot && s.win && s.win.length > 0;
+      const hasWin = !!(s.win && s.win.length);
+      const openTag = !!slot && hasWin;
       const open = openTag ? s.win.indexOf(slot) > -1 : false;
+      const unkTag = !!slot && !hasWin;
 
       return Object.assign({}, s, {
         dd: dd,
         dl: dl,
         open: open,
         openTag: openTag,
+        unkTag: unkTag,
         k: 's' + i
       });
     });
 
     list.sort(function (a, b) {
+      // 选了时段：知道营业时间的排前面
+      if (slot) {
+        const ua = a.openTag ? 0 : 1;
+        const ub = b.openTag ? 0 : 1;
+        if (ua !== ub) return ua - ub;
+      }
       const va = parseFloat(a.dd) || 99;
       const vb = parseFloat(b.dd) || 99;
       return va - vb;

@@ -90,7 +90,8 @@ Page({
     markers: [],
     cur: null,
     dist: "",
-    areaList: []
+    areaList: [],
+    incPts: []
   },
 
   onLoad(q) {
@@ -130,11 +131,6 @@ Page({
     wx.setNavigationBarTitle({
       title: cur ? cur.n : "附近 " + markers.length + " 个点"
     });
-  },
-
-  /* 点全部时把 141 个点补回来 */
-  resetMarkers() {
-    return buildMarkers(points(), null);
   },
 
   distText(s) {

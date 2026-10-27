@@ -311,6 +311,10 @@
   .shop-d{flex:0 0 auto;text-align:right;font-size:10.5px;color:var(--dawn);font-variant-numeric:tabular-nums;white-space:nowrap}
   .shop-d b{display:block;font-size:12.5px;font-weight:600}
   .shop-d span{font-size:9px;color:var(--ink-3)}
+  .tag-unk{
+    font-size:9.5px;padding:1px 5px;border-radius:4px;margin-left:4px;
+    background:#F0EBE0;color:#A99D8B;font-weight:400;vertical-align:middle;
+  }
   .tag-now{font-size:9px;color:var(--jade);border:1px solid #CBDCD8;background:var(--jade-wash);padding:0 4px;border-radius:3px;font-weight:400}
   .tag-over{font-size:9px;color:var(--ink-3);border:1px solid var(--line);padding:0 4px;border-radius:3px;font-weight:400}
   .shop-nav-btn{
@@ -2776,6 +2780,12 @@
       return true;
     });
     arr.sort(function (a, b) {
+      // 选了时段时，知道营业时间的排前面，未知的沉底
+      if (shopState.slot) {
+        var ua = a.windows.length ? 0 : 1;
+        var ub = b.windows.length ? 0 : 1;
+        if (ua !== ub) return ua - ub;
+      }
       var da = myPos ? (myDist(a) === null ? 99 : myDist(a)) : (a.dist === null ? 99 : a.dist);
       var db = myPos ? (myDist(b) === null ? 99 : myDist(b)) : (b.dist === null ? 99 : b.dist);
       return da - db;
@@ -2800,10 +2810,14 @@
       var distTxt = md !== null ? md.toFixed(1) : (d.dist !== null ? d.dist.toFixed(1) : "");
       var distLbl = md !== null ? "距我" : "距站";
       var tag = "";
-      if (shopState.slot && d.windows.length) {
-        tag = d.windows.indexOf(shopState.slot) > -1
-          ? '<span class="tag-now">开着</span>'
-          : '<span class="tag-over">已过点</span>';
+      if (shopState.slot) {
+        if (!d.windows.length) {
+          tag = '<span class="tag-unk">时间未知</span>';
+        } else {
+          tag = d.windows.indexOf(shopState.slot) > -1
+            ? '<span class="tag-now">开着</span>'
+            : '<span class="tag-over">已过点</span>';
+        }
       }
       var meta = [d.area.split(" · ")[0], d.type].filter(Boolean).join(" · ");
       return '<div class="shop' + (activeShop === d.key ? " on" : "") + '" data-key="' + d.key + '">' +
