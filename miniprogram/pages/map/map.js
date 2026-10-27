@@ -15,9 +15,9 @@ function distKm(lat1, lng1, lat2, lng2) {
   return 2 * R * Math.asin(Math.sqrt(x));
 }
 
-/* 把同一片区的店合并成一个点，避免灰点堆成一坨 */
-function buildMarkers() {
-  const pts = points();
+/* 把同一片区的店合并成一个点。list 可传子集，cur 用来突出当前店 */
+function buildMarkers(list, cur) {
+  const pts = list || points();
   const exact = pts.filter(function (s) { return s.lv === 1; });
   const loose = pts.filter(function (s) { return s.lv !== 1; });
 
@@ -30,12 +30,13 @@ function buildMarkers() {
 
   const markers = [];
   exact.forEach(function (s) {
+    const isCur = cur && s.n === cur.n;
     markers.push({
       id: markers.length,
       latitude: s.la,
       longitude: s.ln,
-      width: 26,
-      height: 26,
+      width: isCur ? 36 : 24,
+      height: isCur ? 36 : 24,
       iconPath: "/images/pin.png",
       shopName: s.n,
       isArea: false,
@@ -93,13 +94,12 @@ Page({
   },
 
   onLoad(q) {
-    const markers = buildMarkers();
     const my = app.globalData;
-
     let lat = 34.267;
     let lng = 108.948;
-    let scale = 13;          // 默认宽一点，能看见一片
+    let scale = 13;
     let cur = null;
+    let list = points();
 
     if (my.myLat !== null) {
       lat = my.myLat;
@@ -108,14 +108,20 @@ Page({
 
     if (q && q.name) {
       const n = decodeURIComponent(q.name);
-      const hit = points().filter(function (s) { return s.n === n; })[0];
+      const hit = list.filter(function (s) { return s.n === n; })[0];
       if (hit) {
         cur = hit;
         lat = hit.la;
         lng = hit.ln;
-        scale = 14;          // 看单店时也不用 15，留点周边
+        scale = 16;
+        // 关键：只看这家周边 300 米，不然 141 个点糊成一片
+        list = list.filter(function (s) {
+          return distKm(hit.la, hit.ln, s.la, s.ln) <= 0.3;
+        });
       }
     }
+
+    const markers = buildMarkers(list, cur);
 
     this.setData({
       lat: lat, lng: lng, scale: scale,
@@ -126,6 +132,11 @@ Page({
     wx.setNavigationBarTitle({
       title: cur ? cur.n : "附近 " + markers.length + " 个点"
     });
+  },
+
+  /* 点全部时把 141 个点补回来 */
+  resetMarkers() {
+    return buildMarkers(points(), null);
   },
 
   distText(s) {
@@ -174,8 +185,9 @@ Page({
   },
 
   showAll() {
-    const markers = this.data.markers;
+    const markers = buildMarkers(points(), null);
     this.setData({
+      markers: markers,
       incPts: markers.map(function (m) { return { latitude: m.latitude, longitude: m.longitude }; }),
       cur: null, dist: "", areaList: []
     });
