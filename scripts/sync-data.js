@@ -45,9 +45,15 @@ const TABLE = grabArr('TABLE');
 const INDEX = grabArr('INDEX');
 const MARKET = grabArr('MARKET');
 const PTS = grabObj('SHOP_PTS');
+const GEO = grabObj('GEO');
 
 const out = [];
 const seen = {};
+
+function geoOf(name) {
+  const g = GEO[name];
+  return g ? { la: g[0], ln: g[1], lv: g[2] } : { la: null, ln: null, lv: -1 };
+}
 
 DATA.forEach(function (d) {
   seen[d.name] = 1;
@@ -58,8 +64,9 @@ DATA.forEach(function (d) {
     t: d.type,
     c: shopCat(d.type),
     d: d.dist,
-    la: p ? p[0] : null,
-    ln: p ? p[1] : null,
+    la: p ? p[0] : (geoOf(d.name).la),
+    ln: p ? p[1] : (geoOf(d.name).ln),
+    lv: p ? 1 : geoOf(d.name).lv,
     win: d.windows || []
   });
 });
@@ -75,8 +82,9 @@ TABLE.forEach(function (c) {
       t: c.name,
       c: tableCat(c.id),
       d: m ? parseFloat(m[1]) : null,
-      la: null,
-      ln: null,
+      la: geoOf(r.n).la,
+      ln: geoOf(r.n).ln,
+      lv: geoOf(r.n).lv,
       win: []
     });
   });
@@ -102,8 +110,9 @@ INDEX.forEach(function (c) {
       t: c.name,
       c: IDX_CAT[c.id] || 'snack',
       d: null,
-      la: null,
-      ln: null,
+      la: geoOf(r.n).la,
+      ln: geoOf(r.n).ln,
+      lv: geoOf(r.n).lv,
       win: []
     });
   });
@@ -118,8 +127,9 @@ MARKET.forEach(function (m) {
     t: '早市',
     c: 'morning',
     d: m.dist,
-    la: null,
-    ln: null,
+    la: geoOf(m.name).la,
+    ln: geoOf(m.name).ln,
+    lv: geoOf(m.name).lv,
     note: m.go || '',
     win: ['morning']
   });

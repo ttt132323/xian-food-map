@@ -29,13 +29,15 @@ Page({
   onLoad(q) {
     const pts = points();
     const markers = pts.map(function (s, i) {
+      // lv=1 店门口（红pin），lv=0 街区中心（灰点）
+      const exact = s.lv === 1;
       return {
         id: i,
         latitude: s.la,
         longitude: s.ln,
-        width: 26,
-        height: 26,
-        iconPath: '/images/pin.png',
+        width: exact ? 26 : 20,
+        height: exact ? 26 : 20,
+        iconPath: exact ? '/images/pin.png' : '/images/dot.png',
         callout: {
           content: s.n,
           color: '#241F1A',

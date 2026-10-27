@@ -27,7 +27,14 @@
     </scroll-view>
   </view>
 
-  <view class="count">{{countText}}</view>
+  <view class="meta-row">
+    <view class="anchor" bindtap="pickAnchor" hover-class="anchor-hover">
+      <text class="a-l">从</text>
+      <text class="a-v">{{anchorName}}</text>
+      <text class="a-d">▾</text>
+    </view>
+    <text class="count">{{countText}}</text>
+  </view>
 
   <view wx:if="{{list.length === 0}}" class="empty">没有符合条件的店，放宽一下筛选。</view>
 
@@ -39,6 +46,7 @@
         <text class="nm">{{item.n}}</text>
         <text wx:if="{{item.openTag}}" class="tag {{item.open ? 'ok' : 'off'}}">{{item.open ? '开着' : '过点'}}</text>
         <text wx:if="{{item.la === null}}" class="tag off">无点位</text>
+        <text wx:elif="{{item.lv === 0}}" class="tag dim">片区</text>
       </view>
       <view class="m">{{item.a}} · {{item.t}}</view>
     </view>
