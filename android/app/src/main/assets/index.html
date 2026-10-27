@@ -417,6 +417,12 @@
   .nav-steps *{font-size:12px!important;line-height:1.7!important;box-shadow:none!important}
   .nav-steps img,.nav-steps i{max-width:14px;vertical-align:middle}
 
+  .mt-link{
+    display:inline-block;font-size:10px;color:#C08A2E;
+    text-decoration:none;border-bottom:1px dotted #DCC39A;margin-left:4px;
+  }
+  .mt-link:hover{color:#9E6A17;border-bottom-color:#C08A2E}
+
   .shop-acts{display:flex;gap:6px;margin-top:6px}
   .act{
     font-family:inherit;font-size:10px;padding:3px 8px;border-radius:5px;
@@ -1283,7 +1289,7 @@
 
   <footer>
     <b>资料</b>：店名、品类、营业时间来自一位常住西安的朋友（2025 年 4 月）和他自己维护的一份 Excel，我按品类和距离重新排列。<br>
-    <b>不评价</b>：这里只写「这家是吃什么的」，不写好吃不好吃。口味是自己的事，到店先少点，不合口就换一家。<br>
+    <b>不评价</b>：这里只写「这家是吃什么的」，不写好吃不好吃。想看评分评价，点每家的「美团 ↗」自己去看——本页不转载、不存储任何第三方评价。<br>
     <b>坐标</b>：街区级估算，可能偏几百米，用来判断顺不顺路够了。真要导航，点「App 导航」交给手机地图。
   </footer>
 
@@ -2809,7 +2815,9 @@
       return '<div class="shop' + (activeShop === d.key ? " on" : "") + '" data-key="' + d.key + '">' +
         '<div class="shop-r">' +
           '<div class="shop-n">' + esc(d.name) + tag + "</div>" +
-          '<div class="shop-m">' + esc(meta) + "</div>" +
+          '<div class="shop-m">' + esc(meta) +
+            ' <a class="mt-link" href="https://i.meituan.com/s/' + encodeURIComponent(d.name) +
+            '" target="_blank" rel="noopener">美团 ↗</a>' + "</div>" +
           '<div class="shop-acts">' +
             '<button class="act" data-act="go">地图上看</button>' +
             '<button class="act nav" data-act="nav">导航过去</button>' +
