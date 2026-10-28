@@ -1,21 +1,35 @@
-.page { padding: 0 28rpx 60rpx; }
-
-.bar {
-  display: flex;
-  align-items: center;
-  gap: 16rpx;
-  padding: 20rpx 0 16rpx;
+/* 首页 = 顶部地图 + 下面列表，像地图软件的结果页 */
+.page {
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.search {
-  flex: 1;
+/* ---------- 顶部地图 ---------- */
+.map-head {
+  position: relative;
+  width: 100%;
+  height: 34vh;
+  background: #E8E1D4;
+}
+
+.mini-map {
+  width: 100%;
+  height: 100%;
+}
+
+.search-float {
+  position: absolute;
+  top: 20rpx;
+  left: 24rpx;
+  right: 24rpx;
   display: flex;
   align-items: center;
   height: 72rpx;
   padding: 0 20rpx;
   border-radius: 12rpx;
-  background: #FFFFFF;
-  border: 1rpx solid var(--line);
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 4rpx 16rpx rgba(36, 31, 26, 0.12);
+  z-index: 10;
 }
 
 .ico { font-size: 24rpx; margin-right: 10rpx; opacity: .5; }
@@ -24,22 +38,30 @@
 
 .ph { color: #B3A896; }
 
-.loc {
-  flex: 0 0 auto;
-  height: 72rpx;
-  line-height: 72rpx;
-  padding: 0 24rpx;
-  border-radius: 12rpx;
-  background: #FFFFFF;
+.map-expand {
+  position: absolute;
+  right: 24rpx;
+  bottom: 20rpx;
+  padding: 10rpx 22rpx;
+  border-radius: 10rpx;
+  background: rgba(255, 252, 246, 0.95);
   border: 1rpx solid var(--line);
   color: var(--ink-2);
-  font-size: 24rpx;
+  font-size: 21rpx;
+  box-shadow: 0 4rpx 14rpx rgba(36, 31, 26, 0.1);
+  z-index: 10;
 }
 
-.loc.on {
-  background: var(--dawn);
-  border-color: var(--dawn);
-  color: #F2F8F7;
+.me-hover { background: #F0EBE0; }
+
+/* ---------- 列表区 ---------- */
+.body {
+  padding: 16rpx 28rpx 60rpx;
+  background: var(--paper);
+  border-radius: 20rpx 20rpx 0 0;
+  margin-top: -18rpx;
+  position: relative;
+  z-index: 11;
 }
 
 .frow {
@@ -65,7 +87,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 18rpx 0 6rpx;
+  padding: 16rpx 0 4rpx;
 }
 
 .anchor {
@@ -89,7 +111,23 @@
 
 .a-d { font-size: 17rpx; color: var(--red); margin-top: 2rpx; }
 
+.loc {
+  padding: 8rpx 22rpx;
+  border-radius: 8rpx;
+  background: #FFFFFF;
+  border: 1rpx solid var(--line);
+  color: var(--ink-2);
+  font-size: 22rpx;
+}
+
+.loc.on {
+  background: var(--dawn);
+  border-color: var(--dawn);
+  color: #F2F8F7;
+}
+
 .count {
+  padding: 12rpx 0 4rpx;
   font-size: 21rpx;
   color: var(--ink-3);
 }
@@ -97,7 +135,7 @@
 .item {
   display: flex;
   align-items: center;
-  padding: 26rpx 0;
+  padding: 24rpx 0;
   border-bottom: 1rpx solid var(--line-2);
 }
 

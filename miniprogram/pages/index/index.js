@@ -1,5 +1,6 @@
 const data = require('../../utils/data.js');
 const app = getApp();
+const mk = require('../../utils/markers.js');
 
 /* 可以当作「出发点」的地标。不依赖定位权限，选一个就按它排序。 */
 const ANCHORS = [
@@ -31,11 +32,26 @@ Page({
     countText: '',
     located: false,
     anchor: ANCHORS[0],
-    anchorName: ANCHORS[0].n
+    anchorName: ANCHORS[0].n,
+    lat: 34.267,
+    lng: 108.948,
+    scale: 13,
+    markers: []
   },
 
   onLoad() {
+    const my = app.globalData;
+    this.setData({
+      lat: my.myLat !== null ? my.myLat : 34.267,
+      lng: my.myLng !== null ? my.myLng : 108.948,
+      markers: mk.buildMarkers(mk.points(), null)
+    });
     this.refresh();
+  },
+
+  /* 顶部地图太小，点按钮去全屏页 */
+  goFullMap() {
+    wx.navigateTo({ url: '/pages/map/map' });
   },
 
   onSearch(e) {
@@ -141,7 +157,10 @@ Page({
         that.setData({
           located: true,
           anchorName: '我的位置',
-          anchor: { n: '我的位置', short: '距我', lat: res.latitude, lng: res.longitude }
+          anchor: { n: '我的位置', short: '距我', lat: res.latitude, lng: res.longitude },
+          lat: res.latitude,
+          lng: res.longitude,
+          scale: 14
         });
         that.refresh();
         wx.showToast({ title: '已按你的位置排序', icon: 'none' });

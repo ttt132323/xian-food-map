@@ -1,63 +1,81 @@
 <view class="page">
 
-  <view class="bar">
-    <view class="search">
+  <!-- 顶部地图：像地图软件那样，一进来就先看到位置 -->
+  <view class="map-head">
+    <map class="mini-map"
+         latitude="{{lat}}"
+         longitude="{{lng}}"
+         scale="{{scale}}"
+         markers="{{markers}}"
+         show-location="{{true}}"
+         enable-zoom="{{false}}"
+         enable-scroll="{{false}}"
+         enable-rotate="{{false}}"></map>
+
+    <view class="search-float">
       <text class="ico">🔍</text>
       <input class="ipt" placeholder="搜店名、菜、街区" placeholder-class="ph"
              value="{{q}}" bindinput="onSearch" confirm-type="search" />
     </view>
-    <view class="loc {{located ? 'on' : ''}}" bindtap="locate">{{located ? '已定位' : '定位'}}</view>
+
+    <view class="map-expand" bindtap="goFullMap" hover-class="me-hover">全屏地图 ›</view>
   </view>
 
-  <view class="frow">
-    <text class="fl">时间</text>
-    <scroll-view class="chips" scroll-x enable-flex show-scrollbar="{{false}}">
-      <view wx:for="{{slots}}" wx:key="n"
-            class="chip {{slot === item.id ? 'on' : ''}}"
-            data-v="{{item.id}}" bindtap="pickSlot">{{item.n}}</view>
-    </scroll-view>
-  </view>
+  <view class="body">
 
-  <view class="frow">
-    <text class="fl">类型</text>
-    <scroll-view class="chips" scroll-x enable-flex show-scrollbar="{{false}}">
-      <view wx:for="{{cats}}" wx:key="n"
-            class="chip {{cat === item.id ? 'on' : ''}}"
-            data-v="{{item.id}}" bindtap="pickCat">{{item.n}}</view>
-    </scroll-view>
-  </view>
-
-  <view class="meta-row">
-    <view class="anchor" bindtap="pickAnchor" hover-class="anchor-hover">
-      <text class="a-l">从</text>
-      <text class="a-v">{{anchorName}}</text>
-      <text class="a-d">▾</text>
+    <view class="frow">
+      <text class="fl">时间</text>
+      <scroll-view class="chips" scroll-x enable-flex show-scrollbar="{{false}}">
+        <view wx:for="{{slots}}" wx:key="n"
+              class="chip {{slot === item.id ? 'on' : ''}}"
+              data-v="{{item.id}}" bindtap="pickSlot">{{item.n}}</view>
+      </scroll-view>
     </view>
-    <text class="count">{{countText}}</text>
-  </view>
 
-  <view wx:if="{{list.length === 0}}" class="empty">没有符合条件的店，放宽一下筛选。</view>
+    <view class="frow">
+      <text class="fl">类型</text>
+      <scroll-view class="chips" scroll-x enable-flex show-scrollbar="{{false}}">
+        <view wx:for="{{cats}}" wx:key="n"
+              class="chip {{cat === item.id ? 'on' : ''}}"
+              data-v="{{item.id}}" bindtap="pickCat">{{item.n}}</view>
+      </scroll-view>
+    </view>
 
-  <view wx:for="{{list}}" wx:key="k" class="item"
-        hover-class="item-hover" hover-stay-time="60"
-        data-i="{{index}}" bindtap="openMap">
-    <view class="r">
-      <view class="n">
-        <text class="nm">{{item.n}}</text>
-        <text wx:if="{{item.openTag}}" class="tag {{item.open ? 'ok' : 'off'}}">{{item.open ? '开着' : '过点'}}</text>
-        <text wx:if="{{item.unkTag}}" class="tag dim">时间未知</text>
-        <text wx:if="{{item.la === null}}" class="tag off">无点位</text>
-        <text wx:elif="{{item.lv === 0}}" class="tag dim">片区</text>
+    <view class="meta-row">
+      <view class="anchor" bindtap="pickAnchor" hover-class="anchor-hover">
+        <text class="a-l">从</text>
+        <text class="a-v">{{anchorName}}</text>
+        <text class="a-d">▾</text>
       </view>
-      <view class="m">{{item.a}} · {{item.t}}</view>
+      <view class="loc {{located ? 'on' : ''}}" bindtap="locate">{{located ? '已定位' : '定位'}}</view>
     </view>
-    <view class="d" wx:if="{{item.dd}}">
-      <text class="dv">{{item.dd}}</text>
-      <text class="dl">{{item.dl}}</text>
-    </view>
-    <text class="arrow">›</text>
-  </view>
 
-  <view class="foot">点任意一家看地图 · 地图页可导航</view>
+    <view class="count">{{countText}}</view>
+
+    <view wx:if="{{list.length === 0}}" class="empty">没有符合条件的店，放宽一下筛选。</view>
+
+    <view wx:for="{{list}}" wx:key="k" class="item"
+          hover-class="item-hover" hover-stay-time="60"
+          data-i="{{index}}" bindtap="openMap">
+      <view class="r">
+        <view class="n">
+          <text class="nm">{{item.n}}</text>
+          <text wx:if="{{item.openTag}}" class="tag {{item.open ? 'ok' : 'off'}}">{{item.open ? '开着' : '过点'}}</text>
+          <text wx:if="{{item.unkTag}}" class="tag dim">时间未知</text>
+          <text wx:if="{{item.la === null}}" class="tag off">无点位</text>
+          <text wx:elif="{{item.lv === 0}}" class="tag dim">片区</text>
+        </view>
+        <view class="m">{{item.a}} · {{item.t}}</view>
+      </view>
+      <view class="d" wx:if="{{item.dd}}">
+        <text class="dv">{{item.dd}}</text>
+        <text class="dl">{{item.dl}}</text>
+      </view>
+      <text class="arrow">›</text>
+    </view>
+
+    <view class="foot">点任意一家看地图 · 「全屏地图」看全部点位</view>
+
+  </view>
 
 </view>
