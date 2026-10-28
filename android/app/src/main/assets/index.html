@@ -2810,6 +2810,9 @@
       var distTxt = md !== null ? md.toFixed(1) : (d.dist !== null ? d.dist.toFixed(1) : "");
       var distLbl = md !== null ? "距我" : "距站";
       var tag = "";
+      if (d.pt && d.lv === 0) {
+        tag += '<span class="tag-unk">片区</span>';
+      }
       if (shopState.slot) {
         if (!d.windows.length) {
           tag = '<span class="tag-unk">时间未知</span>';
@@ -2997,6 +3000,13 @@
 
   function startRoute(shop) {
     if (!shop.pt) return;
+    if (shop.lv === 0) {
+      $("navPanel").hidden = false;
+      $("navTitle").textContent = "只有片区位置";
+      $("navMeta").textContent = "";
+      $("navSteps").innerHTML = '<p class="nav-tip">这家只查到了所在街区（比如「大皮院」），没有门牌号。拿它当方位参考，真要走点「App 导航」或复制店名去高德搜。</p>';
+      return;
+    }
     if (!myPos) {
       $("navPanel").hidden = false;
       $("navTitle").textContent = "先定位";

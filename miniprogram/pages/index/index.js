@@ -38,10 +38,6 @@ Page({
     this.refresh();
   },
 
-  onShow() {
-    this.refresh();
-  },
-
   onSearch(e) {
     this.setData({ q: (e.detail.value || '').trim().toLowerCase() });
     this.refresh();
@@ -71,7 +67,7 @@ Page({
           return;
         }
         const a = ANCHORS[res.tapIndex];
-        that.setData({ anchor: a, anchorName: a.n });
+        that.setData({ anchor: a, anchorName: a.n, located: false });
         that.refresh();
       }
     });
@@ -132,7 +128,7 @@ Page({
 
     this.setData({
       list: list,
-      countText: '共 ' + list.length + ' 家'
+      countText: '共 ' + list.length + ' 家 · 按' + anchor.n + '由近到远'
     });
   },
 

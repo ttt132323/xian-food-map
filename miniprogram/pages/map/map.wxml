@@ -16,12 +16,13 @@
   <view class="card" wx:if="{{cur}}">
     <view class="cn">{{cur.n}}</view>
     <view class="cm">{{cur.a}} · {{cur.t}}</view>
-    <view class="cd" wx:if="{{dist}}">{{dist}}</view>
+    <view class="cd" wx:if="{{cur.lv === 0}}">位置是片区估算，导航不准</view>
+    <view class="cd" wx:elif="{{dist}}">{{dist}}</view>
     <view class="alist" wx:if="{{areaList.length}}">
       <text class="ai" wx:for="{{areaList}}" wx:key="*this">{{item}}</text>
     </view>
     <view class="acts" wx:if="{{!areaList.length}}">
-      <view class="btn" bindtap="navTo">导航过去</view>
+      <view class="btn" wx:if="{{cur.lv === 1}}" bindtap="navTo">导航过去</view>
       <view class="btn ghost" bindtap="copyName">复制店名</view>
     </view>
     <view class="acts" wx:if="{{areaList.length}}">

@@ -170,11 +170,18 @@ Page({
 
     const s = points().filter(function (x) { return x.n === m.shopName; })[0];
     if (!s) return;
-    this.setData({
+
+    const upd = {
       cur: s, areaList: [],
       lat: s.la, lng: s.ln, scale: 15,
       dist: this.distText(s)
-    });
+    };
+    // 全量视图下点某个点，把这家放大；只看单店时不用重建
+    if (this.data.markers.length > 1) {
+      upd.markers = buildMarkers(points(), s);
+      upd.incPts = [];
+    }
+    this.setData(upd);
     wx.setNavigationBarTitle({ title: s.n });
   },
 
@@ -191,6 +198,10 @@ Page({
   navTo() {
     const s = this.data.cur;
     if (!s) return;
+    if (s.lv !== 1) {
+      wx.showToast({ title: "这家只有片区位置，导航不准", icon: "none", duration: 2000 });
+      return;
+    }
     wx.openLocation({
       latitude: s.la, longitude: s.ln,
       name: s.n, address: s.a, scale: 17
