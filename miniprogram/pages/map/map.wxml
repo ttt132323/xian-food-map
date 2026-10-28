@@ -18,6 +18,10 @@
     <view class="cm">{{cur.a}} · {{cur.t}}</view>
     <view class="cd" wx:if="{{cur.lv === 0}}">位置是片区估算，导航不准</view>
     <view class="cd" wx:elif="{{dist}}">{{dist}}</view>
+    <view class="must" wx:if="{{cur.must && cur.must.length}}">
+      <text class="mu-l">推荐</text>
+      <text class="mu-i" wx:for="{{cur.must}}" wx:key="*this">{{item}}</text>
+    </view>
     <view class="alist" wx:if="{{areaList.length}}">
       <text class="ai" wx:for="{{areaList}}" wx:key="*this">{{item}}</text>
     </view>

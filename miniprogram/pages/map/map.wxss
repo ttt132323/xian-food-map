@@ -53,6 +53,28 @@
   font-weight: 500;
 }
 
+.must {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10rpx;
+  margin-top: 14rpx;
+}
+
+.mu-l {
+  font-size: 20rpx;
+  color: var(--ink-3);
+  margin-right: 2rpx;
+}
+
+.mu-i {
+  font-size: 22rpx;
+  color: var(--dawn);
+  background: #EAF1F1;
+  border-radius: 6rpx;
+  padding: 5rpx 14rpx;
+}
+
 .alist {
   display: flex;
   flex-wrap: wrap;

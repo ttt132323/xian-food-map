@@ -73,6 +73,7 @@ DATA.forEach(function (d) {
     la: p ? p[0] : (geoOf(d.name).la),
     ln: p ? p[1] : (geoOf(d.name).ln),
     lv: p ? 1 : geoOf(d.name).lv,
+    must: d.must || [],
     win: d.windows || []
   });
 });
